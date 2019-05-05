@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="1230.0" minHeight="-Infinity" minWidth="1230.0" prefHeight="800.0" prefWidth="1230.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.controllers.MainWindowController">
+   <children>
+      <MenuBar cache="true" nodeOrientation="RIGHT_TO_LEFT" VBox.vgrow="SOMETIMES">
+        <menus>
+          <Menu mnemonicParsing="false">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#userAccountBalance" text="Stan konta" />
+                  <MenuItem mnemonicParsing="false" onAction="#userTopUpAccount" text="Doładuj konto" />
+                  <MenuItem mnemonicParsing="false" onAction="#userSettings" text="Ustawienia" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#userSignOut" text="Wyloguj" />
+            </items>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/user.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox alignment="CENTER" VBox.vgrow="SOMETIMES">
+         <children>
+            <ToggleButton contentDisplay="CENTER" minWidth="400.0" mnemonicParsing="false" onAction="#openBankDeposit" prefHeight="50.0" prefWidth="400.0" text="Lokata" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+               <toggleGroup>
+                  <ToggleGroup fx:id="toogleGroup" />
+               </toggleGroup>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </ToggleButton>
+            <ToggleButton minWidth="400.0" mnemonicParsing="false" onAction="#openCurrencyRates" prefHeight="50.0" prefWidth="400.0" text="Kursy walut" textAlignment="CENTER" toggleGroup="$toogleGroup" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </ToggleButton>
+            <ToggleButton minWidth="400.0" mnemonicParsing="false" onAction="#openStockExchange" prefHeight="50.0" prefWidth="400.0" text="Giedła kryptowaluty B&amp;K" textAlignment="CENTER" toggleGroup="$toogleGroup" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </ToggleButton>
+         </children>
+      </HBox>
+      <StackPane prefHeight="150.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+   </children>
+</VBox>
