@@ -1,5 +1,7 @@
 package calculator.controllers;
 
+
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.ToggleGroup;
 
@@ -9,38 +11,44 @@ public class MainWindowController {
     private ToggleGroup toogleGroup;
 
     @FXML
-    void openBankDeposit() {
+    private void checkUser(Event event) {
 
     }
 
     @FXML
-    void openCurrencyRates() {
+    private void openCreditAndBankDeposit() {
 
     }
 
     @FXML
-    void openStockExchange() {
+    private void openCurrencyRates() {
 
     }
 
     @FXML
-    void userTopUpAccount() {
+    private void openStockExchange() {
 
     }
 
     @FXML
-    void userAccountBalance() {
+    private void userTopUpAccount() {
 
     }
 
     @FXML
-    void userSettings() {
+    private void userAccountBalance() {
 
     }
 
     @FXML
-    void userSignOut() {
+    private void userSettings() {
 
     }
+
+    @FXML
+    private void userSignOut() {
+
+    }
+
 
 }

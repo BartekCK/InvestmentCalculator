@@ -13,12 +13,11 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="1230.0" minHeight="-Infinity" minWidth="1230.0" prefHeight="800.0" prefWidth="1230.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.controllers.MainWindowController">
    <children>
       <MenuBar cache="true" nodeOrientation="RIGHT_TO_LEFT" VBox.vgrow="SOMETIMES">
         <menus>
-          <Menu mnemonicParsing="false">
+          <Menu mnemonicParsing="false" onShown="#checkUser">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#userAccountBalance" text="Stan konta" />
                   <MenuItem mnemonicParsing="false" onAction="#userTopUpAccount" text="Doładuj konto" />
@@ -38,7 +37,7 @@
       </MenuBar>
       <HBox alignment="CENTER" VBox.vgrow="SOMETIMES">
          <children>
-            <ToggleButton contentDisplay="CENTER" minWidth="400.0" mnemonicParsing="false" onAction="#openBankDeposit" prefHeight="50.0" prefWidth="400.0" text="Lokata" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+            <ToggleButton contentDisplay="CENTER" minWidth="400.0" mnemonicParsing="false" onAction="#openCreditAndBankDeposit" prefHeight="50.0" prefWidth="400.0" text="Kredyty/Lokaty" textAlignment="CENTER" HBox.hgrow="ALWAYS">
                <toggleGroup>
                   <ToggleGroup fx:id="toogleGroup" />
                </toggleGroup>
