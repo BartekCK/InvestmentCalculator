@@ -19,4 +19,14 @@ public class UserDao extends MainDao {
         return dao.queryForFirst(temp);
     }
 
+    public boolean checkFigureEmail(String email) throws SQLException, CalculatorException {
+
+        Dao<User,Object> dao = getDao(User.class);
+        if(dao.queryForFirst(dao.queryBuilder().where().eq("EMAIL", email).prepare()) == null)
+            return false;
+        else
+            return true;
+
+    }
+
 }
