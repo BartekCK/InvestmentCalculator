@@ -6,13 +6,8 @@ import calculator.utilies.Path;
 import calculator.utilies.ProjectLoader;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.ToggleGroup;
-import javafx.stage.Stage;
 
-import java.io.IOException;
 
 public class MainWindowController {
 

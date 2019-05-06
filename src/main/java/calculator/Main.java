@@ -1,6 +1,7 @@
 package calculator;
 
 
+import calculator.database.DbConnector;
 import calculator.utilies.Path;
 import calculator.utilies.ProjectLoader;
 import javafx.application.Application;
@@ -33,6 +34,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
 
         Main.commonWindowFeatures(ProjectLoader.ParentLoader(Path.PATH_MAIN_WINDOW),primaryStage,"Kalkulator Inwestora");
+        DbConnector.initDatabase();
 
 
     }
