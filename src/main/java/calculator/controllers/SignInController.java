@@ -14,6 +14,7 @@ public class SignInController {
     @FXML
     private PasswordField passwordTextField;
 
+
     @FXML
     void loginAction(ActionEvent event) {
 
@@ -23,5 +24,7 @@ public class SignInController {
     void registerNewUser(MouseEvent event) {
 
     }
+
+
 
 }

@@ -1,18 +1,32 @@
 package calculator.controllers;
 
 
+import calculator.user.User;
+import calculator.utilies.Path;
+import calculator.utilies.ProjectLoader;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ToggleGroup;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class MainWindowController {
+
+    private User user;
 
     @FXML
     private ToggleGroup toogleGroup;
 
     @FXML
     private void checkUser(Event event) {
-
+        if(user == null)//Sign in
+        {
+            SignInController signInController = ProjectLoader.FxmlLoader(Path.PATH_LOGIN,"Panel logowania").getController();
+        }
     }
 
     @FXML
