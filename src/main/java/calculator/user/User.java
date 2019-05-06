@@ -1,10 +1,11 @@
 package calculator.user;
 
+import calculator.database.BaseModel;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
 @DatabaseTable(tableName = "USER")
-public class User //implements SuperUser,CommonUser
+public class User implements SuperUser,CommonUser, BaseModel
 {
 
     @DatabaseField(generatedId = true)
