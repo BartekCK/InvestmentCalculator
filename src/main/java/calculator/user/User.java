@@ -29,6 +29,9 @@ public class User implements SuperUser,CommonUser, BaseModel
     @DatabaseField(columnName = "PHONE", canBeNull = true)
     private String phone;
 
+    @DatabaseField(columnName = "IS_SUPER_USER", canBeNull = false)
+    private boolean superUser;
+
     public User() {
     }
 

@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="fxml.login.Registration"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane maxHeight="400.0" maxWidth="350.0" minHeight="400.0" minWidth="350.0" prefHeight="400.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.controllers.RegistrationController">
+   <children>
+      <TextField fx:id="nickTextField" layoutX="39.0" layoutY="43.0" prefHeight="25.0" prefWidth="150.0" />
+      <TextField fx:id="emailTextField" layoutX="39.0" layoutY="93.0" prefHeight="25.0" prefWidth="150.0" />
+      <Text layoutX="38.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nick" />
+      <Text layoutX="40.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Email" />
+      <Text layoutX="39.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Hasło" />
+      <Text layoutX="40.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Powtórz hasło" />
+      <TextField fx:id="nameTextField" layoutX="39.0" layoutY="240.0" prefHeight="25.0" prefWidth="150.0" />
+      <Text layoutX="38.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imię" />
+      <TextField fx:id="surname" layoutX="39.0" layoutY="292.0" prefHeight="25.0" prefWidth="150.0" />
+      <Text layoutX="36.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko" />
+      <RadioButton fx:id="investorCheckBox" layoutX="224.0" layoutY="27.0" mnemonicParsing="false" selected="true" text="Inwestor">
+         <toggleGroup>
+            <ToggleGroup fx:id="radioButtonGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="superInvestorCheckBox" layoutX="224.0" layoutY="55.0" mnemonicParsing="false" text="Super Inwestor" toggleGroup="$radioButtonGroup" />
+      <Button layoutX="39.0" layoutY="350.0" mnemonicParsing="false" onAction="#register" prefHeight="25.0" prefWidth="149.0" text="Zarejestruj" />
+      <Text layoutX="220.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="•Pola oznaczone * są wymagane podczas rejestracji" wrappingWidth="109.0" />
+      <Text fx:id="textPasswordWarning" fill="RED" layoutX="220.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Podane hasła nie są jednakowe" wrappingWidth="109.0" />
+      <Text fx:id="textEmailWarning" fill="RED" layoutX="220.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Podany email już instnieje w bazie użytkowników" wrappingWidth="109.0" />
+      <PasswordField fx:id="password1TextField" layoutX="39.0" layoutY="143.0" />
+      <PasswordField fx:id="password2TextField" layoutX="40.0" layoutY="188.0" />
+   </children>
 </AnchorPane>
