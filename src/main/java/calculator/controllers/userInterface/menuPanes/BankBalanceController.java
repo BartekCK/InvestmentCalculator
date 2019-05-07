@@ -1,4 +1,4 @@
-package calculator.controllers;
+package calculator.controllers.userInterface.menuPanes;
 
 import calculator.user.User;
 import javafx.fxml.FXML;

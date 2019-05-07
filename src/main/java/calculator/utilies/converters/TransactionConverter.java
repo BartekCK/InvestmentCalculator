@@ -1,7 +1,7 @@
 package calculator.utilies.converters;
 
-import calculator.models.TransactionFx;
-import calculator.user.Transaction;
+import calculator.date.TransactionFx;
+import calculator.date.Transaction;
 
 public class TransactionConverter {
 

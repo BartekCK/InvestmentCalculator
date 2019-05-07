@@ -1,6 +1,8 @@
 package calculator.controllers;
 
 
+import calculator.controllers.login.SignInController;
+import calculator.controllers.userInterface.UserInterfaceController;
 import calculator.user.User;
 import calculator.utilies.Path;
 import calculator.utilies.ProjectLoader;
@@ -71,6 +73,7 @@ public class MainWindowController {
     protected void superUserTransaction() {
         clickOnMenuItem();
         userInterfaceController.getButtonUserTransaction().setSelected(true);
+        userInterfaceController.superUserTransaction();
     }
 
     @FXML
@@ -79,7 +82,7 @@ public class MainWindowController {
 
     }
 
-    void setSuperUser(User user) {//Rzutowanie w góre
+    public void setSuperUser(User user) {//Rzutowanie w góre
 
         this.user = user;
         if(user.isSuperUser())

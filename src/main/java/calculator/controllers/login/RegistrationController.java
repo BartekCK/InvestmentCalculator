@@ -1,4 +1,4 @@
-package calculator.controllers;
+package calculator.controllers.login;
 
 import calculator.database.dao.SuperUserDao;
 import calculator.database.tasks.UserTask;

@@ -1,7 +1,7 @@
 package calculator.database;
 
 import calculator.user.SuperUser;
-import calculator.user.Transaction;
+import calculator.date.Transaction;
 import com.j256.ormlite.jdbc.JdbcConnectionSource;
 import com.j256.ormlite.logger.Logger;
 import com.j256.ormlite.logger.LoggerFactory;

@@ -1,9 +1,8 @@
-package calculator.controllers;
+package calculator.controllers.userInterface.menuPanes;
 
 import calculator.database.tasks.TransactionTask;
-import calculator.models.TransactionFx;
+import calculator.date.TransactionFx;
 import calculator.user.SuperUser;
-import calculator.user.Transaction;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;

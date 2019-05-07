@@ -1,5 +1,9 @@
-package calculator.controllers;
+package calculator.controllers.userInterface;
 
+import calculator.controllers.MainWindowController;
+import calculator.controllers.userInterface.menuPanes.AccountTopUpController;
+import calculator.controllers.userInterface.menuPanes.BankBalanceController;
+import calculator.controllers.userInterface.menuPanes.TransactionRecordController;
 import calculator.user.SuperUser;
 import calculator.user.User;
 import calculator.utilies.Path;
@@ -9,7 +13,7 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.AnchorPane;
 
 
-public class UserInterfaceController extends MainWindowController  {
+public class UserInterfaceController extends MainWindowController {
 
 
     @FXML
@@ -25,7 +29,7 @@ public class UserInterfaceController extends MainWindowController  {
     private ToggleButton buttonUserTransaction;
 
     @Override
-    protected void userTopUpAccount() {
+    public void userTopUpAccount() {
         AccountTopUpController accountTopUpController = ProjectLoader.FxmlLoader(Path.PATH_ACCOUNT_TOP_UP).getController();
         accountTopUpController.setUser(this.user);
         anchorPane.getChildren().clear();
@@ -33,7 +37,7 @@ public class UserInterfaceController extends MainWindowController  {
     }
 
     @Override
-    protected void userAccountBalance() {
+    public void userAccountBalance() {
 
         BankBalanceController bankBalanceController = ProjectLoader.FxmlLoader(Path.PATH_BANK_BALANCE).getController();
         bankBalanceController.setValuesInText(this.user);
@@ -42,7 +46,7 @@ public class UserInterfaceController extends MainWindowController  {
     }
 
     @Override
-    protected void superUserTransaction() {
+    public void superUserTransaction() {
         TransactionRecordController transactionRecordController = ProjectLoader.FxmlLoader(Path.PATH_TRANSACTION_RECORD).getController();
         transactionRecordController.setSuperUser((SuperUser) this.user);
         transactionRecordController.showTable();

@@ -2,7 +2,7 @@ package calculator.database.dao;
 
 import calculator.exceptions.CalculatorException;
 import calculator.user.SuperUser;
-import calculator.user.Transaction;
+import calculator.date.Transaction;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.stmt.PreparedQuery;
 import java.sql.SQLException;

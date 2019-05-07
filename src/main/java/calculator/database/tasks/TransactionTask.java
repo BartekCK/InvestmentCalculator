@@ -2,9 +2,9 @@ package calculator.database.tasks;
 
 import calculator.database.dao.TransactionDao;
 import calculator.exceptions.CalculatorException;
-import calculator.models.TransactionFx;
+import calculator.date.TransactionFx;
 import calculator.user.SuperUser;
-import calculator.user.Transaction;
+import calculator.date.Transaction;
 import calculator.utilies.converters.TransactionConverter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

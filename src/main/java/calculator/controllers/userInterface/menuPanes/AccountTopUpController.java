@@ -1,4 +1,4 @@
-package calculator.controllers;
+package calculator.controllers.userInterface.menuPanes;
 
 import calculator.database.tasks.UserTask;
 import calculator.user.SuperUser;
