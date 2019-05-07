@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="1230.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.controllers.LoansAndDepositsController">
+   <children>
+      <Separator layoutX="612.0" orientation="VERTICAL" prefHeight="690.0" />
+      <AnchorPane fx:id="loansAnchorPane" prefHeight="690.0" prefWidth="615.0">
+         <children>
+            <fx:include source="Loans.fxml" />
+         </children></AnchorPane>
+      <AnchorPane fx:id="depositAnchorPane" layoutX="612.0" prefHeight="690.0" prefWidth="615.0">
+         <children>
+            <fx:include source="Deposit.fxml" />
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

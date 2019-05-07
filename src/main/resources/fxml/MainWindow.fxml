@@ -15,7 +15,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="1230.0" minHeight="-Infinity" minWidth="1230.0" prefHeight="800.0" prefWidth="1230.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.controllers.MainWindowController">
    <children>
-      <MenuBar cache="true" nodeOrientation="RIGHT_TO_LEFT" VBox.vgrow="SOMETIMES">
+      <MenuBar cache="true" nodeOrientation="RIGHT_TO_LEFT" prefHeight="50.0">
         <menus>
           <Menu mnemonicParsing="false" onShown="#checkUser">
             <items>
@@ -35,7 +35,7 @@
           </Menu>
         </menus>
       </MenuBar>
-      <HBox alignment="CENTER" VBox.vgrow="SOMETIMES">
+      <HBox alignment="CENTER" prefHeight="60.0">
          <children>
             <ToggleButton contentDisplay="CENTER" minWidth="400.0" mnemonicParsing="false" onAction="#openCreditAndBankDeposit" prefHeight="50.0" prefWidth="400.0" text="Kredyty/Lokaty" textAlignment="CENTER" HBox.hgrow="ALWAYS">
                <toggleGroup>
@@ -57,6 +57,6 @@
             </ToggleButton>
          </children>
       </HBox>
-      <StackPane prefHeight="150.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+      <StackPane fx:id="downStackPane" prefHeight="690.0" />
    </children>
 </VBox>

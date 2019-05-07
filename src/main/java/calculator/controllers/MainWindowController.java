@@ -8,11 +8,17 @@ import calculator.utilies.Path;
 import calculator.utilies.ProjectLoader;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.StackPane;
+
+import java.io.IOException;
 
 
 public class MainWindowController {
+
 
     protected User user;
     private UserInterfaceController userInterfaceController;
@@ -24,6 +30,9 @@ public class MainWindowController {
     private MenuItem transactionMenuItem;
 
     @FXML
+    private StackPane downStackPane;
+
+    @FXML
     private void checkUser(Event event) {
         if(user == null)//Sign in
         {
@@ -33,13 +42,10 @@ public class MainWindowController {
     }
 
     @FXML
-    public void initialize()
-    {
-
-    }
-
-    @FXML
     private void openCreditAndBankDeposit() {
+
+        downStackPane.getChildren().clear();
+        downStackPane.getChildren().add(ProjectLoader.ParentLoader(Path.PATH_LOANS_AND_DEPOSIT));
 
     }
 
