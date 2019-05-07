@@ -8,4 +8,5 @@ public class Path {
     public static final String PATH_USER_INTERFACE = "/fxml/userMenu/UserInterface.fxml";
     public static final String PATH_BANK_BALANCE = "/fxml/userMenu/BankBalance.fxml";
     public static final String PATH_ACCOUNT_TOP_UP = "/fxml/userMenu/AccountTopUp.fxml";
+    public static final String PATH_TRANSACTION_RECORD = "/fxml/userMenu/TransactionRecord.fxml";
 }
