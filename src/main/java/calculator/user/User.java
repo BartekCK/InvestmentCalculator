@@ -26,9 +26,6 @@ public class User implements SuperUser,CommonUser, BaseModel
     @DatabaseField(columnName = "SURNAME", canBeNull = true)
     private String surname;
 
-    @DatabaseField(columnName = "PHONE", canBeNull = true)
-    private String phone;
-
     @DatabaseField(columnName = "IS_SUPER_USER", canBeNull = false)
     private boolean superUser;
 
@@ -39,5 +36,29 @@ public class User implements SuperUser,CommonUser, BaseModel
         this.email = email;
         this.password = password;
         this.nick = nick;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setNick(String nick) {
+        this.nick = nick;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setSuperUser(boolean superUser) {
+        this.superUser = superUser;
     }
 }

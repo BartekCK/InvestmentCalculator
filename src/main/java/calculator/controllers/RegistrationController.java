@@ -1,6 +1,7 @@
 package calculator.controllers;
 
 import calculator.database.dao.UserDao;
+import calculator.database.tasks.UserTask;
 import calculator.exceptions.CalculatorException;
 import calculator.user.User;
 import javafx.beans.property.BooleanProperty;
@@ -17,6 +18,8 @@ import java.sql.SQLException;
 
 public class RegistrationController {
 
+    UserTask userTask;
+
     @FXML
     private TextField nickTextField;
 
@@ -27,7 +30,7 @@ public class RegistrationController {
     private TextField nameTextField;
 
     @FXML
-    private TextField surname;
+    private TextField surnameTextField;
 
     @FXML
     private RadioButton investorCheckBox;
@@ -55,19 +58,30 @@ public class RegistrationController {
     @FXML
     public void initialize()
     {
+        userTask = new UserTask();
         textEmailWarning.visibleProperty().bind(emailBoolean);
         textPasswordWarning.visibleProperty().bind(passwordBoolean);
     }
 
     @FXML
     void register(ActionEvent event) {
+
         if(checkPassword()&&checkEmail() && !(password1TextField.getText().isEmpty() || emailTextField.getText().isEmpty()))
         {
-            System.out.println("UDALO SIE");
+            User user = new User(emailTextField.getText(),password1TextField.getText(),nickTextField.getText());
+            user.setName(nameTextField.getText());
+            user.setSurname(surnameTextField.getText());
+            if(investorCheckBox.isSelected())
+            {
+                user.setSuperUser(false);
+            }
+            else if(superInvestorCheckBox.isSelected())
+            {
+                user.setSuperUser(true);
+            }
+            userTask.addUserToDataBase(user);
+
         }
-
-
-        //User user = new User(emailTextField.toString(),password1TextField.toString(),nickTextField.toString());
 
     }
 
@@ -92,12 +106,12 @@ public class RegistrationController {
         try {
             if(userDao.checkFigureEmail(emailTextField.getText()))
             {
-                emailBoolean.set(true);//To znczy ze juz wystepuje taki email
+                emailBoolean.set(true);
                 return false;
             }
             else
             {
-                emailBoolean.set(false);//Porzadana odp
+                emailBoolean.set(false);
                 return true;
             }
         } catch (SQLException e) {

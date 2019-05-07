@@ -19,7 +19,7 @@
       <Text layoutX="40.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Powtórz hasło" />
       <TextField fx:id="nameTextField" layoutX="39.0" layoutY="240.0" prefHeight="25.0" prefWidth="150.0" />
       <Text layoutX="38.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imię" />
-      <TextField fx:id="surname" layoutX="39.0" layoutY="292.0" prefHeight="25.0" prefWidth="150.0" />
+      <TextField fx:id="surnameTextField" layoutX="39.0" layoutY="292.0" prefHeight="25.0" prefWidth="150.0" />
       <Text layoutX="36.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko" />
       <RadioButton fx:id="investorCheckBox" layoutX="224.0" layoutY="27.0" mnemonicParsing="false" selected="true" text="Inwestor">
          <toggleGroup>
