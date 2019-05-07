@@ -8,7 +8,7 @@ import com.j256.ormlite.table.DatabaseTable;
 public class SuperUser extends User {
 
     @ForeignCollectionField(eager = true)
-    private ForeignCollection<TransactionRecord> transactionRecords;
+    private ForeignCollection<Transaction> transactions;
 
     public SuperUser(String email, String password, String nick) {
         super(email, password, nick);
