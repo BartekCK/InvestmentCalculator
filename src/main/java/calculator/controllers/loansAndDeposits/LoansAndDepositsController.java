@@ -1,4 +1,4 @@
-package calculator.controllers;
+package calculator.controllers.loansAndDeposits;
 
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;

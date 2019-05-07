@@ -1,4 +1,4 @@
-package calculator.controllers;
+package calculator.controllers.loansAndDeposits;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
