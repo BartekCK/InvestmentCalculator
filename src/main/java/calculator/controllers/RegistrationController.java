@@ -4,15 +4,19 @@ import calculator.database.dao.UserDao;
 import calculator.database.tasks.UserTask;
 import calculator.exceptions.CalculatorException;
 import calculator.user.User;
+import calculator.utilies.Path;
+import calculator.utilies.ProjectLoader;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.sql.SQLException;
 
@@ -34,9 +38,6 @@ public class RegistrationController {
 
     @FXML
     private RadioButton investorCheckBox;
-
-    @FXML
-    private ToggleGroup radioButtonGroup;
 
     @FXML
     private RadioButton superInvestorCheckBox;
@@ -71,16 +72,21 @@ public class RegistrationController {
             User user = new User(emailTextField.getText(),password1TextField.getText(),nickTextField.getText());
             user.setName(nameTextField.getText());
             user.setSurname(surnameTextField.getText());
+
             if(investorCheckBox.isSelected())
             {
+                user.setPolishZlotyAccount(100);
                 user.setSuperUser(false);
             }
             else if(superInvestorCheckBox.isSelected())
             {
+                user.setPolishZlotyAccount(1000);
                 user.setSuperUser(true);
             }
             userTask.addUserToDataBase(user);
 
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(new Scene(ProjectLoader.ParentLoader(Path.PATH_REGISTRATION_CONFIRMATION)));
         }
 
     }

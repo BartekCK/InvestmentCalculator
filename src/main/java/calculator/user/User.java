@@ -29,6 +29,9 @@ public class User implements SuperUser,CommonUser, BaseModel
     @DatabaseField(columnName = "IS_SUPER_USER", canBeNull = false)
     private boolean superUser;
 
+    @DatabaseField(columnName = "POLISH_ZLOTY", canBeNull = false)
+    private double polishZlotyAccount;
+
     public User() {
     }
 
@@ -60,5 +63,27 @@ public class User implements SuperUser,CommonUser, BaseModel
 
     public void setSuperUser(boolean superUser) {
         this.superUser = superUser;
+    }
+
+    public double getPolishZlotyAccount() {
+        return polishZlotyAccount;
+    }
+
+    public void setPolishZlotyAccount(double polishZlotyAccount) {
+        this.polishZlotyAccount = polishZlotyAccount;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", nick='" + nick + '\'' +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", superUser=" + superUser +
+                ", polishZlotyAccount=" + polishZlotyAccount +
+                '}';
     }
 }

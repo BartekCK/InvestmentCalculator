@@ -21,6 +21,7 @@ public class MainWindowController {
         if(user == null)//Sign in
         {
             SignInController signInController = ProjectLoader.FxmlLoader(Path.PATH_LOGIN,"Panel logowania").getController();
+            signInController.setMainWindowController(this);
         }
     }
 
@@ -56,8 +57,11 @@ public class MainWindowController {
 
     @FXML
     private void userSignOut() {
+        this.user = null;
 
     }
 
-
+    public void setUser(User user) {
+        this.user = user;
+    }
 }
