@@ -23,7 +23,6 @@ public class BankBalanceController {
 
     public void setValuesInText(User user)
     {
-        System.out.println(user);
         zlValueText.setText(String.valueOf(user.getPolishZlotyAccount()));
         catValueText.setText(String.valueOf(user.getValueCaT()));
         bandkzlValueText.setText(String.valueOf(user.getValueBandK()));

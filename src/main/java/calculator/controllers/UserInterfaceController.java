@@ -27,15 +27,19 @@ public class UserInterfaceController extends MainWindowController  {
 
     @Override
     protected void userTopUpAccount() {
-
+        AccountTopUpController accountTopUpController = ProjectLoader.FxmlLoader(Path.PATH_ACCOUNT_TOP_UP).getController();
+        accountTopUpController.setUser(this.user);
+        anchorPane.getChildren().clear();
+        anchorPane.getChildren().addAll(accountTopUpController.getTopUpAccountAnchorPane());
     }
 
     @Override
     protected void userAccountBalance() {
 
-            BankBalanceController bankBalanceController = ProjectLoader.FxmlLoader(Path.PATH_BANK_BALANCE).getController();
-            bankBalanceController.setValuesInText(this.user);
-            anchorPane.getChildren().addAll(bankBalanceController.getBankBalanceAnchorPane());
+        BankBalanceController bankBalanceController = ProjectLoader.FxmlLoader(Path.PATH_BANK_BALANCE).getController();
+        bankBalanceController.setValuesInText(this.user);
+        anchorPane.getChildren().clear();
+        anchorPane.getChildren().addAll(bankBalanceController.getBankBalanceAnchorPane());
     }
 
     @Override

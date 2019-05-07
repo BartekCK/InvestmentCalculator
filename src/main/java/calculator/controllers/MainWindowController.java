@@ -57,12 +57,14 @@ public class MainWindowController {
     protected void userTopUpAccount() {
         clickOnMenuItem();
         userInterfaceController.getButtonTopUpAccount().setSelected(true);
+        userInterfaceController.userTopUpAccount();
     }
 
     @FXML
     protected void userAccountBalance() {
         clickOnMenuItem();
         userInterfaceController.getButtonAccountBalance().setSelected(true);
+        userInterfaceController.userAccountBalance();
     }
 
     @FXML
