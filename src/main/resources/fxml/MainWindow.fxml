@@ -21,7 +21,7 @@
             <items>
               <MenuItem mnemonicParsing="false" onAction="#userAccountBalance" text="Stan konta" />
                   <MenuItem mnemonicParsing="false" onAction="#userTopUpAccount" text="Doładuj konto" />
-                  <MenuItem mnemonicParsing="false" onAction="#userSettings" text="Ustawienia" />
+                  <MenuItem fx:id="transactionMenuItem" mnemonicParsing="false" onAction="#superUserTransaction" text="Zapis transakcji" />
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem mnemonicParsing="false" onAction="#userSignOut" text="Wyloguj" />
             </items>

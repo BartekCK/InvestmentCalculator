@@ -5,8 +5,11 @@ import calculator.user.SuperUser;
 import calculator.user.User;
 import calculator.utilies.Path;
 import calculator.utilies.ProjectLoader;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.ToggleGroup;
 
 
@@ -18,12 +21,21 @@ public class MainWindowController {
     private ToggleGroup toogleGroup;
 
     @FXML
+    private MenuItem transactionMenuItem;
+
+    @FXML
     private void checkUser(Event event) {
         if(user == null)//Sign in
         {
             SignInController signInController = ProjectLoader.FxmlLoader(Path.PATH_LOGIN,"Panel logowania").getController();
             signInController.setMainWindowController(this);
         }
+    }
+
+    @FXML
+    public void initialize()
+    {
+
     }
 
     @FXML
@@ -41,6 +53,8 @@ public class MainWindowController {
 
     }
 
+
+
     @FXML
     private void userTopUpAccount() {
 
@@ -52,7 +66,7 @@ public class MainWindowController {
     }
 
     @FXML
-    private void userSettings() {
+    private void superUserTransaction() {
 
     }
 
@@ -62,8 +76,12 @@ public class MainWindowController {
 
     }
 
-    public void setSuperUser(User user) {
+    public void setSuperUser(User user) {//Rzutowanie w góre
 
         this.user = user;
+        if(user.isSuperUser())
+            transactionMenuItem.setDisable(false);
+        else
+            transactionMenuItem.setDisable(true);
     }
 }
