@@ -62,8 +62,8 @@ public class MainWindowController {
 
     }
 
-    public void setUser(User user) {
+    public void setSuperUser(User user) {
 
-
+        this.user = user;
     }
 }

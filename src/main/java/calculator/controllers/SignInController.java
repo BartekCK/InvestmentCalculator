@@ -1,7 +1,7 @@
 package calculator.controllers;
 
 import calculator.database.tasks.UserTask;
-import calculator.user.User;
+import calculator.user.SuperUser;
 import calculator.utilies.Path;
 import calculator.utilies.ProjectLoader;
 import javafx.beans.property.BooleanProperty;
@@ -20,7 +20,7 @@ import javafx.stage.Stage;
 public class SignInController {
 
     private MainWindowController mainWindowController;
-    private User user;
+    private SuperUser superUser;
     private UserTask userTask;
 
     @FXML
@@ -46,14 +46,15 @@ public class SignInController {
 
     @FXML
     void loginAction(ActionEvent event) {
-        user = userTask.pullUserFromDataBase(emailTextField.getText(),passwordTextField.getText());
-        if(user == null)
+        superUser = userTask.pullUserFromDataBase(emailTextField.getText(),passwordTextField.getText());
+        if(superUser == null)
         {
             System.out.println("Brak użytkownika");//THING TO DO LATER !!!
             textBoolean.set(true);
         }else
         {
-            mainWindowController.setUser(user);
+
+            mainWindowController.setSuperUser(superUser);
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
             window.close();
         }

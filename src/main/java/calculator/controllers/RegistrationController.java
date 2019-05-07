@@ -1,9 +1,9 @@
 package calculator.controllers;
 
-import calculator.database.dao.UserDao;
+import calculator.database.dao.SuperUserDao;
 import calculator.database.tasks.UserTask;
 import calculator.exceptions.CalculatorException;
-import calculator.user.User;
+import calculator.user.SuperUser;
 import calculator.utilies.Path;
 import calculator.utilies.ProjectLoader;
 import javafx.beans.property.BooleanProperty;
@@ -69,21 +69,21 @@ public class RegistrationController {
 
         if(checkPassword()&&checkEmail() && !(password1TextField.getText().isEmpty() || emailTextField.getText().isEmpty()))
         {
-            User user = new User(emailTextField.getText(),password1TextField.getText(),nickTextField.getText());
-            user.setName(nameTextField.getText());
-            user.setSurname(surnameTextField.getText());
+            SuperUser superUser = new SuperUser(emailTextField.getText(),password1TextField.getText(),nickTextField.getText());
+            superUser.setName(nameTextField.getText());
+            superUser.setSurname(surnameTextField.getText());
 
             if(investorCheckBox.isSelected())
             {
-                user.setPolishZlotyAccount(100);
-                user.setSuperUser(false);
+                superUser.setPolishZlotyAccount(100);
+                superUser.setSuperUser(false);
             }
             else if(superInvestorCheckBox.isSelected())
             {
-                user.setPolishZlotyAccount(1000);
-                user.setSuperUser(true);
+                superUser.setPolishZlotyAccount(1000);
+                superUser.setSuperUser(true);
             }
-            userTask.addUserToDataBase(user);
+            userTask.addUserToDataBase(superUser);
 
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
             window.setScene(new Scene(ProjectLoader.ParentLoader(Path.PATH_REGISTRATION_CONFIRMATION)));
@@ -108,9 +108,9 @@ public class RegistrationController {
 
     private boolean checkEmail()
     {
-        UserDao userDao = new UserDao();
+        SuperUserDao superUserDao = new SuperUserDao();
         try {
-            if(userDao.checkFigureEmail(emailTextField.getText()))
+            if(superUserDao.checkFigureEmail(emailTextField.getText()))
             {
                 emailBoolean.set(true);
                 return false;

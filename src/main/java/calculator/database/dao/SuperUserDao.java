@@ -1,27 +1,28 @@
 package calculator.database.dao;
 
 import calculator.exceptions.CalculatorException;
+import calculator.user.SuperUser;
 import calculator.user.User;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.stmt.PreparedQuery;
 
 import java.sql.SQLException;
 
-public class UserDao extends MainDao {
-    public UserDao() {
+public class SuperUserDao extends MainDao {
+    public SuperUserDao() {
         super();
     }
 
-    public User findUserByRequiredProperty(String email, String password) throws CalculatorException, SQLException {
+    public SuperUser findUserByRequiredProperty(String email, String password) throws CalculatorException, SQLException {
 
-        Dao<User,Object> dao = getDao(User.class);
-        PreparedQuery<User> temp = dao.queryBuilder().where().eq("EMAIL", email).and().eq("PASSWORD", password).prepare();
+        Dao<SuperUser,Object> dao = getDao(SuperUser.class);
+        PreparedQuery<SuperUser> temp = dao.queryBuilder().where().eq("EMAIL", email).and().eq("PASSWORD", password).prepare();
         return dao.queryForFirst(temp);
     }
 
     public boolean checkFigureEmail(String email) throws SQLException, CalculatorException {
 
-        Dao<User,Object> dao = getDao(User.class);
+        Dao<SuperUser,Object> dao = getDao(SuperUser.class);
         if(dao.queryForFirst(dao.queryBuilder().where().eq("EMAIL", email).prepare()) == null)
             return false;
         else

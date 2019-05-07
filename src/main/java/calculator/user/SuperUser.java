@@ -16,4 +16,6 @@ public class SuperUser extends User {
 
     public SuperUser() {
     }
+
+
 }

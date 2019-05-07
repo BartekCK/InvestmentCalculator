@@ -1,29 +1,29 @@
 package calculator.database.tasks;
 
-import calculator.database.dao.UserDao;
+import calculator.database.dao.SuperUserDao;
 import calculator.exceptions.CalculatorException;
-import calculator.user.User;
+import calculator.user.SuperUser;
 
 import java.sql.SQLException;
 
 public class UserTask {
 
-    public void addUserToDataBase(User user)
+    public void addUserToDataBase(SuperUser superUser)
     {
-        UserDao userDao = new UserDao();
+        SuperUserDao superUserDao = new SuperUserDao();
         try {
-            userDao.creatOrUpdate(user);
+            superUserDao.creatOrUpdate(superUser);
         } catch (CalculatorException e) {
             e.printStackTrace();
         }
     }
 
-    public User pullUserFromDataBase(String email,String password)
+    public SuperUser pullUserFromDataBase(String email, String password)
     {
-        UserDao userDao = new UserDao();
+        SuperUserDao superUserDao = new SuperUserDao();
         try {
-            User user = userDao.findUserByRequiredProperty(email,password);
-            return user;
+            SuperUser superUser = superUserDao.findUserByRequiredProperty(email,password);
+            return superUser;
         } catch (CalculatorException e) {
             e.printStackTrace();
         } catch (SQLException e) {

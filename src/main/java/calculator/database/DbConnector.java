@@ -50,7 +50,7 @@ public class DbConnector {
 
     private static void createTable(){
         try {
-            TableUtils.createTableIfNotExists(connectionSource, User.class);
+
             TableUtils.createTableIfNotExists(connectionSource, SuperUser.class);
             TableUtils.createTableIfNotExists(connectionSource, TransactionRecord.class);
 
@@ -61,7 +61,7 @@ public class DbConnector {
 
     private static void dropTable(){
         try {
-            TableUtils.dropTable(connectionSource, User.class,true);
+
             TableUtils.dropTable(connectionSource, SuperUser.class,true);
             TableUtils.dropTable(connectionSource, TransactionRecord.class,true);
         } catch (SQLException e) {
