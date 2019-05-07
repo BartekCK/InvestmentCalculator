@@ -1,5 +1,7 @@
 package calculator.database;
 
+import calculator.user.SuperUser;
+import calculator.user.TransactionRecord;
 import calculator.user.User;
 import com.j256.ormlite.jdbc.JdbcConnectionSource;
 import com.j256.ormlite.logger.Logger;
@@ -18,7 +20,7 @@ public class DbConnector {
 
     public static void initDatabase(){
         createConnectionSource();
-        //dropTable();
+        dropTable();
         createTable();
         closeConnectionSource();
     }
@@ -49,6 +51,8 @@ public class DbConnector {
     private static void createTable(){
         try {
             TableUtils.createTableIfNotExists(connectionSource, User.class);
+            TableUtils.createTableIfNotExists(connectionSource, SuperUser.class);
+            TableUtils.createTableIfNotExists(connectionSource, TransactionRecord.class);
 
         } catch (SQLException e) {
             LOGGER.warn(e.getMessage());
@@ -58,6 +62,8 @@ public class DbConnector {
     private static void dropTable(){
         try {
             TableUtils.dropTable(connectionSource, User.class,true);
+            TableUtils.dropTable(connectionSource, SuperUser.class,true);
+            TableUtils.dropTable(connectionSource, TransactionRecord.class,true);
         } catch (SQLException e) {
             LOGGER.warn(e.getMessage());
         }

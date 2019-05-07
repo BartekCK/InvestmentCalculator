@@ -5,32 +5,32 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
 @DatabaseTable(tableName = "USER")
-public class User implements SuperUser,CommonUser, BaseModel
+public class User implements BaseModel
 {
 
     @DatabaseField(generatedId = true)
-    private int id;
+    protected int id;
 
     @DatabaseField(columnName = "EMAIL", canBeNull = false, unique = true)
-    private String email;
+    protected String email;
 
     @DatabaseField(columnName = "PASSWORD", canBeNull = false)
-    private String password;
+    protected String password;
 
     @DatabaseField(columnName = "NICK", canBeNull = true, unique = true)
-    private String nick;
+    protected String nick;
 
     @DatabaseField(columnName = "NAME", canBeNull = true)
-    private String name;
+    protected String name;
 
     @DatabaseField(columnName = "SURNAME", canBeNull = true)
-    private String surname;
+    protected String surname;
 
     @DatabaseField(columnName = "IS_SUPER_USER", canBeNull = false)
-    private boolean superUser;
+    protected boolean superUser;
 
     @DatabaseField(columnName = "POLISH_ZLOTY", canBeNull = false)
-    private double polishZlotyAccount;
+    protected double polishZlotyAccount;
 
     public User() {
     }

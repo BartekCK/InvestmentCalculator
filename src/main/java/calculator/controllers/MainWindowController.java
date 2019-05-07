@@ -1,6 +1,7 @@
 package calculator.controllers;
 
 
+import calculator.user.SuperUser;
 import calculator.user.User;
 import calculator.utilies.Path;
 import calculator.utilies.ProjectLoader;
@@ -62,6 +63,7 @@ public class MainWindowController {
     }
 
     public void setUser(User user) {
-        this.user = user;
+
+
     }
 }
