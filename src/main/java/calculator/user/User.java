@@ -30,6 +30,12 @@ public class User implements BaseModel
     @DatabaseField(columnName = "POLISH_ZLOTY", canBeNull = false)
     protected double polishZlotyAccount;
 
+    @DatabaseField(columnName = "B_AND_K", canBeNull = false)
+    protected double valueBandK;
+
+    @DatabaseField(columnName = "C_A_T", canBeNull = false)
+    protected double valueCaT;
+
     public User() {
     }
 
@@ -93,5 +99,38 @@ public class User implements BaseModel
 
     public void setPolishZlotyAccount(double polishZlotyAccount) {
         this.polishZlotyAccount = polishZlotyAccount;
+    }
+
+    public double getValueBandK() {
+        return valueBandK;
+    }
+
+    public void setValueBandK(double valueBandK) {
+        this.valueBandK = valueBandK;
+    }
+
+    public double getValueCaT() {
+        return valueCaT;
+    }
+
+    public void setValueCaT(double valueCaT) {
+        this.valueCaT = valueCaT;
+    }
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", nick='" + nick + '\'' +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", superUser=" + superUser +
+                ", polishZlotyAccount=" + polishZlotyAccount +
+                ", valueBandK=" + valueBandK +
+                ", valueCaT=" + valueCaT +
+                '}';
     }
 }

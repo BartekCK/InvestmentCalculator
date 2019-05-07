@@ -18,11 +18,22 @@ public class ProjectLoader {
         return null;
     }
 
-    public static FXMLLoader FxmlLoader(String fxmlPath, String title)
+    public static FXMLLoader FxmlLoaderNewWindow(String fxmlPath, String title)
     {
         FXMLLoader fxmlLoader = new FXMLLoader();
         try {
             Main.newWindow(fxmlLoader.load(ProjectLoader.class.getResource(fxmlPath).openStream()),title);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return fxmlLoader;
+    }
+
+    public static FXMLLoader FxmlLoader(String fxmlPath)
+    {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        try {
+            fxmlLoader.load(ProjectLoader.class.getResource(fxmlPath).openStream());
         } catch (IOException e) {
             e.printStackTrace();
         }

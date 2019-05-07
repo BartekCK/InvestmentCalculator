@@ -17,7 +17,7 @@
    <children>
       <MenuBar cache="true" nodeOrientation="RIGHT_TO_LEFT" VBox.vgrow="SOMETIMES">
         <menus>
-          <Menu mnemonicParsing="false" onAction="#clickOnMenuItem" onShown="#checkUser">
+          <Menu mnemonicParsing="false" onShown="#checkUser">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#userAccountBalance" text="Stan konta" />
                   <MenuItem mnemonicParsing="false" onAction="#userTopUpAccount" text="Doładuj konto" />

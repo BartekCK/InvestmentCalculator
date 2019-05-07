@@ -1,13 +1,9 @@
 package calculator.controllers;
 
 
-import calculator.user.SuperUser;
 import calculator.user.User;
 import calculator.utilies.Path;
 import calculator.utilies.ProjectLoader;
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuItem;
@@ -16,7 +12,7 @@ import javafx.scene.control.ToggleGroup;
 
 public class MainWindowController {
 
-    private User user;
+    protected User user;
     private UserInterfaceController userInterfaceController;
 
     @FXML
@@ -29,7 +25,7 @@ public class MainWindowController {
     private void checkUser(Event event) {
         if(user == null)//Sign in
         {
-            SignInController signInController = ProjectLoader.FxmlLoader(Path.PATH_LOGIN,"Panel logowania").getController();
+            SignInController signInController = ProjectLoader.FxmlLoaderNewWindow(Path.PATH_LOGIN,"Panel logowania").getController();
             signInController.setMainWindowController(this);
         }
     }
@@ -59,16 +55,19 @@ public class MainWindowController {
 
     @FXML
     protected void userTopUpAccount() {
+        clickOnMenuItem();
         userInterfaceController.getButtonTopUpAccount().setSelected(true);
     }
 
     @FXML
     protected void userAccountBalance() {
+        clickOnMenuItem();
         userInterfaceController.getButtonAccountBalance().setSelected(true);
     }
 
     @FXML
     protected void superUserTransaction() {
+        clickOnMenuItem();
         userInterfaceController.getButtonUserTransaction().setSelected(true);
     }
 
@@ -88,8 +87,9 @@ public class MainWindowController {
     }
 
 
-    public void clickOnMenuItem(ActionEvent event) {
-        userInterfaceController = ProjectLoader.FxmlLoader(Path.PATH_USER_INTERFACE,"Menu użytkownika").getController();
+    private void clickOnMenuItem() {
+        userInterfaceController = ProjectLoader.FxmlLoaderNewWindow(Path.PATH_USER_INTERFACE,"Menu użytkownika").getController();
+        userInterfaceController.setUser(this.user);
         if(!user.isSuperUser())
             userInterfaceController.getButtonUserTransaction().setDisable(true);
     }

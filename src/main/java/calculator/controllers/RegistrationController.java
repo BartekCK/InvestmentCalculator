@@ -83,6 +83,8 @@ public class RegistrationController {
                 superUser.setPolishZlotyAccount(1000);
                 superUser.setSuperUser(true);
             }
+            superUser.setValueBandK(0);
+            superUser.setValueCaT(0);
             userTask.addUserToDataBase(superUser);
 
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();

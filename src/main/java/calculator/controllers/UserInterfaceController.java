@@ -1,21 +1,28 @@
 package calculator.controllers;
 
-import javafx.event.ActionEvent;
+import calculator.user.User;
+import calculator.utilies.Path;
+import calculator.utilies.ProjectLoader;
 import javafx.fxml.FXML;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.AnchorPane;
 
+
 public class UserInterfaceController extends MainWindowController  {
+
 
     @FXML
     private AnchorPane anchorPane;
 
     @FXML
     private ToggleButton buttonAccountBalance;
+
     @FXML
     private ToggleButton buttonTopUpAccount;
+
     @FXML
     private ToggleButton buttonUserTransaction;
+
 
 
     @Override
@@ -26,6 +33,9 @@ public class UserInterfaceController extends MainWindowController  {
     @Override
     protected void userAccountBalance() {
 
+            BankBalanceController bankBalanceController = ProjectLoader.FxmlLoader(Path.PATH_BANK_BALANCE).getController();
+            bankBalanceController.setValuesInText(this.user);
+            anchorPane.getChildren().addAll(bankBalanceController.getBankBalanceAnchorPane());
     }
 
     @Override
@@ -33,35 +43,19 @@ public class UserInterfaceController extends MainWindowController  {
 
     }
 
-    public AnchorPane getAnchorPane() {
-        return anchorPane;
-    }
-
-    public void setAnchorPane(AnchorPane anchorPane) {
-        this.anchorPane = anchorPane;
-    }
-
     public ToggleButton getButtonAccountBalance() {
         return buttonAccountBalance;
-    }
-
-    public void setButtonAccountBalance(ToggleButton buttonAccountBalance) {
-        this.buttonAccountBalance = buttonAccountBalance;
     }
 
     public ToggleButton getButtonTopUpAccount() {
         return buttonTopUpAccount;
     }
 
-    public void setButtonTopUpAccount(ToggleButton buttonTopUpAccount) {
-        this.buttonTopUpAccount = buttonTopUpAccount;
-    }
-
     public ToggleButton getButtonUserTransaction() {
         return buttonUserTransaction;
     }
 
-    public void setButtonUserTransaction(ToggleButton buttonUserTransaction) {
-        this.buttonUserTransaction = buttonUserTransaction;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

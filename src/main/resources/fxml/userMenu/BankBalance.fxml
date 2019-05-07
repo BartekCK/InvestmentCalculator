@@ -1,14 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="bankBalanceAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.controllers.BankBalanceController">
    <children>
-      <ToggleButton mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" text="Stan Konta" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <ToggleButton layoutY="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" text="Doładuj Konto" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="100.0" />
-      <ToggleButton layoutY="200.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" text="Zapis transakcji" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="200.0" />
-      <AnchorPane layoutX="200.0" prefHeight="300.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Text fx:id="zlValueText" layoutX="56.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="catValueText" fill="#109406" layoutX="56.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="bandkzlValueText" fill="RED" layoutX="56.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="302.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zł">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <Text fill="#109406" layoutX="302.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CaT">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <Text fill="RED" layoutX="301.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BandK">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
