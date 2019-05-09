@@ -63,7 +63,7 @@ public class LoansController {
 
         resultInstallment.setText(String.valueOf(loansCalculate.getResultInstallment()));
         resultValue1.setText(String.valueOf(((BankCalculate) loansCalculate).getResultValue1()));
-        resultValue2.setText(String.valueOf(((BankCalculate) loansCalculate).getResultValue2(Double.parseDouble(loansValueTextField.getText()))));
+        resultValue2.setText(String.valueOf(((BankCalculate) loansCalculate).getResultValue2()));
 
         tableView.setItems(loansCalculate.getListFx());
         installmentNumberTableColumn.setCellValueFactory(cell-> cell.getValue().numberProperty());

@@ -37,24 +37,25 @@ public class BankCalculate implements LoansCalculate,DepositCalculate{
     }
 
     public double getResultValue1() {
-        return resultInstallment*countMonth;
+        return roundTwo(resultInstallment*countMonth);
     }
 
-    public double getResultValue2(double initValue) {
-        double sum=initValue;
+    public double getResultValue2() {
+        double sum=0;
         for (DecreasingInstallmentFx fx : listFx) {
             sum = sum + fx.getValue();
         }
-        return sum;
+        return roundTwo(sum);
     }
 
     private void calculateDecreasingInstallment(double initValue, int countMonth)
     {
 
         double rk = initValue/countMonth;
-        for (int x=0;x<countMonth;x++)
+        for (int x=1;x<countMonth+1;x++)
         {
-            DecreasingInstallmentFx decreasingInstallmentFx = new DecreasingInstallmentFx(x+1,roundTwo(((initValue-x*rk)*percent)/12));
+            //DecreasingInstallmentFx decreasingInstallmentFx = new DecreasingInstallmentFx(x+1,roundTwo(((initValue-x*rk)*percent)/12)+rk);
+            DecreasingInstallmentFx decreasingInstallmentFx = new DecreasingInstallmentFx(x,roundTwo((initValue/countMonth)*(1+(countMonth-x+1)*percent/12)));
             listFx.add(decreasingInstallmentFx);
         }
 
