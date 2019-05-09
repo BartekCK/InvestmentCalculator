@@ -1,5 +1,8 @@
 package calculator.controllers.loansAndDeposits;
 
+import calculator.calculate.BankCalculate;
+import calculator.calculate.DecreasingInstallmentFx;
+import calculator.calculate.LoansCalculate;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -7,15 +10,11 @@ import javafx.scene.control.Slider;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 
 import java.text.NumberFormat;
 
 public class LoansController {
-
-    @FXML
-    private AnchorPane loansAnchorPane;
-
+    
     @FXML
     private TextField loansValueTextField;
 
@@ -29,13 +28,13 @@ public class LoansController {
     private TextField percentTextField;
 
     @FXML
-    private TableView<?> tableView;
+    private TableView<DecreasingInstallmentFx> tableView;
 
     @FXML
-    private TableColumn<?, ?> installmentNumberTableColumn;
+    private TableColumn<DecreasingInstallmentFx, Number> installmentNumberTableColumn;
 
     @FXML
-    private TableColumn<?, ?> valueTableColumn;
+    private TableColumn<DecreasingInstallmentFx, Number> valueTableColumn;
 
     @FXML
     private TextField resultInstallment;
@@ -58,7 +57,17 @@ public class LoansController {
 
     @FXML
     void calculateLoans(ActionEvent event) {
+        LoansCalculate loansCalculate = new BankCalculate();
+        loansCalculate.parametrQ(percentSlider.getValue());
+        loansCalculate.amountInstallment(Double.parseDouble(loansValueTextField.getText()),Integer.parseInt(installmentCountTextField.getText()));
 
+        resultInstallment.setText(String.valueOf(loansCalculate.getResultInstallment()));
+        resultValue1.setText(String.valueOf(((BankCalculate) loansCalculate).getResultValue1()));
+        resultValue2.setText(String.valueOf(((BankCalculate) loansCalculate).getResultValue2(Double.parseDouble(loansValueTextField.getText()))));
+
+        tableView.setItems(loansCalculate.getListFx());
+        installmentNumberTableColumn.setCellValueFactory(cell-> cell.getValue().numberProperty());
+        valueTableColumn.setCellValueFactory(cell-> cell.getValue().valueProperty());
     }
 
 }
