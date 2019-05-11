@@ -1,28 +1,20 @@
 package calculator.currency;
 
-import com.j256.ormlite.field.DataType;
+import calculator.currency.manage.ManageCurrency;
+import calculator.currency.manage.Money;
+import calculator.database.BaseModel;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
-import java.util.Date;
 
 
 @DatabaseTable(tableName = "CAT_MONEY")
-public class CaT implements ManageCurrency{
+public class CaT extends Money implements ManageCurrency, BaseModel {
 
     private final String name = "CaT";
 
-    @DatabaseField(generatedId = true)
-    private int id;
-
     @DatabaseField(columnName = "MONEY_RATE", canBeNull = false)
     static private double moneyRate;
-
-    @DatabaseField(columnName = "VALID_FROM", dataType = DataType.DATE_TIME, format = "yyyy-MM-dd-HH:mm:ss")
-    private Date validFrom;
-
-    @DatabaseField(columnName = "VALID_TO", dataType = DataType.DATE_TIME, format = "yyyy-MM-dd-HH:mm:ss")
-    private Date validTo;
 
 
     public CaT() {

@@ -3,14 +3,21 @@ package calculator.controllers;
 
 import calculator.controllers.login.SignInController;
 import calculator.controllers.userInterface.UserInterfaceController;
+import calculator.currency.BandK;
+import calculator.database.dao.BandKDao;
+import calculator.exceptions.CalculatorException;
 import calculator.user.User;
 import calculator.utilies.Path;
 import calculator.utilies.ProjectLoader;
+import calculator.utilies.converters.ConvertToDate;
+import com.j256.ormlite.dao.Dao;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.StackPane;
+
+import java.time.LocalDateTime;
 
 
 public class MainWindowController {
@@ -52,6 +59,7 @@ public class MainWindowController {
 
     @FXML
     private void openStockExchange() {
+
 
     }
 

@@ -14,16 +14,8 @@ public class DecreasingInstallmentFx {
         this.value.set(value);
     }
 
-    public int getNumber() {
-        return number.get();
-    }
-
     public IntegerProperty numberProperty() {
         return number;
-    }
-
-    public void setNumber(int number) {
-        this.number.set(number);
     }
 
     public double getValue() {
@@ -32,9 +24,5 @@ public class DecreasingInstallmentFx {
 
     public DoubleProperty valueProperty() {
         return value;
-    }
-
-    public void setValue(double value) {
-        this.value.set(value);
     }
 }

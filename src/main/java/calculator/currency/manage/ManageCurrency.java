@@ -1,4 +1,4 @@
-package calculator.currency;
+package calculator.currency.manage;
 
 import calculator.user.SuperUser;
 
