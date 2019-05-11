@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="depositAnchorPane" prefHeight="690.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.controllers.loansAndDeposits.DepositController">
+<AnchorPane prefHeight="690.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.controllers.loansAndDeposits.DepositController">
    <children>
       <Text layoutX="122.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kwota" />
       <TextField fx:id="valueTextField" layoutX="170.0" layoutY="100.0" prefHeight="25.0" prefWidth="277.0" />
@@ -22,10 +22,12 @@
       <Text layoutX="46.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Oprocentowanie" />
       <TextField fx:id="percentTableView" layoutX="501.0" layoutY="293.0" prefHeight="25.0" prefWidth="70.0" />
       <Text layoutX="583.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\%" />
-      <TextField fx:id="showProfitTableView" alignment="CENTER" editable="false" layoutX="7.0" layoutY="579.0" prefHeight="104.0" prefWidth="603.0">
+      <TextField fx:id="showProfitTextField" alignment="CENTER" editable="false" layoutX="7.0" layoutY="579.0" prefHeight="104.0" prefWidth="603.0">
          <font>
             <Font size="33.0" />
          </font>
       </TextField>
+      <TextField fx:id="countDay" editable="false" layoutX="433.0" layoutY="236.0" prefHeight="25.0" prefWidth="116.0" />
+      <Text layoutX="382.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ilość dni" />
    </children>
 </AnchorPane>

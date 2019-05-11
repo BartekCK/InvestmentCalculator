@@ -13,8 +13,8 @@ public class BankCalculate implements LoansCalculate,DepositCalculate{
 
 
     @Override
-    public double depositProfit(double initValue, double percent, int countDay) {
-        return 0;
+    public double depositProfit(double initValue, double percent, double countDay) {
+        return roundTwo(initValue*(percent/100)*(countDay/365));
     }
 
     @Override
@@ -54,7 +54,6 @@ public class BankCalculate implements LoansCalculate,DepositCalculate{
         double rk = initValue/countMonth;
         for (int x=1;x<countMonth+1;x++)
         {
-            //DecreasingInstallmentFx decreasingInstallmentFx = new DecreasingInstallmentFx(x+1,roundTwo(((initValue-x*rk)*percent)/12)+rk);
             DecreasingInstallmentFx decreasingInstallmentFx = new DecreasingInstallmentFx(x,roundTwo((initValue/countMonth)*(1+(countMonth-x+1)*percent/12)));
             listFx.add(decreasingInstallmentFx);
         }

@@ -1,5 +1,7 @@
 package calculator.database;
 
+import calculator.currency.BandK;
+import calculator.currency.CaT;
 import calculator.user.SuperUser;
 import calculator.date.Transaction;
 import com.j256.ormlite.jdbc.JdbcConnectionSource;
@@ -52,6 +54,8 @@ public class DbConnector {
 
             TableUtils.createTableIfNotExists(connectionSource, SuperUser.class);
             TableUtils.createTableIfNotExists(connectionSource, Transaction.class);
+            TableUtils.createTableIfNotExists(connectionSource, BandK.class);
+            TableUtils.createTableIfNotExists(connectionSource, CaT.class);
 
         } catch (SQLException e) {
             LOGGER.warn(e.getMessage());
@@ -63,6 +67,8 @@ public class DbConnector {
 
             TableUtils.dropTable(connectionSource, SuperUser.class,true);
             TableUtils.dropTable(connectionSource, Transaction.class,true);
+            TableUtils.dropTable(connectionSource, BandK.class,true);
+            TableUtils.dropTable(connectionSource, CaT.class,true);
         } catch (SQLException e) {
             LOGGER.warn(e.getMessage());
         }

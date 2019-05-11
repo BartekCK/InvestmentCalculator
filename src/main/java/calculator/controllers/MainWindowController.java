@@ -8,13 +8,9 @@ import calculator.utilies.Path;
 import calculator.utilies.ProjectLoader;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.StackPane;
-
-import java.io.IOException;
 
 
 public class MainWindowController {

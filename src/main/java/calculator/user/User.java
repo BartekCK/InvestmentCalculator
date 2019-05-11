@@ -1,7 +1,9 @@
 package calculator.user;
 
+
 import calculator.database.BaseModel;
 import com.j256.ormlite.field.DatabaseField;
+
 
 public class User implements BaseModel
 {

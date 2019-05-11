@@ -1,5 +1,9 @@
 package calculator.controllers.loansAndDeposits;
 
+import calculator.calculate.BankCalculate;
+import calculator.calculate.DepositCalculate;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -18,9 +22,6 @@ public class DepositController {
     private Button button;
 
     @FXML
-    private AnchorPane depositAnchorPane;
-
-    @FXML
     private TextField valueTextField;
 
     @FXML
@@ -36,23 +37,30 @@ public class DepositController {
     private TextField percentTableView;
 
     @FXML
-    private TextField showProfitTableView;
+    private TextField showProfitTextField;
+
+    @FXML
+    private TextField countDay;
 
     @FXML
     public void initialize()
     {
         percentTableView.textProperty().bindBidirectional(percentSlider.valueProperty(), NumberFormat.getNumberInstance());
         button.disableProperty().bind(valueTextField.textProperty().isEmpty().or(fromDate.valueProperty().isNull().or(toDate.valueProperty().isNull())));
+
     }
 
     @FXML
-    void calculateProfit(ActionEvent event) {
-
+    void calculateProfit() {
+        DepositCalculate depositCalculate = new BankCalculate();
+        countDay.setText(String.valueOf(calculateDayDiffrence()));
+        showProfitTextField.setText(String.valueOf(depositCalculate.depositProfit(Double.parseDouble(valueTextField.getText()),percentSlider.getValue(),calculateDayDiffrence())));
+        showProfitTextField.setText(showProfitTextField.getText() + " zł brutto");
     }
     
-    private long calculateDayDiffrence()
+    private int calculateDayDiffrence()
     {
-        return DAYS.between(fromDate.getValue(),toDate.getValue());
+        return (int)DAYS.between(fromDate.getValue(),toDate.getValue());
 
     }
 
