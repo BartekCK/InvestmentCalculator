@@ -3,27 +3,19 @@ package calculator.controllers;
 
 import calculator.controllers.login.SignInController;
 import calculator.controllers.userInterface.UserInterfaceController;
-import calculator.currency.BandK;
-import calculator.database.dao.BandKDao;
-import calculator.exceptions.CalculatorException;
 import calculator.user.User;
 import calculator.utilies.Path;
 import calculator.utilies.ProjectLoader;
-import calculator.utilies.converters.ConvertToDate;
-import com.j256.ormlite.dao.Dao;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.StackPane;
 
-import java.time.LocalDateTime;
-
 
 public class MainWindowController {
 
 
-    protected User user;
+    protected static User user;
     private UserInterfaceController userInterfaceController;
 
     @FXML
@@ -36,7 +28,7 @@ public class MainWindowController {
     private StackPane downStackPane;
 
     @FXML
-    private void checkUser(Event event) {
+    private void checkUser() {
         if(user == null)//Sign in
         {
             SignInController signInController = ProjectLoader.FxmlLoaderNewWindow(Path.PATH_LOGIN,"Panel logowania").getController();
@@ -59,7 +51,16 @@ public class MainWindowController {
 
     @FXML
     private void openStockExchange() {
-
+        if(user != null)
+        {
+            StockExchangeController stockExchangeController = ProjectLoader.FxmlLoader(Path.PATH_STOCK_EXCHANGE).getController();
+            downStackPane.getChildren().clear();
+            downStackPane.getChildren().addAll(stockExchangeController.getAnchorPane());
+        }else
+        {
+            checkUser();
+            toogleGroup.getSelectedToggle().setSelected(false);
+        }
 
     }
 
@@ -89,6 +90,8 @@ public class MainWindowController {
     @FXML
     private void userSignOut() {
         this.user = null;
+        downStackPane.getChildren().clear();
+        toogleGroup.getToggles().clear();
 
     }
 
@@ -107,5 +110,9 @@ public class MainWindowController {
         userInterfaceController.setUser(this.user);
         if(!user.isSuperUser())
             userInterfaceController.getButtonUserTransaction().setDisable(true);
+    }
+
+    public static User getUser() {
+        return user;
     }
 }

@@ -10,9 +10,12 @@ public abstract class Money {
     @DatabaseField(generatedId = true)
     protected int id;
 
-    @DatabaseField(columnName = "VALID_FROM", dataType = DataType.DATE_STRING, format = "yyyy-MM-dd HH:mm:ss")
+    @DatabaseField(columnName = "POLISH_MONEY", canBeNull = false)
+    protected double polishMoney;
+
+    @DatabaseField(columnName = "VALID_FROM", dataType = DataType.DATE_STRING, format = "yyyy-MM-dd HH:mm")
     protected Date validFrom;
 
-    @DatabaseField(columnName = "VALID_TO", dataType = DataType.DATE_STRING, format = "yyyy-MM-dd HH:mm:ss")
+    @DatabaseField(columnName = "VALID_TO", dataType = DataType.DATE_STRING, format = "yyyy-MM-dd HH:mm")
     protected Date validTo;
 }

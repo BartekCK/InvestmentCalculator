@@ -31,9 +31,9 @@ public class BandK extends Money implements ManageCurrency, BaseModel {
         return moneyRate;
     }
 
+
     @Override
-    public String returnName() {
+    public String toString() {
         return name;
     }
-
 }

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="1230.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.controllers.StockExchangeController">
+    <children>
+        <AnchorPane prefHeight="130.0" prefWidth="1230.0">
+            <children>
+                <Text layoutX="919.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liczba pieniędzy na koncie" />
+                <Text layoutX="919.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liczba jednostek BandK" />
+                <Text layoutX="919.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liczba jednostek CaT" />
+                <Text fx:id="zlotychOnAccountText" layoutX="1129.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                <Text fx:id="catOnAccountText" layoutX="1129.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                <Text fx:id="bandkOnAccountText" layoutX="1129.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                <Text layoutX="25.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wartość CaT" />
+                <Text layoutX="25.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wartość BandK" />
+                <Text fx:id="catValueText" layoutX="145.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                <Text fx:id="bandkValueText" layoutX="145.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            </children>
+        </AnchorPane>
+        <ToggleButton layoutY="130.0" mnemonicParsing="false" onAction="#check" prefHeight="280.0" prefWidth="280.0" text="Sprawdź">
+            <toggleGroup>
+                <ToggleGroup fx:id="toogleGroup" />
+            </toggleGroup>
+        </ToggleButton>
+        <ToggleButton layoutY="410.0" mnemonicParsing="false" onAction="#buy" prefHeight="280.0" prefWidth="280.0" text="Zakup" toggleGroup="$toogleGroup" />
+        <Separator layoutY="128.0" prefHeight="5.0" prefWidth="1230.0" />
+        <AnchorPane layoutX="280.0" layoutY="128.0" prefHeight="562.0" prefWidth="950.0">
+            <children>
+                <Text layoutX="53.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz walutę:" />
+                <ComboBox fx:id="sellComboBox" layoutX="152.0" layoutY="75.0" prefWidth="150.0" />
+            <TextField fx:id="sellTextField" layoutX="153.0" layoutY="167.0" />
+            <Text layoutX="72.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sprzedaj" />
+            <TextField fx:id="buyTextField" layoutX="630.0" layoutY="167.0" />
+            <Text layoutX="786.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WALUTA" />
+            <Text layoutX="542.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zakup" />
+            <ComboBox fx:id="buyComboBox" layoutX="629.0" layoutY="75.0" prefWidth="150.0" />
+            <Text layoutX="517.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz walutę:" />
+            <Text layoutX="308.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WALUTA" />
+
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
