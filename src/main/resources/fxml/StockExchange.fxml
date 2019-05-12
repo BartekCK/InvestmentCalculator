@@ -43,6 +43,10 @@
             <ComboBox fx:id="buyComboBox" layoutX="629.0" layoutY="75.0" prefWidth="150.0" />
             <Text layoutX="517.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz walutę:" />
             <Text layoutX="308.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WALUTA" />
+            <AnchorPane layoutY="282.0" prefHeight="280.0" prefWidth="950.0">
+               <children>
+                  <fx:include source="StockExchangeTableView.fxml" />
+               </children></AnchorPane>
 
             </children>
         </AnchorPane>

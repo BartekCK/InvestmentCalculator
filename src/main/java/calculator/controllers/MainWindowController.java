@@ -53,9 +53,8 @@ public class MainWindowController {
     private void openStockExchange() {
         if(user != null)
         {
-            StockExchangeController stockExchangeController = ProjectLoader.FxmlLoader(Path.PATH_STOCK_EXCHANGE).getController();
             downStackPane.getChildren().clear();
-            downStackPane.getChildren().addAll(stockExchangeController.getAnchorPane());
+            downStackPane.getChildren().add(ProjectLoader.ParentLoader(Path.PATH_STOCK_EXCHANGE));
         }else
         {
             checkUser();

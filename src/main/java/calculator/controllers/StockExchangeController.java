@@ -49,8 +49,6 @@ public class StockExchangeController {
     @FXML
     private ComboBox<ManageCurrency> buyComboBox;
 
-    @FXML
-    private AnchorPane downAnchorPane;
 
     public StockExchangeController()
     {
