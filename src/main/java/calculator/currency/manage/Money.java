@@ -18,4 +18,16 @@ public abstract class Money {
 
     @DatabaseField(columnName = "VALID_TO", dataType = DataType.DATE_STRING, format = "yyyy-MM-dd HH:mm")
     protected Date validTo;
+
+    protected String currencyName;
+    protected String currencyShort;
+
+    @Override
+    public String toString() {
+        return currencyName +" ("+currencyShort+")";
+    }
+
+    public abstract double returnCurrentValue();
+
+
 }

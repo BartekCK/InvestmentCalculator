@@ -11,13 +11,12 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable(tableName = "CAT_MONEY")
 public class CaT extends Money implements ManageCurrency, BaseModel {
 
-    private final String name = "CaT";
-
     @DatabaseField(columnName = "MONEY_RATE", canBeNull = false)
     static private double moneyRate;
 
-
     public CaT() {
+        currencyName = "CaT";
+        currencyShort = "CT";
     }
 
     @Override
@@ -30,9 +29,4 @@ public class CaT extends Money implements ManageCurrency, BaseModel {
         return moneyRate;
     }
 
-
-    @Override
-    public String toString() {
-        return name;
-    }
 }

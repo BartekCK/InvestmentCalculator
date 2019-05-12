@@ -2,7 +2,9 @@ package calculator.controllers;
 
 import calculator.currency.BandK;
 import calculator.currency.CaT;
+import calculator.currency.Zloty;
 import calculator.currency.manage.ManageCurrency;
+import calculator.currency.manage.Money;
 import calculator.user.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,7 +19,7 @@ public class StockExchangeController {
 
     private User user;
 
-    private ObservableList<ManageCurrency> list = FXCollections.observableArrayList();
+    private ObservableList<Money> list = FXCollections.observableArrayList();
 
     @FXML
     private AnchorPane mainAnchorPane;
@@ -38,7 +40,7 @@ public class StockExchangeController {
     private Text bandkValueText;
 
     @FXML
-    private ComboBox<ManageCurrency> sellComboBox;
+    private ComboBox<Money> sellComboBox;
 
     @FXML
     private TextField sellTextField;
@@ -47,15 +49,13 @@ public class StockExchangeController {
     private TextField buyTextField;
 
     @FXML
-    private ComboBox<ManageCurrency> buyComboBox;
+    private ComboBox<Money> buyComboBox;
 
 
     public StockExchangeController()
     {
         user = MainWindowController.getUser();
-        ManageCurrency bandK = new BandK();
-        ManageCurrency caT = new CaT();
-        list.addAll(caT,bandK);
+        list.addAll(new CaT(),new BandK(), new Zloty());
     }
 
     @FXML
