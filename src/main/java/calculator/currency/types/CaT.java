@@ -1,30 +1,30 @@
-package calculator.currency;
+package calculator.currency.types;
 
+import calculator.currency.manage.CryptoCurrency;
 import calculator.currency.manage.ManageCurrency;
 import calculator.currency.manage.Money;
 import calculator.database.BaseModel;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
+import java.util.Random;
 
 
-
-@DatabaseTable(tableName = "B_AND_K_MONEY")
-public class BandK extends Money implements ManageCurrency, BaseModel {
-
+@DatabaseTable(tableName = "CAT_MONEY")
+public class CaT extends CryptoCurrency implements ManageCurrency, BaseModel {
 
     @DatabaseField(columnName = "MONEY_RATE", canBeNull = false)
     static private double moneyRate;
 
-
-    public BandK() {
-        currencyName = "BandK";
-        currencyShort = "BK";
+    public CaT() {
+        currencyName = "CaT";
+        currencyShort = "CT";
     }
 
     @Override
     public void changeRate() {
-
+        Random random = new Random();
+        moneyRate = random.nextDouble() * 2 - (1-(1*this.polishMoney/1000000));
     }
 
     @Override

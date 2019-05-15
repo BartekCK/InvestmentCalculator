@@ -1,4 +1,4 @@
-package calculator.currency;
+package calculator.currency.types;
 
 import calculator.currency.manage.Money;
 
@@ -9,8 +9,5 @@ public class Zloty extends Money {
         currencyShort = "PLN";
     }
 
-    @Override
-    public double returnCurrentValue() {
-        return 1;
-    }
+
 }

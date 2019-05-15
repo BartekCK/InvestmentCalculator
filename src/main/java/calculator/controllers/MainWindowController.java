@@ -11,6 +11,9 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.StackPane;
 
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+
 
 public class MainWindowController {
 
@@ -26,6 +29,14 @@ public class MainWindowController {
 
     @FXML
     private StackPane downStackPane;
+
+    @FXML
+    private void initialize()
+    {
+
+
+
+    }
 
     @FXML
     private void checkUser() {

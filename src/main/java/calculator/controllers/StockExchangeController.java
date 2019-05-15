@@ -1,9 +1,9 @@
 package calculator.controllers;
 
-import calculator.currency.BandK;
-import calculator.currency.CaT;
-import calculator.currency.Zloty;
-import calculator.currency.manage.ManageCurrency;
+import calculator.currency.manage.CryptoCurrency;
+import calculator.currency.types.BandK;
+import calculator.currency.types.CaT;
+import calculator.currency.types.Zloty;
 import calculator.currency.manage.Money;
 import calculator.user.User;
 import javafx.collections.FXCollections;
@@ -19,7 +19,7 @@ public class StockExchangeController {
 
     private User user;
 
-    private ObservableList<Money> list = FXCollections.observableArrayList();
+    private ObservableList<Money> list;
 
     @FXML
     private AnchorPane mainAnchorPane;
@@ -55,18 +55,19 @@ public class StockExchangeController {
     public StockExchangeController()
     {
         user = MainWindowController.getUser();
-        list.addAll(new CaT(),new BandK(), new Zloty());
+        list = FXCollections.observableArrayList(new CaT(),new BandK(), new Zloty());
     }
 
     @FXML
     private void initialize()
     {
+
         zlotychOnAccountText.setText(String.valueOf(user.getPolishZlotyAccount()));
         catOnAccountText.setText(String.valueOf(user.getValueCaT()));
         bandkOnAccountText.setText(String.valueOf(user.getValueBandK()));
 
-        catValueText.setText(String.valueOf(list.get(0).returnCurrentValue()));
-        bandkValueText.setText(String.valueOf(list.get(1).returnCurrentValue()));
+        catValueText.setText(String.valueOf(((CryptoCurrency)list.get(0)).returnCurrentValue()));
+        bandkValueText.setText(String.valueOf(((CryptoCurrency)list.get(1)).returnCurrentValue()));
 
         sellComboBox.setItems(list);
         buyComboBox.setItems(list);

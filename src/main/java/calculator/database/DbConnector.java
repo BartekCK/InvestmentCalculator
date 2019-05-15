@@ -1,7 +1,7 @@
 package calculator.database;
 
-import calculator.currency.BandK;
-import calculator.currency.CaT;
+import calculator.currency.types.BandK;
+import calculator.currency.types.CaT;
 import calculator.user.SuperUser;
 import calculator.date.Transaction;
 import com.j256.ormlite.jdbc.JdbcConnectionSource;
