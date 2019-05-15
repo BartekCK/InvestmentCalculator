@@ -1,6 +1,8 @@
 package calculator.currency.manage;
 
-public interface ManageCurrency {
+import calculator.database.BaseModel;
+
+public interface ManageCurrency extends BaseModel {
     void changeRate();
 
 }

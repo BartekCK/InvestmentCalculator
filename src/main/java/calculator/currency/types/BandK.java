@@ -11,7 +11,7 @@ import java.util.Random;
 
 
 @DatabaseTable(tableName = "B_AND_K_MONEY")
-public class BandK extends CryptoCurrency implements ManageCurrency, BaseModel {
+public class BandK extends CryptoCurrency implements ManageCurrency {
 
 
     @DatabaseField(columnName = "MONEY_RATE", canBeNull = false)
@@ -27,6 +27,7 @@ public class BandK extends CryptoCurrency implements ManageCurrency, BaseModel {
     public void changeRate() {
         Random random = new Random();
         moneyRate = random.nextDouble() * 10 - (5-(5*(this.polishMoney/100000)));
+        System.out.println(moneyRate);
     }
 
     @Override

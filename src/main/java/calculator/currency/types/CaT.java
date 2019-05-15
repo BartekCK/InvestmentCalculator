@@ -11,7 +11,7 @@ import java.util.Random;
 
 
 @DatabaseTable(tableName = "CAT_MONEY")
-public class CaT extends CryptoCurrency implements ManageCurrency, BaseModel {
+public class CaT extends CryptoCurrency implements ManageCurrency {
 
     @DatabaseField(columnName = "MONEY_RATE", canBeNull = false)
     static private double moneyRate;
@@ -25,6 +25,7 @@ public class CaT extends CryptoCurrency implements ManageCurrency, BaseModel {
     public void changeRate() {
         Random random = new Random();
         moneyRate = random.nextDouble() * 2 - (1-(1*this.polishMoney/1000000));
+        System.out.println(moneyRate);
     }
 
     @Override
