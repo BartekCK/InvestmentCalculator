@@ -1,14 +1,10 @@
 package calculator.database.dao;
 
 import calculator.currency.manage.ManageCurrency;
-import calculator.currency.types.BandK;
-import calculator.database.BaseModel;
 import calculator.exceptions.CalculatorException;
-import calculator.user.SuperUser;
 import calculator.utilies.converters.ConvertToDate;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.stmt.PreparedQuery;
-
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Date;

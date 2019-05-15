@@ -2,15 +2,12 @@ package calculator.controllers.loansAndDeposits;
 
 import calculator.calculate.BankCalculate;
 import calculator.calculate.DepositCalculate;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.StringProperty;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
+
 
 import java.text.NumberFormat;
 

@@ -14,7 +14,7 @@ public class BankCalculate implements LoansCalculate,DepositCalculate{
 
     @Override
     public double depositProfit(double initValue, double percent, double countDay) {
-        return roundTwo(initValue*(percent/100)*(countDay/365));
+        return MyMath.roundTwo(initValue*(percent/100)*(countDay/365));
     }
 
     @Override
@@ -32,12 +32,12 @@ public class BankCalculate implements LoansCalculate,DepositCalculate{
     }
 
     public double getResultInstallment() {
-        resultInstallment=roundTwo(resultInstallment);
+        resultInstallment=MyMath.roundTwo(resultInstallment);
         return resultInstallment;
     }
 
     public double getResultValue1() {
-        return roundTwo(resultInstallment*countMonth);
+        return MyMath.roundTwo(resultInstallment*countMonth);
     }
 
     public double getResultValue2() {
@@ -45,16 +45,15 @@ public class BankCalculate implements LoansCalculate,DepositCalculate{
         for (DecreasingInstallmentFx fx : listFx) {
             sum = sum + fx.getValue();
         }
-        return roundTwo(sum);
+        return MyMath.roundTwo(sum);
     }
 
     private void calculateDecreasingInstallment(double initValue, int countMonth)
     {
 
-        double rk = initValue/countMonth;
         for (int x=1;x<countMonth+1;x++)
         {
-            DecreasingInstallmentFx decreasingInstallmentFx = new DecreasingInstallmentFx(x,roundTwo((initValue/countMonth)*(1+(countMonth-x+1)*percent/12)));
+            DecreasingInstallmentFx decreasingInstallmentFx = new DecreasingInstallmentFx(x,MyMath.roundTwo((initValue/countMonth)*(1+(countMonth-x+1)*percent/12)));
             listFx.add(decreasingInstallmentFx);
         }
 
@@ -64,11 +63,5 @@ public class BankCalculate implements LoansCalculate,DepositCalculate{
         return listFx;
     }
 
-    private double roundTwo(double number)
-    {
-        number *=100;
-        number = Math.round(number);
-        number /=100;
-        return number;
-    }
+
 }

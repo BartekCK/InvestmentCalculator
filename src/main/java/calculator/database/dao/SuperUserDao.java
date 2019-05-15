@@ -2,7 +2,6 @@ package calculator.database.dao;
 
 import calculator.exceptions.CalculatorException;
 import calculator.user.SuperUser;
-import calculator.user.User;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.stmt.PreparedQuery;
 
