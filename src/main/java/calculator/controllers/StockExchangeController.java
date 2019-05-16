@@ -5,6 +5,7 @@ import calculator.currency.types.BandK;
 import calculator.currency.types.CaT;
 import calculator.currency.types.Zloty;
 import calculator.currency.manage.Money;
+import calculator.database.tasks.CurrencyTask;
 import calculator.user.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,8 +13,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+
+import java.util.LinkedList;
+import java.util.List;
 
 public class StockExchangeController {
 
@@ -21,8 +24,7 @@ public class StockExchangeController {
 
     private ObservableList<Money> list;
 
-    @FXML
-    private AnchorPane mainAnchorPane;
+    private CurrencyTask currencyTask;
 
     @FXML
     private Text zlotychOnAccountText;
@@ -40,22 +42,30 @@ public class StockExchangeController {
     private Text bandkValueText;
 
     @FXML
-    private ComboBox<Money> sellComboBox;
-
-    @FXML
-    private TextField sellTextField;
-
-    @FXML
     private TextField buyTextField;
 
     @FXML
+    private Text currencyText;
+
+    @FXML
     private ComboBox<Money> buyComboBox;
+
+    @FXML
+    private TextField buyTextField1;
+
+    @FXML
+    private Text currencyText1;
+
+    @FXML
+    private ComboBox<Money> buyComboBox1;
 
 
     public StockExchangeController()
     {
         user = MainWindowController.getUser();
         list = FXCollections.observableArrayList(new CaT(),new BandK(), new Zloty());
+        currencyTask = new CurrencyTask();
+        list = currencyTask.init(list);
     }
 
     @FXML
@@ -66,11 +76,15 @@ public class StockExchangeController {
         catOnAccountText.setText(String.valueOf(user.getValueCaT()));
         bandkOnAccountText.setText(String.valueOf(user.getValueBandK()));
 
-        catValueText.setText(String.valueOf(((CryptoCurrency)list.get(0)).returnCurrentValue()));
-        bandkValueText.setText(String.valueOf(((CryptoCurrency)list.get(1)).returnCurrentValue()));
+        catValueText.setText(String.valueOf(((CryptoCurrency)list.get(0)).getMoneyRate()));
+        bandkValueText.setText(String.valueOf(((CryptoCurrency)list.get(1)).getMoneyRate()));
 
-        sellComboBox.setItems(list);
         buyComboBox.setItems(list);
+        buyComboBox1.setItems(list);
+
+        buyComboBox.valueProperty().addListener((observable, oldValue, newValue) -> currencyText.setText(newValue.toString()));
+        buyComboBox1.valueProperty().addListener((observable, oldValue, newValue) -> currencyText1.setText(newValue.toString()));
+
     }
 
     @FXML
@@ -83,8 +97,4 @@ public class StockExchangeController {
 
     }
 
-    public AnchorPane getAnchorPane()
-    {
-        return this.mainAnchorPane;
-    }
 }

@@ -9,4 +9,12 @@ public abstract class Money {
     public String toString() {
         return currencyName +" ("+currencyShort+")";
     }
+
+    public String getCurrencyName() {
+        return currencyName;
+    }
+
+    public String getCurrencyShort() {
+        return currencyShort;
+    }
 }

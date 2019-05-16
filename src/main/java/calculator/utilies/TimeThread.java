@@ -1,7 +1,6 @@
 package calculator.utilies;
 
 import calculator.currency.manage.CryptoCurrency;
-import calculator.currency.manage.ManageCurrency;
 import calculator.currency.types.BandK;
 import calculator.currency.types.CaT;
 import calculator.database.tasks.CurrencyTask;
@@ -49,12 +48,12 @@ public class TimeThread implements Serializable {
     private void setCurrency(LocalDate localDate)
     {
         CurrencyTask currencyTask = new CurrencyTask();
-        ManageCurrency [] manageCurrencies = new ManageCurrency[]{new CaT(),new BandK()};
-        for (ManageCurrency currency : manageCurrencies) {
+        CryptoCurrency[] cryptoCurrencies = new CryptoCurrency[]{new CaT(),new BandK()};
+        for (CryptoCurrency currency : cryptoCurrencies) {
 
-            ((CryptoCurrency)currency).setPolishMoney(currencyTask.getPolishMoneyFromLast(currency,localDate.minusDays(1)));
+            currency.setPolishMoney(currencyTask.getPolishMoneyFromLast(currency,localDate.minusDays(1)));
             currency.changeRate();
-            ((CryptoCurrency)currency).setValidFromAndValidTo(localDate);
+            currency.setValidFromAndValidTo(localDate);
             currencyTask.addCurrencyToDataBase(currency);
 
         }
