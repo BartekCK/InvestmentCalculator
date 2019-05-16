@@ -15,7 +15,6 @@ public class CurrencyDao extends MainDao{
         super();
     }
 
-
     public <T extends CryptoCurrency> T pullLastCaTandBandK(Class<T> tClass, LocalDate localDate) throws CalculatorException, SQLException {
 
         Dao<T,Object> dao = getDao(tClass);
@@ -34,7 +33,5 @@ public class CurrencyDao extends MainDao{
         Dao<T,Object> dao = getDao(tClass);
         return dao.queryForAll();
     }
-
-
 
 }

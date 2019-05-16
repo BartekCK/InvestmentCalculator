@@ -7,6 +7,7 @@ import calculator.currency.types.Zloty;
 import calculator.currency.manage.Money;
 import calculator.database.tasks.CurrencyTask;
 import calculator.user.User;
+import calculator.utilies.TimeThread;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,8 +16,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
-import java.util.LinkedList;
-import java.util.List;
 
 public class StockExchangeController {
 
@@ -25,6 +24,8 @@ public class StockExchangeController {
     private ObservableList<Money> list;
 
     private CurrencyTask currencyTask;
+
+    private TimeThread timeThread;
 
     @FXML
     private Text zlotychOnAccountText;
@@ -62,6 +63,8 @@ public class StockExchangeController {
 
     public StockExchangeController()
     {
+        timeThread = new TimeThread();
+
         user = MainWindowController.getUser();
         list = FXCollections.observableArrayList(new CaT(),new BandK(), new Zloty());
         currencyTask = new CurrencyTask();
@@ -94,7 +97,9 @@ public class StockExchangeController {
 
     @FXML
     void check(ActionEvent event) {
-
+        System.out.println(user);
+        CryptoCurrency.buyCurrency(this.user,buyComboBox.getValue(),Double.parseDouble(buyTextField.getText()),buyComboBox1.getValue());
+        System.out.println(user);
     }
 
 }

@@ -20,7 +20,7 @@ public class BandK extends CryptoCurrency
     @Override
     public void changeRate() {
         Random random = new Random();
-        moneyRate = MyMath.roundTwo(random.nextDouble() * 10 - (5-(5*(this.polishMoney/100000))));
+        moneyRate = MyMath.roundTwo(random.nextDouble() *5 + (this.polishMoney/100000));
         System.out.println(moneyRate);
     }
 
