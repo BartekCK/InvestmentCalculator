@@ -1,5 +1,6 @@
 package calculator.currency.manage;
 
+import calculator.calculate.MyMath;
 import calculator.currency.types.BandK;
 import calculator.currency.types.CaT;
 import calculator.currency.types.Zloty;
@@ -28,11 +29,9 @@ public abstract class CryptoCurrency extends Money implements BaseModel {
     protected Date validTo;
 
 
-
-
     public abstract void changeRate();
 
-    public static void buyCurrency(User user, Money forWhatBuy,double countForWhatBuy, Money whatBuy)
+    public static double buyCurrency(User user, Money forWhatBuy,double countForWhatBuy, Money whatBuy)
     {
         try {
 
@@ -40,7 +39,8 @@ public abstract class CryptoCurrency extends Money implements BaseModel {
                 if (forWhatBuy instanceof Zloty) {
                     if (user.getPolishZlotyAccount() >= countForWhatBuy) {
                         user.setPolishZlotyAccount(user.getPolishZlotyAccount() - countForWhatBuy);
-                        user.setValueCaT(user.getValueCaT() + countForWhatBuy * whatBuy.moneyRate);
+                        user.setValueCaT(user.getValueCaT() + countForWhatBuy / whatBuy.moneyRate);
+                        return MyMath.roundTwo(countForWhatBuy / whatBuy.moneyRate);
                     } else
                         throw new CalculatorException("Brak środków na koncie");
                 }
@@ -57,7 +57,8 @@ public abstract class CryptoCurrency extends Money implements BaseModel {
                 if (forWhatBuy instanceof Zloty) {
                     if (user.getPolishZlotyAccount() >= countForWhatBuy) {
                         user.setPolishZlotyAccount(user.getPolishZlotyAccount() - countForWhatBuy);
-                        user.setValueBandK(user.getValueBandK() + countForWhatBuy * whatBuy.moneyRate);
+                        user.setValueBandK(user.getValueBandK() + countForWhatBuy / whatBuy.moneyRate);
+                        return MyMath.roundTwo(countForWhatBuy / whatBuy.moneyRate);
                     } else
                         throw new CalculatorException("Brak środków na koncie");
                 }
@@ -74,25 +75,24 @@ public abstract class CryptoCurrency extends Money implements BaseModel {
                 if (forWhatBuy instanceof BandK) {
                     if (user.getValueBandK() >= countForWhatBuy) {
                         user.setValueBandK(user.getValueBandK() - countForWhatBuy);
-                        user.setPolishZlotyAccount(user.getPolishZlotyAccount() + ((countForWhatBuy / forWhatBuy.moneyRate) * whatBuy.moneyRate));
+                        user.setPolishZlotyAccount(user.getPolishZlotyAccount() + forWhatBuy.moneyRate*countForWhatBuy);
                     } else
                         throw new CalculatorException("Brak środków na koncie");
                 }
                 if (forWhatBuy instanceof CaT) {
                     if (user.getValueCaT() >= countForWhatBuy) {
                         user.setValueCaT(user.getValueCaT() - countForWhatBuy);
-                        user.setPolishZlotyAccount(user.getPolishZlotyAccount() + ((countForWhatBuy / forWhatBuy.moneyRate) * whatBuy.moneyRate));
+                        user.setPolishZlotyAccount(user.getPolishZlotyAccount() + forWhatBuy.moneyRate*countForWhatBuy);
                     } else
                         throw new CalculatorException("Brak środków na koncie");
                 }
             }
+            return MyMath.roundTwo((forWhatBuy.moneyRate*countForWhatBuy));
         } catch (CalculatorException e) {
             System.out.println(e.getMessage());
         }
+        return 0;
     }
-
-
-
 
 
     public void setValidFromAndValidTo(LocalDate actuallDate)
@@ -107,10 +107,6 @@ public abstract class CryptoCurrency extends Money implements BaseModel {
 
     public void setPolishMoney(double polishMoney) {
         this.polishMoney = polishMoney;
-    }
-
-    public double getMoneyRate() {
-        return moneyRate;
     }
 
     public int getId() {

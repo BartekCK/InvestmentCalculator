@@ -22,4 +22,8 @@ public abstract class Money {
     public String getCurrencyShort() {
         return currencyShort;
     }
+
+    public double getMoneyRate() {
+        return moneyRate;
+    }
 }

@@ -8,13 +8,14 @@ import java.io.*;
 import java.time.LocalDate;
 
 public class TimeThread implements Serializable {
-    private LocalDate lastSaveDay;
+    private static LocalDate lastSaveDay;
 
 
     public TimeThread() {
         try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("dateConfig.bin"))) {
             lastSaveDay = (LocalDate) inputStream.readObject();
             checkToday();
+            saveDay();
         } catch (ClassNotFoundException| IOException e) {
             lastSaveDay = LocalDate.now();
             setCurrency(lastSaveDay);
@@ -34,7 +35,7 @@ public class TimeThread implements Serializable {
         }
     }
 
-    public void saveDay()
+    private void saveDay()
     {
         try {
             ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("dateConfig.bin"));

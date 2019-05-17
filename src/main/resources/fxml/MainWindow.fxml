@@ -45,12 +45,12 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
             </ToggleButton>
-            <ToggleButton minWidth="400.0" mnemonicParsing="false" onAction="#openCurrencyRates" prefHeight="50.0" prefWidth="400.0" text="Kursy walut" textAlignment="CENTER" toggleGroup="$toogleGroup" HBox.hgrow="ALWAYS">
+            <ToggleButton minWidth="400.0" mnemonicParsing="false" onAction="#openCurrencyRates" prefHeight="50.0" prefWidth="400.0" text="Kalkulatory" textAlignment="CENTER" toggleGroup="$toogleGroup" HBox.hgrow="ALWAYS">
                <HBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
             </ToggleButton>
-            <ToggleButton minWidth="400.0" mnemonicParsing="false" onAction="#openStockExchange" prefHeight="50.0" prefWidth="400.0" text="Giedła kryptowaluty B&amp;K" textAlignment="CENTER" toggleGroup="$toogleGroup" HBox.hgrow="ALWAYS">
+            <ToggleButton minWidth="400.0" mnemonicParsing="false" onAction="#openStockExchange" prefHeight="50.0" prefWidth="400.0" text="Giedła kryptowalut" textAlignment="CENTER" toggleGroup="$toogleGroup" HBox.hgrow="ALWAYS">
                <HBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>

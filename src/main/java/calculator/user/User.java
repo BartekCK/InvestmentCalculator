@@ -1,6 +1,7 @@
 package calculator.user;
 
 
+import calculator.calculate.MyMath;
 import calculator.database.BaseModel;
 import com.j256.ormlite.field.DatabaseField;
 
@@ -46,6 +47,7 @@ public class User implements BaseModel
         this.password = password;
         this.nick = nick;
     }
+
 
     public int getId() {
         return id;
@@ -108,7 +110,7 @@ public class User implements BaseModel
     }
 
     public void setPolishZlotyAccount(double polishZlotyAccount) {
-        this.polishZlotyAccount = polishZlotyAccount;
+        this.polishZlotyAccount = MyMath.roundTwo(polishZlotyAccount);
     }
 
     public double getValueBandK() {
@@ -116,7 +118,7 @@ public class User implements BaseModel
     }
 
     public void setValueBandK(double valueBandK) {
-        this.valueBandK = valueBandK;
+        this.valueBandK = MyMath.roundTwo(valueBandK);
     }
 
     public double getValueCaT() {
@@ -124,7 +126,7 @@ public class User implements BaseModel
     }
 
     public void setValueCaT(double valueCaT) {
-        this.valueCaT = valueCaT;
+        this.valueCaT = MyMath.roundTwo(valueCaT);
     }
 
 

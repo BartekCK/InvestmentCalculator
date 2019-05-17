@@ -3,7 +3,7 @@ package calculator.calculate;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-public class BankCalculate implements LoansCalculate,DepositCalculate{
+public final class BankCalculate implements LoansCalculate,DepositCalculate{
 
     private double resultInstallment;
     private double q;

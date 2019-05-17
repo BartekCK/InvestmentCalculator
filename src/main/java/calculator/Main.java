@@ -13,8 +13,6 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    private TimeThread timeThread;
-
     public static void main(String[] args) {
         launch(args);
     }
@@ -36,14 +34,13 @@ public class Main extends Application {
 
         Main.commonWindowFeatures(ProjectLoader.ParentLoader(Path.PATH_MAIN_WINDOW), primaryStage, "Kalkulator Inwestora");
         DbConnector.initDatabase();
-        timeThread = new TimeThread();
-
+        TimeThread timeThread = new TimeThread();
     }
 
     @Override
     public void stop(){
         System.out.println("Stage is closing");
-        timeThread.saveDay();
+        TimeThread timeThread = new TimeThread();
     }
 
 

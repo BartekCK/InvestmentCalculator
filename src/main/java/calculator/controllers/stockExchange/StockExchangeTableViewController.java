@@ -1,4 +1,4 @@
-package calculator.controllers;
+package calculator.controllers.stockExchange;
 
 import calculator.currency.modelFx.CryptoCurrencyFx;
 import calculator.currency.types.BandK;

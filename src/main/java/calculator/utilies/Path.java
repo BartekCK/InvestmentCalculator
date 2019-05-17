@@ -10,5 +10,5 @@ public class Path {
     public static final String PATH_ACCOUNT_TOP_UP = "/fxml/userMenu/AccountTopUp.fxml";
     public static final String PATH_TRANSACTION_RECORD = "/fxml/userMenu/TransactionRecord.fxml";
     public static final String PATH_LOANS_AND_DEPOSIT = "/fxml/bank/LoansAndDeposits.fxml";
-    public static final String PATH_STOCK_EXCHANGE = "/fxml/StockExchange.fxml";
+    public static final String PATH_STOCK_EXCHANGE = "/fxml/stock/StockExchange.fxml";
 }

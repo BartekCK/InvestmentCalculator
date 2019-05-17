@@ -66,7 +66,5 @@ public class UserInterfaceController extends MainWindowController {
         return buttonUserTransaction;
     }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
+
 }

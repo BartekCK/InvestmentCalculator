@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="1230.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.controllers.StockExchangeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="1230.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.controllers.stockExchange.StockExchangeController">
     <children>
         <AnchorPane prefHeight="130.0" prefWidth="1230.0">
             <children>
@@ -25,12 +25,12 @@
                 <Text fx:id="bandkValueText" layoutX="145.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
             </children>
         </AnchorPane>
-        <ToggleButton layoutY="130.0" mnemonicParsing="false" onAction="#check" prefHeight="280.0" prefWidth="280.0" text="Sprawdź">
+        <ToggleButton fx:id="checkButton" layoutY="130.0" mnemonicParsing="false" onAction="#check" prefHeight="280.0" prefWidth="280.0" text="Sprawdź">
             <toggleGroup>
                 <ToggleGroup fx:id="toogleGroup" />
             </toggleGroup>
         </ToggleButton>
-        <ToggleButton layoutY="410.0" mnemonicParsing="false" onAction="#buy" prefHeight="280.0" prefWidth="280.0" text="Zakup" toggleGroup="$toogleGroup" />
+        <ToggleButton fx:id="buyButton" layoutY="410.0" mnemonicParsing="false" onAction="#buy" prefHeight="280.0" prefWidth="280.0" text="Zakup" toggleGroup="$toogleGroup" />
         <Separator layoutY="128.0" prefHeight="5.0" prefWidth="1230.0" />
         <AnchorPane layoutX="280.0" layoutY="128.0" prefHeight="562.0" prefWidth="950.0">
             <children>
