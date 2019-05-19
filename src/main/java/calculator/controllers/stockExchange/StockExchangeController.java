@@ -11,6 +11,7 @@ import calculator.database.tasks.CurrencyTask;
 import calculator.database.tasks.TransactionTask;
 import calculator.database.tasks.UserTask;
 import calculator.date.Transaction;
+import calculator.exceptions.CalculatorException;
 import calculator.user.SuperUser;
 import calculator.user.User;
 import calculator.utilies.TimeThread;
@@ -92,26 +93,33 @@ public class StockExchangeController {
 
     @FXML
     void buy(ActionEvent event) {
-        buyTextField1.setText(String.valueOf(CryptoCurrency.buyCurrency(this.user, buyComboBox.getValue(),
-                Double.parseDouble(buyTextField.getText()), buyComboBox1.getValue())));
         refresh();
-        MainWindowController.setUser(this.user);
-        UserTask userTask = new UserTask();
-        userTask.addUserToDataBase((SuperUser) user);
+        try {
+            buyTextField1.setText(String.valueOf(CryptoCurrency.buyCurrency(this.user, buyComboBox.getValue(),
+                    Double.parseDouble(buyTextField.getText()), buyComboBox1.getValue())));
+            MainWindowController.setUser(this.user);
+            UserTask userTask = new UserTask();
+            userTask.addUserToDataBase((SuperUser) user);
 
-        if(user.isSuperUser())
-        {
-            Transaction transaction= new Transaction((SuperUser)user
-                    ,TimeThread.getLastSaveDay()
-                    ,buyComboBox1.getSelectionModel().getSelectedItem().getCurrencyShort()
-                    ,buyTextField1.getText()
-                    ,buyComboBox1.getSelectionModel().getSelectedItem().getMoneyRate()
-                    ,buyComboBox.getSelectionModel().getSelectedItem().getCurrencyShort()
-                    ,buyTextField.getText()
-                    ,buyComboBox.getSelectionModel().getSelectedItem().getMoneyRate());
-            TransactionTask transactionTask = new TransactionTask();
-            transactionTask.addTransactionToDataBase(transaction);
+            if(user.isSuperUser())
+            {
+                Transaction transaction= new Transaction((SuperUser)user
+                        ,TimeThread.getLastSaveDay()
+                        ,buyComboBox1.getSelectionModel().getSelectedItem().getCurrencyShort()
+                        ,buyTextField1.getText()
+                        ,buyComboBox1.getSelectionModel().getSelectedItem().getMoneyRate()
+                        ,buyComboBox.getSelectionModel().getSelectedItem().getCurrencyShort()
+                        ,buyTextField.getText()
+                        ,buyComboBox.getSelectionModel().getSelectedItem().getMoneyRate());
+                TransactionTask transactionTask = new TransactionTask();
+                transactionTask.addTransactionToDataBase(transaction);
+            }
+
+        } catch (CalculatorException e) {
+            System.out.println(e.getMessage());
         }
+
+
 
     }
 
@@ -122,8 +130,12 @@ public class StockExchangeController {
         userTemp.setValueCaT(user.getValueCaT());
         userTemp.setValueBandK(user.getValueBandK());
         refresh();
-        buyTextField1.setText(String.valueOf(CryptoCurrency.buyCurrency(userTemp, buyComboBox.getValue(),
-                Double.parseDouble(buyTextField.getText()), buyComboBox1.getValue())));
+        try {
+            buyTextField1.setText(String.valueOf(CryptoCurrency.buyCurrency(userTemp, buyComboBox.getValue(),
+                    Double.parseDouble(buyTextField.getText()), buyComboBox1.getValue())));
+        } catch (CalculatorException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
 

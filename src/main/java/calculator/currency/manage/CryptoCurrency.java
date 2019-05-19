@@ -31,9 +31,8 @@ public abstract class CryptoCurrency extends Money implements BaseModel {
 
     public abstract void changeRate();
 
-    public static double buyCurrency(User user, Money forWhatBuy,double countForWhatBuy, Money whatBuy)
-    {
-        try {
+    public static double buyCurrency(User user, Money forWhatBuy,double countForWhatBuy, Money whatBuy) throws CalculatorException {
+
 
             if (whatBuy instanceof CaT) {
                 if (forWhatBuy instanceof Zloty) {
@@ -88,10 +87,6 @@ public abstract class CryptoCurrency extends Money implements BaseModel {
                 }
             }
             return MyMath.roundTwo((forWhatBuy.moneyRate*countForWhatBuy));
-        } catch (CalculatorException e) {
-            System.out.println(e.getMessage());
-        }
-        return 0;
     }
 
 
