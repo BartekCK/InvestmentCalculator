@@ -88,7 +88,7 @@ public class RegistrationController {
             userTask.addUserToDataBase(superUser);
 
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-            window.setScene(new Scene(ProjectLoader.ParentLoader(Path.PATH_REGISTRATION_CONFIRMATION)));
+            window.setScene(new Scene(ProjectLoader.ParentLoader(Path.PATH_REGISTRATION_CONFIRMATION,null)));
         }
 
     }

@@ -1,0 +1,66 @@
+
+.menu-bar
+{
+    -fx-background-color: #1E2222;
+}
+
+.menu-item .label {
+    -fx-text-fill: white;
+}
+
+.menu-item:focused {
+    -fx-background-color: #313131;
+}
+
+.menu-item:focused .label {
+    -fx-text-fill: white;
+}
+
+.context-menu {
+
+    -fx-background-color: black;
+    -fx-background-insets: 0, 1, 2;
+
+}
+
+#hBox
+{
+    -fx-background-color: #1E2222;
+}
+
+#downStackPane
+{
+    -fx-background-color: #1E2222;
+}
+
+/*.toggle-button{
+    -fx-font-weight: bold;
+    -fx-background-color: #2196f3;
+    -fx-background-radius: 22;
+    -fx-font-size: 22;
+    -fx-text-fill: white;
+}
+
+.toggle-button:hover
+{
+    -fx-font-weight: bold;
+    -fx-background-color: white;
+    -fx-background-radius: 22;
+    -fx-font-size: 16;
+    -fx-text-fill: #2196f3;
+    -fx-border-color: #2196f3;
+    -fx-border-width: 3px;
+}
+.toggle-button:pressed
+{
+    -fx-font-weight: bold;
+    -fx-background-color: white;
+    -fx-background-radius: 22;
+    -fx-font-size: 16;
+    -fx-text-fill: #2196f3;
+    -fx-border-color: #2196f3;
+    -fx-border-radius: 20;
+    -fx-border-width: 3px;
+    -fx-rotate: 10;
+}*/
+

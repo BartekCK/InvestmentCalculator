@@ -32,7 +32,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
 
-        Main.commonWindowFeatures(ProjectLoader.ParentLoader(Path.PATH_MAIN_WINDOW), primaryStage, "Kalkulator Inwestora");
+        Main.commonWindowFeatures(ProjectLoader.ParentLoader(Path.PATH_MAIN_WINDOW,Path.CSS_MAIN_SCENE), primaryStage, "Kalkulator Inwestora");
         DbConnector.initDatabase();
         TimeThread timeThread = new TimeThread();
     }

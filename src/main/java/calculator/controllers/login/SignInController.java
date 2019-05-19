@@ -63,7 +63,7 @@ public class SignInController {
 
     public void registerNewUser(MouseEvent mouseEvent) {
         Stage window = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
-        window.setScene(new Scene(ProjectLoader.ParentLoader(Path.PATH_REGISTRATION)));
+        window.setScene(new Scene(ProjectLoader.ParentLoader(Path.PATH_REGISTRATION,null)));
     }
 
     public void setMainWindowController(MainWindowController mainWindowController) {

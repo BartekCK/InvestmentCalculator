@@ -8,10 +8,13 @@ import java.io.IOException;
 
 public class ProjectLoader {
 
-    public static Parent ParentLoader(String fxmlPath)
+    public static Parent ParentLoader(String fxmlPath,String cssPath)
     {
         try {
-            return FXMLLoader.load(ProjectLoader.class.getResource(fxmlPath));
+            Parent root = FXMLLoader.load(ProjectLoader.class.getResource(fxmlPath));
+            if (cssPath!= null)
+                root.getStylesheets().add(cssPath);
+            return root;
         } catch (IOException e) {
             e.printStackTrace();
         }

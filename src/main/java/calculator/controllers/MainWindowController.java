@@ -48,7 +48,7 @@ public class MainWindowController {
     private void openCreditAndBankDeposit() {
 
         downStackPane.getChildren().clear();
-        downStackPane.getChildren().add(ProjectLoader.ParentLoader(Path.PATH_LOANS_AND_DEPOSIT));
+        downStackPane.getChildren().add(ProjectLoader.ParentLoader(Path.PATH_LOANS_AND_DEPOSIT,null));
 
     }
 
@@ -62,7 +62,7 @@ public class MainWindowController {
         if(user != null)
         {
             downStackPane.getChildren().clear();
-            downStackPane.getChildren().add(ProjectLoader.ParentLoader(Path.PATH_STOCK_EXCHANGE));
+            downStackPane.getChildren().add(ProjectLoader.ParentLoader(Path.PATH_STOCK_EXCHANGE,null));
         }else
         {
             checkUser();
