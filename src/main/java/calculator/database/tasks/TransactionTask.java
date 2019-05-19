@@ -19,6 +19,17 @@ public class TransactionTask {
     private ObservableList<TransactionFx> transactionFxObservableList = FXCollections.observableArrayList();
     private List<Transaction> transactionList = new ArrayList<>();
 
+
+    public void addTransactionToDataBase(Transaction transaction)
+    {
+        TransactionDao transactionDao = new TransactionDao();
+        try {
+            transactionDao.creatOrUpdate(transaction);
+        } catch (CalculatorException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void pullTransactionFromDataBase(SuperUser superUser)
     {
         TransactionDao transactionDao = new TransactionDao();

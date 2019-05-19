@@ -7,10 +7,13 @@ import java.time.LocalDate;
 public class TransactionFx {
 
     private ObjectProperty<LocalDate> addedDate = new SimpleObjectProperty<>();
-    private StringProperty typeCurrency= new SimpleStringProperty();
-    private DoubleProperty buyCurrency = new SimpleDoubleProperty();
-    private DoubleProperty sellCurrency = new SimpleDoubleProperty();
-    private DoubleProperty rateValue = new SimpleDoubleProperty();
+    private StringProperty buyTypeCurrency= new SimpleStringProperty();
+    private StringProperty buyCountCurrency= new SimpleStringProperty();
+    private DoubleProperty buyRateCurrency = new SimpleDoubleProperty();
+
+    private StringProperty sellTypeCurrency= new SimpleStringProperty();
+    private StringProperty sellCountCurrency= new SimpleStringProperty();
+    private DoubleProperty sellRateCurrency = new SimpleDoubleProperty();
 
     public LocalDate getAddedDate() {
         return addedDate.get();
@@ -24,51 +27,75 @@ public class TransactionFx {
         this.addedDate.set(addedDate);
     }
 
-    public String getTypeCurrency() {
-        return typeCurrency.get();
+    public String getBuyTypeCurrency() {
+        return buyTypeCurrency.get();
     }
 
-    public StringProperty typeCurrencyProperty() {
-        return typeCurrency;
+    public StringProperty buyTypeCurrencyProperty() {
+        return buyTypeCurrency;
     }
 
-    public void setTypeCurrency(String typeCurrency) {
-        this.typeCurrency.set(typeCurrency);
+    public void setBuyTypeCurrency(String buyTypeCurrency) {
+        this.buyTypeCurrency.set(buyTypeCurrency);
     }
 
-    public double getBuyCurrency() {
-        return buyCurrency.get();
+    public String getBuyCountCurrency() {
+        return buyCountCurrency.get();
     }
 
-    public DoubleProperty buyCurrencyProperty() {
-        return buyCurrency;
+    public StringProperty buyCountCurrencyProperty() {
+        return buyCountCurrency;
     }
 
-    public void setBuyCurrency(double buyCurrency) {
-        this.buyCurrency.set(buyCurrency);
+    public void setBuyCountCurrency(String buyCountCurrency) {
+        this.buyCountCurrency.set(buyCountCurrency);
     }
 
-    public double getSellCurrency() {
-        return sellCurrency.get();
+    public double getBuyRateCurrency() {
+        return buyRateCurrency.get();
     }
 
-    public DoubleProperty sellCurrencyProperty() {
-        return sellCurrency;
+    public DoubleProperty buyRateCurrencyProperty() {
+        return buyRateCurrency;
     }
 
-    public void setSellCurrency(double sellCurrency) {
-        this.sellCurrency.set(sellCurrency);
+    public void setBuyRateCurrency(double buyRateCurrency) {
+        this.buyRateCurrency.set(buyRateCurrency);
     }
 
-    public double getRateValue() {
-        return rateValue.get();
+    public String getSellTypeCurrency() {
+        return sellTypeCurrency.get();
     }
 
-    public DoubleProperty rateValueProperty() {
-        return rateValue;
+    public StringProperty sellTypeCurrencyProperty() {
+        return sellTypeCurrency;
     }
 
-    public void setRateValue(double rateValue) {
-        this.rateValue.set(rateValue);
+    public void setSellTypeCurrency(String sellTypeCurrency) {
+        this.sellTypeCurrency.set(sellTypeCurrency);
+    }
+
+    public String getSellCountCurrency() {
+        return sellCountCurrency.get();
+    }
+
+    public StringProperty sellCountCurrencyProperty() {
+        return sellCountCurrency;
+    }
+
+    public void setSellCountCurrency(String sellCountCurrency) {
+        this.sellCountCurrency.set(sellCountCurrency);
+    }
+
+    public double getSellRateCurrency() {
+        return sellRateCurrency.get();
+    }
+
+    public DoubleProperty sellRateCurrencyProperty() {
+        return sellRateCurrency;
+    }
+
+    public void setSellRateCurrency(double sellRateCurrency) {
+        this.sellRateCurrency.set(sellRateCurrency);
     }
 }

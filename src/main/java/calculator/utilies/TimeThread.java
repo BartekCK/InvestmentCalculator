@@ -60,4 +60,8 @@ public class TimeThread implements Serializable {
         }
 
     }
+
+    public static LocalDate getLastSaveDay() {
+        return lastSaveDay;
+    }
 }

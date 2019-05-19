@@ -2,10 +2,12 @@ package calculator.date;
 
 import calculator.database.BaseModel;
 import calculator.user.SuperUser;
+import calculator.utilies.converters.ConvertToDate;
 import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @DatabaseTable(tableName = "TRANSACTION")
@@ -20,21 +22,43 @@ public class Transaction implements BaseModel {
     @DatabaseField(columnName = "TRANSACTION_DATE", dataType = DataType.DATE_STRING, format = "yyyy-MM-dd")
     private Date addedDate;
 
-    @DatabaseField(columnName = "CURRENCY", canBeNull = true)
-    private String typeCurrency;
 
-    @DatabaseField(columnName = "BUY_CURRENCY", canBeNull = true)
-    private Double buyCurrency;
 
-    @DatabaseField(columnName = "SELL_CURRENCY", canBeNull = true)
-    private Double sellCurrency;
+    @DatabaseField(columnName = "BUY_TYPE_CURRENCY")
+    private String buyTypeCurrency;
 
-    @DatabaseField(columnName = "RATE_VALUE", canBeNull = true)
-    private Double rateValue;
+    @DatabaseField(columnName = "BUY_COUNT_CURRENCY")
+    private String buyCountCurrency;
+
+    @DatabaseField(columnName = "BUY_RATE_CURRENCY")
+    private Double buyRateCurrency;
+
+
+
+    @DatabaseField(columnName = "SELL_TYPE_CURRENCY")
+    private String sellTypeCurrency;
+
+    @DatabaseField(columnName = "SELL_COUNT_CURRENCY")
+    private String sellCountCurrency;
+
+    @DatabaseField(columnName = "SELL_RATE_CURRENCY")
+    private Double sellRateCurrency;
+
 
     public Transaction() {
     }
 
+
+    public Transaction(SuperUser superUser, LocalDate addedDate, String buyTypeCurrency, String buyCountCurrency, Double buyRateCurrency, String sellTypeCurrency, String sellCountCurrency, Double sellRateCurrency) {
+        this.superUser = superUser;
+        this.addedDate = ConvertToDate.convertToDate(addedDate);
+        this.buyTypeCurrency = buyTypeCurrency;
+        this.buyCountCurrency = buyCountCurrency;
+        this.buyRateCurrency = buyRateCurrency;
+        this.sellTypeCurrency = sellTypeCurrency;
+        this.sellCountCurrency = sellCountCurrency;
+        this.sellRateCurrency = sellRateCurrency;
+    }
 
     public int getId() {
         return id;
@@ -60,35 +84,51 @@ public class Transaction implements BaseModel {
         this.addedDate = addedDate;
     }
 
-    public String getTypeCurrency() {
-        return typeCurrency;
+    public String getBuyTypeCurrency() {
+        return buyTypeCurrency;
     }
 
-    public void setTypeCurrency(String typeCurrency) {
-        this.typeCurrency = typeCurrency;
+    public void setBuyTypeCurrency(String buyTypeCurrency) {
+        this.buyTypeCurrency = buyTypeCurrency;
     }
 
-    public Double getBuyCurrency() {
-        return buyCurrency;
+    public String getBuyCountCurrency() {
+        return buyCountCurrency;
     }
 
-    public void setBuyCurrency(Double buyCurrency) {
-        this.buyCurrency = buyCurrency;
+    public void setBuyCountCurrency(String buyCountCurrency) {
+        this.buyCountCurrency = buyCountCurrency;
     }
 
-    public Double getSellCurrency() {
-        return sellCurrency;
+    public Double getBuyRateCurrency() {
+        return buyRateCurrency;
     }
 
-    public void setSellCurrency(Double sellCurrency) {
-        this.sellCurrency = sellCurrency;
+    public void setBuyRateCurrency(Double buyRateCurrency) {
+        this.buyRateCurrency = buyRateCurrency;
     }
 
-    public Double getRateValue() {
-        return rateValue;
+    public String getSellTypeCurrency() {
+        return sellTypeCurrency;
     }
 
-    public void setRateValue(Double rateValue) {
-        this.rateValue = rateValue;
+    public void setSellTypeCurrency(String sellTypeCurrency) {
+        this.sellTypeCurrency = sellTypeCurrency;
+    }
+
+    public String getSellCountCurrency() {
+        return sellCountCurrency;
+    }
+
+    public void setSellCountCurrency(String sellCountCurrency) {
+        this.sellCountCurrency = sellCountCurrency;
+    }
+
+    public Double getSellRateCurrency() {
+        return sellRateCurrency;
+    }
+
+    public void setSellRateCurrency(Double sellRateCurrency) {
+        this.sellRateCurrency = sellRateCurrency;
     }
 }

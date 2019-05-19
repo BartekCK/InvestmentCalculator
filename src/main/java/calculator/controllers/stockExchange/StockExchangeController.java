@@ -6,8 +6,11 @@ import calculator.currency.types.BandK;
 import calculator.currency.types.CaT;
 import calculator.currency.types.Zloty;
 import calculator.currency.manage.Money;
+import calculator.database.dao.TransactionDao;
 import calculator.database.tasks.CurrencyTask;
+import calculator.database.tasks.TransactionTask;
 import calculator.database.tasks.UserTask;
+import calculator.date.Transaction;
 import calculator.user.SuperUser;
 import calculator.user.User;
 import calculator.utilies.TimeThread;
@@ -96,6 +99,19 @@ public class StockExchangeController {
         UserTask userTask = new UserTask();
         userTask.addUserToDataBase((SuperUser) user);
 
+        if(user.isSuperUser())
+        {
+            Transaction transaction= new Transaction((SuperUser)user
+                    ,TimeThread.getLastSaveDay()
+                    ,buyComboBox1.getSelectionModel().getSelectedItem().getCurrencyShort()
+                    ,buyTextField1.getText()
+                    ,buyComboBox1.getSelectionModel().getSelectedItem().getMoneyRate()
+                    ,buyComboBox.getSelectionModel().getSelectedItem().getCurrencyShort()
+                    ,buyTextField.getText()
+                    ,buyComboBox.getSelectionModel().getSelectedItem().getMoneyRate());
+            TransactionTask transactionTask = new TransactionTask();
+            transactionTask.addTransactionToDataBase(transaction);
+        }
 
     }
 

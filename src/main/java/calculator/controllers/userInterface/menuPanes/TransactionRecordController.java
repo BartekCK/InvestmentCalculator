@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
-
 import java.time.LocalDate;
 
 public class TransactionRecordController {
@@ -24,30 +23,38 @@ public class TransactionRecordController {
     private TableColumn<TransactionFx, LocalDate> dateTableColumn;
 
     @FXML
-    private TableColumn<TransactionFx, String> typeTableColumn;
+    private TableColumn<TransactionFx, String> buyTypeTableColumn;
 
     @FXML
-    private TableColumn<TransactionFx, Number> buyTableColumn;
+    private TableColumn<TransactionFx, String> buyCountTableColumn;
 
     @FXML
-    private TableColumn<TransactionFx, Number> sellTableColumn;
+    private TableColumn<TransactionFx, Number> buyRateTableColumn;
 
     @FXML
-    private TableColumn<TransactionFx, Number> rateTableColumn;
+    private TableColumn<TransactionFx, String> sellTypeTableColumn;
+
+    @FXML
+    private TableColumn<TransactionFx, String> sellCountTableColumn;
+
+    @FXML
+    private TableColumn<TransactionFx, Number> sellRateTableColumn;
 
 
     public void showTable()
     {
-
         TransactionTask transactionTask = new TransactionTask();
         transactionTask.init(superUser);
         tableView.setItems(transactionTask.getTransactionFxObservableList());
-        dateTableColumn.setCellValueFactory(cellData -> cellData.getValue().addedDateProperty());
-        typeTableColumn.setCellValueFactory(cellData -> cellData.getValue().typeCurrencyProperty());
-        buyTableColumn.setCellValueFactory(cellData -> cellData.getValue().buyCurrencyProperty());
-        sellTableColumn.setCellValueFactory(cellData -> cellData.getValue().sellCurrencyProperty());
-        rateTableColumn.setCellValueFactory(cellData -> cellData.getValue().rateValueProperty());
+        dateTableColumn.setCellValueFactory(cell->cell.getValue().addedDateProperty());
 
+        buyTypeTableColumn.setCellValueFactory(cell->cell.getValue().buyTypeCurrencyProperty());
+        buyCountTableColumn.setCellValueFactory(cell->cell.getValue().buyCountCurrencyProperty());
+        buyRateTableColumn.setCellValueFactory(cell->cell.getValue().buyRateCurrencyProperty());
+
+        sellTypeTableColumn.setCellValueFactory(cell->cell.getValue().sellTypeCurrencyProperty());
+        sellCountTableColumn.setCellValueFactory(cell->cell.getValue().sellCountCurrencyProperty());
+        sellRateTableColumn.setCellValueFactory(cell->cell.getValue().sellRateCurrencyProperty());
     }
 
     public void setSuperUser(SuperUser superUser) {

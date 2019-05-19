@@ -4,20 +4,27 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane fx:id="transactionRecordAnchorPane" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.controllers.userInterface.menuPanes.TransactionRecordController">
-   <children>
-      <TableView fx:id="tableView" layoutY="6.0" prefHeight="300.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <columns>
-          <TableColumn fx:id="dateTableColumn" prefWidth="75.0" text="Data" />
-          <TableColumn fx:id="typeTableColumn" prefWidth="75.0" text="Rodzaj" />
-            <TableColumn fx:id="buyTableColumn" prefWidth="75.0" text="Zakupiono" />
-            <TableColumn fx:id="sellTableColumn" prefWidth="75.0" text="Sprzedano" />
-            <TableColumn fx:id="rateTableColumn" prefWidth="75.0" text="Kurs" />
-        </columns>
-         <columnResizePolicy>
-            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-         </columnResizePolicy>
-      </TableView>
-   </children>
+    <children>
+        <TableView fx:id="tableView" layoutY="6.0" prefHeight="300.0" prefWidth="400.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <columns>
+                <TableColumn fx:id="dateTableColumn" prefWidth="75.0" text="Data" />
+                <TableColumn prefWidth="75.0" text="Zakupiono">
+                    <columns>
+                        <TableColumn fx:id="buyTypeTableColumn" prefWidth="75.0" text="Rodzaj" />
+                        <TableColumn fx:id="buyCountTableColumn" prefWidth="75.0" text="Liczba" />
+                        <TableColumn fx:id="buyRateTableColumn" prefWidth="75.0" text="Kurs" />
+                    </columns></TableColumn>
+                <TableColumn prefWidth="75.0" text="Sprzedano">
+                    <columns>
+                        <TableColumn fx:id="sellTypeTableColumn" prefWidth="75.0" text="Rodzaj" />
+                        <TableColumn fx:id="sellCountTableColumn" prefWidth="75.0" text="Liczba" />
+                        <TableColumn fx:id="sellRateTableColumn" prefWidth="75.0" text="Kurs" />
+                    </columns></TableColumn>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+    </children>
 </AnchorPane>

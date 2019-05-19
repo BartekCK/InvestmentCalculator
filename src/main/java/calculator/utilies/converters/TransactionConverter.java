@@ -9,10 +9,14 @@ public class TransactionConverter {
     {
         TransactionFx transactionFx = new TransactionFx();
         transactionFx.setAddedDate(ConvertToDate.convertToLocalDate(transaction.getAddedDate()));
-        transactionFx.setTypeCurrency(transaction.getTypeCurrency());
-        transactionFx.setBuyCurrency(transaction.getBuyCurrency());
-        transactionFx.setSellCurrency(transaction.getSellCurrency());
-        transactionFx.setRateValue(transaction.getRateValue());
+
+        transactionFx.setBuyTypeCurrency(transaction.getBuyTypeCurrency());
+        transactionFx.setBuyCountCurrency(transaction.getBuyCountCurrency());
+        transactionFx.setBuyRateCurrency(transaction.getBuyRateCurrency());
+
+        transactionFx.setSellTypeCurrency(transaction.getSellTypeCurrency());
+        transactionFx.setSellCountCurrency(transaction.getSellCountCurrency());
+        transactionFx.setSellRateCurrency(transaction.getSellRateCurrency());
 
         return transactionFx;
     }
