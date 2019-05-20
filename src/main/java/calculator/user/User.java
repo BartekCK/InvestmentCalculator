@@ -6,7 +6,7 @@ import calculator.database.BaseModel;
 import com.j256.ormlite.field.DatabaseField;
 
 
-public class User implements BaseModel
+public class User implements BaseModel, Cloneable
 {
 
     @DatabaseField(generatedId = true)
@@ -46,6 +46,16 @@ public class User implements BaseModel
         this.email = email;
         this.password = password;
         this.nick = nick;
+    }
+
+    @Override
+    public Object clone()  {
+        try {
+            return super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 

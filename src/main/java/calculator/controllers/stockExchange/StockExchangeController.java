@@ -125,17 +125,17 @@ public class StockExchangeController {
 
     @FXML
     void check(ActionEvent event) {
-        User userTemp = new User();
-        userTemp.setPolishZlotyAccount(user.getPolishZlotyAccount());
-        userTemp.setValueCaT(user.getValueCaT());
-        userTemp.setValueBandK(user.getValueBandK());
-        refresh();
+        User userTemp = (User)user.clone();
         try {
             buyTextField1.setText(String.valueOf(CryptoCurrency.buyCurrency(userTemp, buyComboBox.getValue(),
                     Double.parseDouble(buyTextField.getText()), buyComboBox1.getValue())));
         } catch (CalculatorException e) {
             System.out.println(e.getMessage());
         }
+        finally {
+            refresh();
+        }
+
     }
 
 
