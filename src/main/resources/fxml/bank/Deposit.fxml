@@ -8,26 +8,26 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="690.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.controllers.loansAndDeposits.DepositController">
+<AnchorPane prefHeight="690.0" prefWidth="615.0" styleClass="anchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.controllers.loansAndDeposits.DepositController">
    <children>
-      <Text layoutX="122.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kwota" />
+      <Text layoutX="122.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Kwota" />
       <TextField fx:id="valueTextField" layoutX="170.0" layoutY="100.0" prefHeight="25.0" prefWidth="277.0" />
       <DatePicker fx:id="fromDate" layoutX="83.0" layoutY="171.0" />
       <DatePicker fx:id="toDate" layoutX="377.0" layoutY="171.0" />
       <Slider fx:id="percentSlider" layoutX="158.0" layoutY="297.0" majorTickUnit="1.0" max="10.0" minorTickCount="1" prefHeight="38.0" prefWidth="333.0" showTickLabels="true" showTickMarks="true" />
       <Button fx:id="button" layoutX="233.0" layoutY="499.0" mnemonicParsing="false" onAction="#calculateProfit" prefHeight="25.0" prefWidth="149.0" text="Oblicz zysk" />
-      <Text layoutX="464.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zł" />
-      <Text layoutX="61.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Od" />
-      <Text layoutX="353.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Do" />
-      <Text layoutX="46.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Oprocentowanie" />
+      <Text layoutX="464.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Zł" />
+      <Text layoutX="61.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Od" />
+      <Text layoutX="353.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Do" />
+      <Text layoutX="46.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Oprocentowanie" />
       <TextField fx:id="percentTableView" layoutX="501.0" layoutY="293.0" prefHeight="25.0" prefWidth="70.0" />
-      <Text layoutX="583.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\%" />
+      <Text layoutX="583.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="\%" />
       <TextField fx:id="showProfitTextField" alignment="CENTER" editable="false" layoutX="7.0" layoutY="579.0" prefHeight="104.0" prefWidth="603.0">
          <font>
             <Font size="33.0" />
          </font>
       </TextField>
       <TextField fx:id="countDay" editable="false" layoutX="433.0" layoutY="236.0" prefHeight="25.0" prefWidth="116.0" />
-      <Text layoutX="382.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ilość dni" />
+      <Text layoutX="382.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Ilość dni" />
    </children>
 </AnchorPane>

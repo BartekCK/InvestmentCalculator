@@ -9,28 +9,28 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="690.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.controllers.loansAndDeposits.LoansController">
+<AnchorPane prefHeight="690.0" prefWidth="615.0" styleClass="anchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.controllers.loansAndDeposits.LoansController">
    <children>
-      <Text layoutX="204.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OBLICZANIE RATY STAŁEJ">
+      <Text layoutX="204.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="OBLICZANIE RATY STAŁEJ">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <Text layoutX="178.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OBLICZANIE RATY MALEJĄCEJ">
+      <Text layoutX="178.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="OBLICZANIE RATY MALEJĄCEJ">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <Text layoutX="37.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wysokość kredytu" />
-      <Text layoutX="38.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ilość rat do spłaty" />
-      <Text layoutX="38.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Oprocentowanie w skali roku" />
+      <Text layoutX="37.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Wysokość kredytu" />
+      <Text layoutX="38.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Ilość rat do spłaty" />
+      <Text layoutX="38.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Oprocentowanie w skali roku" />
       <TextField fx:id="loansValueTextField" layoutX="143.0" layoutY="72.0" />
       <TextField fx:id="installmentCountTextField" layoutX="143.0" layoutY="113.0" prefHeight="25.0" prefWidth="40.0" />
       <Slider fx:id="percentSlider" layoutX="208.0" layoutY="160.0" majorTickUnit="5.0" max="20.0" minorTickCount="5" prefHeight="38.0" prefWidth="325.0" showTickLabels="true" showTickMarks="true" />
       <TextField fx:id="percentTextField" layoutX="537.0" layoutY="158.0" prefHeight="25.0" prefWidth="61.0" />
-      <Text layoutX="596.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\%" />
-      <Text layoutX="77.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wysokość raty miesięcznej" />
-      <Text layoutX="405.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Całkowita kwota do spłaty" />
+      <Text layoutX="601.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="\%" />
+      <Text layoutX="77.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Wysokość raty miesięcznej" />
+      <Text layoutX="405.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Całkowita kwota do spłaty" />
       <TableView fx:id="tableView" layoutY="443.0" prefHeight="247.0" prefWidth="325.0">
         <columns>
           <TableColumn fx:id="installmentNumberTableColumn" prefWidth="75.0" text="Numer raty" />
@@ -40,7 +40,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Text layoutX="405.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Całkowita kwota do spłaty" />
+      <Text layoutX="405.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Całkowita kwota do spłaty" />
       <TextField fx:id="resultInstallment" editable="false" layoutX="69.0" layoutY="306.0" />
       <TextField fx:id="resultValue1" editable="false" layoutX="400.0" layoutY="306.0" />
       <TextField fx:id="resultValue2" editable="false" layoutX="400.0" layoutY="467.0" />

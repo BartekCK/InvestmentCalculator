@@ -93,14 +93,14 @@ public class StockExchangeController {
 
     @FXML
     void buy(ActionEvent event) {
-        refresh();
+
         try {
             buyTextField1.setText(String.valueOf(CryptoCurrency.buyCurrency(this.user, buyComboBox.getValue(),
                     Double.parseDouble(buyTextField.getText()), buyComboBox1.getValue())));
             MainWindowController.setUser(this.user);
             UserTask userTask = new UserTask();
             userTask.addUserToDataBase((SuperUser) user);
-
+            refresh();
             if(user.isSuperUser())
             {
                 Transaction transaction= new Transaction((SuperUser)user

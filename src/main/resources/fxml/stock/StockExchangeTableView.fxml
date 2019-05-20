@@ -10,8 +10,8 @@
          <columns>
             <TableColumn fx:id="idBandkTableColumn" prefWidth="75.0" text="ID" />
             <TableColumn fx:id="nameBandkTableColumn" prefWidth="75.0" text="Waluta" />
-            <TableColumn fx:id="timeFromBandkTableColumn" prefWidth="75.0" text="Czas trwania od" />
-            <TableColumn fx:id="timeToBandkTableColumn" prefWidth="75.0" text="Czas trwania do" />
+            <TableColumn fx:id="timeFromBandkTableColumn" prefWidth="75.0" text="Od" />
+            <TableColumn fx:id="timeToBandkTableColumn" prefWidth="75.0" text="Do" />
             <TableColumn fx:id="valueBandkTableColumn" prefWidth="75.0" text="Wartość" />
          </columns>
          <columnResizePolicy>
@@ -22,8 +22,8 @@
          <columns>
             <TableColumn fx:id="idCatTableColumn" prefWidth="75.0" text="ID" />
             <TableColumn fx:id="nameCatTableColumn" prefWidth="75.0" text="Waluta" />
-            <TableColumn fx:id="timeFromCatTableColumn" prefWidth="75.0" text="Czas trwania od" />
-            <TableColumn fx:id="timeToCatTableColumn" prefWidth="75.0" text="Czas trwania do" />
+            <TableColumn fx:id="timeFromCatTableColumn" prefWidth="75.0" text="Od" />
+            <TableColumn fx:id="timeToCatTableColumn" prefWidth="75.0" text="Do" />
             <TableColumn fx:id="valueCatTableColumn" prefWidth="75.0" text="Wartość" />
          </columns>
          <columnResizePolicy>

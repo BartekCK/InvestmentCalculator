@@ -13,7 +13,7 @@ public class ProjectLoader {
         try {
             Parent root = FXMLLoader.load(ProjectLoader.class.getResource(fxmlPath));
             if (cssPath!= null)
-                root.getStylesheets().add(cssPath);
+                root.getStylesheets().addAll(ProjectLoader.class.getResource(Path.CSS_MAIN_SCENE).toExternalForm());
             return root;
         } catch (IOException e) {
             e.printStackTrace();

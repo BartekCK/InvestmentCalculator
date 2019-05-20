@@ -15,7 +15,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="1230.0" minHeight="-Infinity" minWidth="1230.0" prefHeight="800.0" prefWidth="1230.0" stylesheets="@../css/StyleSheetMainScene.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.controllers.MainWindowController">
    <children>
-      <MenuBar cache="true" nodeOrientation="RIGHT_TO_LEFT" prefHeight="50.0">
+      <MenuBar cache="true" nodeOrientation="RIGHT_TO_LEFT" prefHeight="50.0" styleClass="backScene">
         <menus>
           <Menu mnemonicParsing="false" onShown="#checkUser">
             <items>
@@ -35,9 +35,9 @@
           </Menu>
         </menus>
       </MenuBar>
-      <HBox fx:id="hBox" alignment="CENTER" prefHeight="60.0">
+      <HBox alignment="CENTER" prefHeight="60.0" styleClass="backScene">
          <children>
-            <ToggleButton contentDisplay="CENTER" minWidth="400.0" mnemonicParsing="false" onAction="#openCreditAndBankDeposit" prefHeight="50.0" prefWidth="400.0" text="Kredyty/Lokaty" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+            <ToggleButton contentDisplay="CENTER" minWidth="400.0" mnemonicParsing="false" onAction="#openCreditAndBankDeposit" prefHeight="50.0" prefWidth="400.0" text="KREDYTY/LOKATY" textAlignment="CENTER" HBox.hgrow="ALWAYS">
                <toggleGroup>
                   <ToggleGroup fx:id="toogleGroup" />
                </toggleGroup>
@@ -45,18 +45,18 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
             </ToggleButton>
-            <ToggleButton minWidth="400.0" mnemonicParsing="false" onAction="#openCurrencyRates" prefHeight="50.0" prefWidth="400.0" text="Kalkulatory" textAlignment="CENTER" toggleGroup="$toogleGroup" HBox.hgrow="ALWAYS">
+            <ToggleButton minWidth="400.0" mnemonicParsing="false" onAction="#openCurrencyRates" prefHeight="50.0" prefWidth="400.0" text="KALKULATOR" textAlignment="CENTER" toggleGroup="$toogleGroup" HBox.hgrow="ALWAYS">
                <HBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
             </ToggleButton>
-            <ToggleButton minWidth="400.0" mnemonicParsing="false" onAction="#openStockExchange" prefHeight="50.0" prefWidth="400.0" text="Giedła kryptowalut" textAlignment="CENTER" toggleGroup="$toogleGroup" HBox.hgrow="ALWAYS">
+            <ToggleButton minWidth="400.0" mnemonicParsing="false" onAction="#openStockExchange" prefHeight="50.0" prefWidth="400.0" text="GIEŁDA" textAlignment="CENTER" toggleGroup="$toogleGroup" HBox.hgrow="ALWAYS">
                <HBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
             </ToggleButton>
          </children>
       </HBox>
-      <StackPane fx:id="downStackPane" prefHeight="690.0" />
+      <StackPane fx:id="downStackPane" prefHeight="690.0" styleClass="backScene" />
    </children>
 </VBox>
