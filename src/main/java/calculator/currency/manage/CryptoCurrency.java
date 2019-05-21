@@ -115,5 +115,4 @@ public abstract class CryptoCurrency extends Money implements BaseModel {
     public Date getValidTo() {
         return validTo;
     }
-
 }

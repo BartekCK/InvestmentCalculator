@@ -17,12 +17,21 @@ import calculator.user.User;
 import calculator.utilies.TimeThread;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.text.Text;
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.toList;
 
 
 public class StockExchangeController {
@@ -73,6 +82,9 @@ public class StockExchangeController {
 
     @FXML
     private ToggleButton checkButton;
+
+    @FXML
+    private Text bestOffer;
 
 
 
@@ -154,6 +166,8 @@ public class StockExchangeController {
 
         catValueText.setText(String.valueOf(list.get(0).getMoneyRate()));
         bandkValueText.setText(String.valueOf(list.get(1).getMoneyRate()));
+
+        bestOffer.setText(Collections.min(list.stream().filter(CryptoCurrency.class::isInstance).map(CryptoCurrency.class::cast).collect(toList())).toString());
 
     }
 

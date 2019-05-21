@@ -2,7 +2,7 @@ package calculator.currency.manage;
 
 import com.j256.ormlite.field.DatabaseField;
 
-public abstract class Money {
+public abstract class Money implements Comparable<CryptoCurrency>{
 
     protected String currencyName;
     protected String currencyShort;
@@ -25,5 +25,12 @@ public abstract class Money {
 
     public double getMoneyRate() {
         return moneyRate;
+    }
+
+    @Override
+    public int compareTo(CryptoCurrency money) {
+
+        return Double.compare(moneyRate,money.moneyRate);
+
     }
 }
