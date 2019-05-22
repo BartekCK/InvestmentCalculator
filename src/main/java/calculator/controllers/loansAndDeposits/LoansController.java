@@ -3,6 +3,8 @@ package calculator.controllers.loansAndDeposits;
 import calculator.calculate.BankCalculate;
 import calculator.calculate.DecreasingInstallmentFx;
 import calculator.calculate.LoansCalculate;
+import calculator.exceptions.CalculatorException;
+import calculator.exceptions.Dialogs;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -53,17 +55,32 @@ public class LoansController {
     {
         percentTextField.textProperty().bindBidirectional(percentSlider.valueProperty(), NumberFormat.getNumberInstance());
         button.disableProperty().bind(loansValueTextField.textProperty().isEmpty().or(installmentCountTextField.textProperty().isEmpty()));
+        percentTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+        });
     }
 
     @FXML
     void calculateLoans(ActionEvent event) {
         LoansCalculate loansCalculate = new BankCalculate();
-        loansCalculate.parametrQ(percentSlider.getValue());
-        loansCalculate.amountInstallment(Double.parseDouble(loansValueTextField.getText()),Integer.parseInt(installmentCountTextField.getText()));
+
+
+        try {
+            if(percentTextField.getText().isEmpty())
+                throw new CalculatorException("Zły dobór procentow :)");
+            Double.parseDouble(percentTextField.getText());
+            loansCalculate.parametrQ(percentSlider.getValue());
+            loansCalculate.amountInstallment(Double.parseDouble(loansValueTextField.getText()),Integer.parseInt(installmentCountTextField.getText()));
+        }catch (NumberFormatException e)
+        {
+            Dialogs.errorDialog("Dane zostały wprowadzone nieprawidłowo");
+        } catch (CalculatorException e) {
+            Dialogs.errorDialog(e.getMessage());
+        }
 
         resultInstallment.setText(String.valueOf(loansCalculate.getResultInstallment()));
         resultValue1.setText(String.valueOf(((BankCalculate) loansCalculate).getResultValue1()));
         resultValue2.setText(String.valueOf(((BankCalculate) loansCalculate).getResultValue2()));
+
 
         tableView.setItems(loansCalculate.getListFx());
         installmentNumberTableColumn.setCellValueFactory(cell-> cell.getValue().numberProperty());

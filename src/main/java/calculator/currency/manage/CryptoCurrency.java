@@ -50,6 +50,8 @@ public abstract class CryptoCurrency extends Money implements BaseModel {
                     } else
                         throw new CalculatorException("Brak środków na koncie");
                 }
+                if(forWhatBuy instanceof CaT)
+                    throw new CalculatorException("Uwaga, wybrana waluta jest niepoprawna");
             }
 
             if (whatBuy instanceof BandK) {
@@ -68,6 +70,8 @@ public abstract class CryptoCurrency extends Money implements BaseModel {
                     } else
                         throw new CalculatorException("Brak środków na koncie");
                 }
+                if(forWhatBuy instanceof BandK)
+                    throw new CalculatorException("Uwaga, wybrana waluta jest niepoprawna");
             }
 
             if (whatBuy instanceof Zloty) {
@@ -85,6 +89,8 @@ public abstract class CryptoCurrency extends Money implements BaseModel {
                     } else
                         throw new CalculatorException("Brak środków na koncie");
                 }
+                if(forWhatBuy instanceof Zloty)
+                    throw new CalculatorException("Uwaga, wybrana waluta jest niepoprawna");
             }
             return MyMath.roundTwo((forWhatBuy.moneyRate*countForWhatBuy));
     }

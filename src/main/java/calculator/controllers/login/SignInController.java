@@ -2,6 +2,7 @@ package calculator.controllers.login;
 
 import calculator.controllers.MainWindowController;
 import calculator.database.tasks.UserTask;
+import calculator.exceptions.Dialogs;
 import calculator.user.SuperUser;
 import calculator.utilies.Path;
 import calculator.utilies.ProjectLoader;
@@ -50,7 +51,7 @@ public class SignInController {
         superUser = userTask.pullUserFromDataBase(emailTextField.getText(),passwordTextField.getText());
         if(superUser == null)
         {
-            System.out.println("Brak użytkownika");//THING TO DO LATER !!!
+            Dialogs.errorDialog("Brak użytkownika");
             textBoolean.set(true);
         }else
         {

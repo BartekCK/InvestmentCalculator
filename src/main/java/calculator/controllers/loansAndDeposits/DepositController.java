@@ -2,6 +2,7 @@ package calculator.controllers.loansAndDeposits;
 
 import calculator.calculate.BankCalculate;
 import calculator.calculate.DepositCalculate;
+import calculator.exceptions.Dialogs;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
@@ -50,9 +51,15 @@ public class DepositController {
     @FXML
     void calculateProfit() {
         DepositCalculate depositCalculate = new BankCalculate();
-        countDay.setText(String.valueOf(calculateDayDiffrence()));
-        showProfitTextField.setText(String.valueOf(depositCalculate.depositProfit(Double.parseDouble(valueTextField.getText()),percentSlider.getValue(),calculateDayDiffrence())));
-        showProfitTextField.setText(showProfitTextField.getText() + " zł brutto");
+        try {
+            countDay.setText(String.valueOf(calculateDayDiffrence()));
+            showProfitTextField.setText(String.valueOf(depositCalculate.depositProfit(Double.parseDouble(valueTextField.getText()),percentSlider.getValue(),calculateDayDiffrence())));
+            showProfitTextField.setText(showProfitTextField.getText() + " zł brutto");
+        }catch (NumberFormatException e)
+        {
+            Dialogs.errorDialog("Dane zostały wprowadzone nieprawidłowo");
+        }
+
     }
     
     private int calculateDayDiffrence()

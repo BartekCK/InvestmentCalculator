@@ -12,6 +12,7 @@ import calculator.database.tasks.TransactionTask;
 import calculator.database.tasks.UserTask;
 import calculator.date.Transaction;
 import calculator.exceptions.CalculatorException;
+import calculator.exceptions.Dialogs;
 import calculator.user.SuperUser;
 import calculator.user.User;
 import calculator.utilies.TimeThread;
@@ -128,7 +129,10 @@ public class StockExchangeController {
             }
 
         } catch (CalculatorException e) {
-            System.out.println(e.getMessage());
+            Dialogs.errorDialog(e.getMessage());
+        }catch (NumberFormatException e)
+        {
+            Dialogs.errorDialog("Dane zostały wprowadzone nieprawidłowo");
         }
 
 
@@ -142,7 +146,11 @@ public class StockExchangeController {
             buyTextField1.setText(String.valueOf(CryptoCurrency.buyCurrency(userTemp, buyComboBox.getValue(),
                     Double.parseDouble(buyTextField.getText()), buyComboBox1.getValue())));
         } catch (CalculatorException e) {
-            System.out.println(e.getMessage());
+            Dialogs.errorDialog(e.getMessage());
+        }
+        catch (NumberFormatException e)
+        {
+            Dialogs.errorDialog("Dane zostały wprowadzone nieprawidłowo");
         }
         finally {
             refresh();

@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="1230.0" styleClass="anchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.controllers.stockExchange.StockExchangeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="1230.0" styleClass="anchorPane" stylesheets="@../../css/StyleSheetMainScene.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.controllers.stockExchange.StockExchangeController">
     <children>
         <AnchorPane prefHeight="130.0" prefWidth="1230.0" styleClass="anchorPane">
             <children>
@@ -40,7 +40,7 @@
             <Text layoutX="14.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Wpisz liczbę wybranej waluty:" />
             <ComboBox fx:id="buyComboBox" layoutX="231.0" layoutY="33.0" prefWidth="150.0" />
             <Text layoutX="14.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Wybierz walutę za którą chcesz kupić:" />
-            <TextField fx:id="buyTextField1" editable="false" layoutX="232.0" layoutY="195.0" styleClass="text-field" />
+            <TextField fx:id="buyTextField1" editable="false" layoutX="232.0" layoutY="195.0" />
             <Text fx:id="currencyText1" fill="#4a4a4a" layoutX="380.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0">
                <font>
                   <Font name="System Bold" size="12.0" />
