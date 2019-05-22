@@ -3,6 +3,7 @@ package calculator.utilies;
 import calculator.Main;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 
 import java.io.IOException;
 
@@ -41,5 +42,11 @@ public class ProjectLoader {
             e.printStackTrace();
         }
         return fxmlLoader;
+    }
+
+    public static Scene addSCssToScene(Scene scene)
+    {
+        scene.getStylesheets().addAll(ProjectLoader.class.getResource(Path.CSS_MAIN_SCENE).toExternalForm());
+        return scene;
     }
 }

@@ -121,7 +121,7 @@
 }
 
 .table-view .column-header .label {
-    -fx-font-size: 20px;
+    -fx-font-size: 17px;
     -fx-font-family: "Segoe UI Light";
     -fx-text-fill: #c4c4c4;
     -fx-alignment: center-left;
@@ -179,3 +179,10 @@
     -fx-background-radius: 6.4, 4, 5, 3;
 }
 
+#imageUser
+{
+    -fx-background-image: url("../images/userSmaller.png");
+}
+#imagePassword{
+    -fx-background-image: url("../images/lock.png");
+}

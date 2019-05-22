@@ -18,7 +18,9 @@ public class Main extends Application {
     }
 
     private static void commonWindowFeatures(Parent parent, Stage stage, String title) {
-        stage.setScene(new Scene(parent));
+        Scene scene = new Scene(parent);
+        //scene.getStylesheets().addAll(ProjectLoader.class.getResource(Path.CSS_MAIN_SCENE).toExternalForm());
+        stage.setScene(ProjectLoader.addSCssToScene(scene));
         stage.setTitle(title);
         stage.setResizable(false);
         stage.show();

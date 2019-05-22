@@ -4,35 +4,34 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane fx:id="bankBalanceAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.controllers.userInterface.menuPanes.BankBalanceController">
+<AnchorPane fx:id="bankBalanceAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" styleClass="anchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.controllers.userInterface.menuPanes.BankBalanceController">
    <children>
-      <Text fx:id="zlValueText" layoutX="56.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+      <Text fx:id="zlValueText" layoutX="91.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="0">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Text fx:id="catValueText" fill="#109406" layoutX="56.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+      <Text fx:id="catValueText" fill="#109406" layoutX="91.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Text fx:id="bandkzlValueText" fill="RED" layoutX="56.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+      <Text fx:id="bandkzlValueText" fill="RED" layoutX="91.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Text layoutX="302.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zł">
+      <Text layoutX="337.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="Zł">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <Text fill="#109406" layoutX="302.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CaT">
+      <Text fill="#109406" layoutX="337.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CaT">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <Text fill="RED" layoutX="301.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BandK">
+      <Text fill="RED" layoutX="336.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BandK">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
