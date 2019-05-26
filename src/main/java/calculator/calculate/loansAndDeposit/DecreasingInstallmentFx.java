@@ -1,4 +1,4 @@
-package calculator.calculate;
+package calculator.calculate.loansAndDeposit;
 
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;

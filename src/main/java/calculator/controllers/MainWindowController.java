@@ -53,7 +53,9 @@ public class MainWindowController {
     }
 
     @FXML
-    private void openCurrencyRates() {
+    private void openRemuneration() {
+        downStackPane.getChildren().clear();
+        downStackPane.getChildren().add(ProjectLoader.ParentLoader(Path.PATH_REMUNERATION,null));
 
     }
 

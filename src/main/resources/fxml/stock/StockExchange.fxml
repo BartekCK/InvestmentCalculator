@@ -30,7 +30,7 @@
             </toggleGroup>
         </ToggleButton>
         <ToggleButton fx:id="buyButton" layoutY="410.0" mnemonicParsing="false" onAction="#buy" prefHeight="280.0" prefWidth="280.0" styleClass="buyButton" text="Zakup" toggleGroup="$toogleGroup" />
-        <AnchorPane layoutX="280.0" layoutY="128.0" prefHeight="562.0" prefWidth="950.0" styleClass="anchorPane">
+        <AnchorPane layoutX="280.0" layoutY="128.0" prefHeight="562.0" prefWidth="950.0">
             <children>
             <TextField fx:id="buyTextField" layoutX="232.0" layoutY="82.0" styleClass="text-field" />
             <Text fx:id="currencyText" fill="#4a4a4a" layoutX="380.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0">
@@ -39,7 +39,6 @@
                </font></Text>
             <Text layoutX="14.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Wpisz liczbę wybranej waluty:" />
             <ComboBox fx:id="buyComboBox" layoutX="231.0" layoutY="33.0" prefWidth="150.0" />
-            <Text layoutX="14.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Wybierz walutę za którą chcesz kupić:" />
             <TextField fx:id="buyTextField1" editable="false" layoutX="232.0" layoutY="195.0" />
             <Text fx:id="currencyText1" fill="#4a4a4a" layoutX="380.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0">
                <font>
@@ -47,7 +46,6 @@
                </font></Text>
             <Text layoutX="14.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Sprawdź ile jednostek możesz zakupić:" />
             <ComboBox fx:id="buyComboBox1" layoutX="231.0" layoutY="138.0" prefWidth="150.0" />
-            <Text layoutX="14.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Wybierz walutę którą chcesz kupić:" />
             <AnchorPane layoutY="281.0" prefHeight="280.0" prefWidth="950.0">
                <children>
                   <fx:include source="StockExchangeTableView.fxml" />
@@ -55,6 +53,12 @@
             </AnchorPane>
             <Text layoutX="643.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Najlepsza dzisiejsza oferta: " />
             <Text fx:id="bestOffer" layoutX="845.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Text" />
+            <Text layoutX="14.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Wybierz walutę " />
+            <Text layoutX="153.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="chcesz kupić:" />
+            <Text id="h3Special" layoutX="105.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="za którą" />
+            <Text layoutX="14.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Wybierz walutę " />
+            <Text layoutX="146.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="chcesz kupić:" />
+            <Text id="h3Special" layoutX="108.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="którą" />
 
             </children>
         </AnchorPane>

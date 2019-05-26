@@ -1,8 +1,8 @@
 package calculator.controllers.loansAndDeposits;
 
-import calculator.calculate.BankCalculate;
-import calculator.calculate.DecreasingInstallmentFx;
-import calculator.calculate.LoansCalculate;
+import calculator.calculate.loansAndDeposit.BankCalculate;
+import calculator.calculate.loansAndDeposit.DecreasingInstallmentFx;
+import calculator.calculate.loansAndDeposit.LoansCalculate;
 import calculator.exceptions.CalculatorException;
 import calculator.exceptions.Dialogs;
 import javafx.event.ActionEvent;

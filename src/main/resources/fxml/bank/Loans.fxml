@@ -11,12 +11,12 @@
 
 <AnchorPane prefHeight="690.0" prefWidth="615.0" styleClass="anchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.controllers.loansAndDeposits.LoansController">
    <children>
-      <Text layoutX="204.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="OBLICZANIE RATY STAŁEJ">
+      <Text layoutX="204.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="OBLICZANIE RATY STAŁEJ">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <Text layoutX="178.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="OBLICZANIE RATY MALEJĄCEJ">
+      <Text layoutX="178.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="OBLICZANIE RATY MALEJĄCEJ">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

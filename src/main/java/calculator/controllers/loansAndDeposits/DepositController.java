@@ -1,7 +1,7 @@
 package calculator.controllers.loansAndDeposits;
 
-import calculator.calculate.BankCalculate;
-import calculator.calculate.DepositCalculate;
+import calculator.calculate.loansAndDeposit.BankCalculate;
+import calculator.calculate.loansAndDeposit.DepositCalculate;
 import calculator.exceptions.Dialogs;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

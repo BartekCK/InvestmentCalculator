@@ -80,6 +80,21 @@
     -fx-fill: #c4c4c4;
     -fx-font-smoothing-type: lcd;
     -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+.h2
+{
+    -fx-font-size: 15px;
+}
+.h1
+{
+    -fx-font-size: 19px;
+}
+#h3Special
+{
+    -fx-fill: #c40100;
+    -fx-font-smoothing-type: lcd;
+    -fx-font-weight: bold;
 }
 
 .text-field {
@@ -185,4 +200,24 @@
 }
 #imagePassword{
     -fx-background-image: url("../images/lock.png");
+}
+#anchorPanePhoto
+{
+    -fx-background-image: url("../images/salary.png");
+}
+
+.radio-button .radio {
+    -fx-border-width: 1px;
+    -fx-border-color: #000;
+    -fx-background-color: white;
+    -fx-border-radius: 15px;
+    -fx-padding: 5px;
+
+}
+.radio-button
+{
+    -fx-fill: #c4c4c4;
+    -fx-font-smoothing-type: lcd;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
 }

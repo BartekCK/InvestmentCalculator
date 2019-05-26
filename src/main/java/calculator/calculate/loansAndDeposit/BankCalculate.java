@@ -1,5 +1,6 @@
-package calculator.calculate;
+package calculator.calculate.loansAndDeposit;
 
+import calculator.calculate.MyMath;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
