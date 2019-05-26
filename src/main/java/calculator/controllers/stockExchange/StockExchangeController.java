@@ -113,7 +113,15 @@ public class StockExchangeController {
             MainWindowController.setUser(this.user);
             UserTask userTask = new UserTask();
             userTask.addUserToDataBase((SuperUser) user);
+
+            buyComboBox1.getValue().buyCurrencyAddOrMinusPolishZloty(buyComboBox.getValue(),Double.parseDouble(buyTextField.getText()));
+            if(buyComboBox1.getValue() instanceof CryptoCurrency)
+                currencyTask.addCurrencyToDataBase((CryptoCurrency) buyComboBox1.getValue());
+            if(buyComboBox.getValue() instanceof CryptoCurrency)
+                currencyTask.addCurrencyToDataBase((CryptoCurrency) buyComboBox.getValue());
+
             refresh();
+
             if(user.isSuperUser())
             {
                 Transaction transaction= new Transaction((SuperUser)user
@@ -167,6 +175,7 @@ public class StockExchangeController {
         list = FXCollections.observableArrayList(new CaT(),new BandK(), new Zloty());
         currencyTask = new CurrencyTask();
         list = currencyTask.init(list);
+
 
         zlotychOnAccountText.setText(String.valueOf(user.getPolishZlotyAccount()));
         catOnAccountText.setText(String.valueOf(user.getValueCaT()));

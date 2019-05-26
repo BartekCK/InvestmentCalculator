@@ -67,7 +67,6 @@ public class LoansController {
         try {
             if(percentTextField.getText().isEmpty())
                 throw new CalculatorException("Zły dobór procentow :)");
-            Double.parseDouble(percentTextField.getText());
             loansCalculate.parametrQ(percentSlider.getValue());
             loansCalculate.amountInstallment(Double.parseDouble(loansValueTextField.getText()),Integer.parseInt(installmentCountTextField.getText()));
         }catch (NumberFormatException e)

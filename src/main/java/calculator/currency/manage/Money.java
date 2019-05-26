@@ -1,5 +1,7 @@
 package calculator.currency.manage;
 
+import calculator.calculate.MyMath;
+import calculator.currency.types.Zloty;
 import com.j256.ormlite.field.DatabaseField;
 
 public abstract class Money implements Comparable<CryptoCurrency>{
@@ -10,9 +12,20 @@ public abstract class Money implements Comparable<CryptoCurrency>{
     @DatabaseField(columnName = "MONEY_RATE", canBeNull = false)
     protected double moneyRate;
 
+    @DatabaseField(columnName = "POLISH_MONEY", canBeNull = false)
+    protected double polishMoney;
+
     @Override
     public String toString() {
         return currencyName +" ("+currencyShort+")";
+    }
+
+    public void buyCurrencyAddOrMinusPolishZloty(Money money,double countUnit)
+    {
+        if(this instanceof Zloty)
+            money.polishMoney = MyMath.roundTwo(money.polishMoney -(countUnit*money.moneyRate));
+        else
+            this.polishMoney= MyMath.roundTwo(this.polishMoney+(countUnit/money.getMoneyRate()));
     }
 
     public String getCurrencyName() {
@@ -32,5 +45,9 @@ public abstract class Money implements Comparable<CryptoCurrency>{
 
         return Double.compare(moneyRate,money.moneyRate);
 
+    }
+
+    public double getPolishMoney() {
+        return polishMoney;
     }
 }

@@ -19,9 +19,6 @@ public abstract class CryptoCurrency extends Money implements BaseModel {
     @DatabaseField(generatedId = true)
     protected int id;
 
-    @DatabaseField(columnName = "POLISH_MONEY", canBeNull = false)
-    protected double polishMoney;
-
     @DatabaseField(columnName = "VALID_FROM", dataType = DataType.DATE_STRING, format = "yyyy-MM-dd")
     protected Date validFrom;
 
@@ -45,8 +42,9 @@ public abstract class CryptoCurrency extends Money implements BaseModel {
                 }
                 if (forWhatBuy instanceof BandK) {
                     if (user.getValueBandK() >= countForWhatBuy) {
-                        user.setValueBandK(user.getValueBandK() - countForWhatBuy);
-                        user.setValueCaT(user.getValueCaT() + ((countForWhatBuy / forWhatBuy.moneyRate) * whatBuy.moneyRate));
+//                        user.setValueBandK(user.getValueBandK() - countForWhatBuy);
+//                        user.setValueCaT(user.getValueCaT() + ((countForWhatBuy * forWhatBuy.moneyRate)/whatBuy.moneyRate ));
+                        throw new CalculatorException("W wersji DEMO można jedynie zmieniać waluty ze złotówek");
                     } else
                         throw new CalculatorException("Brak środków na koncie");
                 }
@@ -65,8 +63,9 @@ public abstract class CryptoCurrency extends Money implements BaseModel {
                 }
                 if (forWhatBuy instanceof CaT) {
                     if (user.getValueCaT() >= countForWhatBuy) {
-                        user.setValueCaT(user.getValueCaT() - countForWhatBuy);
-                        user.setValueBandK(user.getValueBandK() + ((countForWhatBuy / forWhatBuy.moneyRate) * whatBuy.moneyRate));
+//                        user.setValueCaT(user.getValueCaT() - countForWhatBuy);
+//                        user.setValueBandK(user.getValueBandK() + ((countForWhatBuy * forWhatBuy.moneyRate)/whatBuy.moneyRate ));
+                        throw new CalculatorException("W wersji DEMO można jedynie zmieniać waluty ze złotówek");
                     } else
                         throw new CalculatorException("Brak środków na koncie");
                 }
@@ -96,14 +95,12 @@ public abstract class CryptoCurrency extends Money implements BaseModel {
     }
 
 
+
+
     public void setValidFromAndValidTo(LocalDate actuallDate)
     {
         this.validFrom = ConvertToDate.convertToDate(actuallDate);
         this.validTo = ConvertToDate.convertToDate(actuallDate.plusDays(1));
-    }
-
-    public double getPolishMoney() {
-        return polishMoney;
     }
 
     public void setPolishMoney(double polishMoney) {
