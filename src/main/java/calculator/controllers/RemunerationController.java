@@ -1,11 +1,14 @@
 package calculator.controllers;
 
-import javafx.event.ActionEvent;
+import calculator.calculate.remuneration.RemunerationBoss;
+import calculator.calculate.remuneration.RemunerationPerson;
+import calculator.calculate.remuneration.Taxes;
+import calculator.exceptions.CalculatorException;
+import calculator.exceptions.Dialogs;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+
 
 public class RemunerationController {
 
@@ -16,12 +19,6 @@ public class RemunerationController {
     private RadioButton checkBoxLower;
 
     @FXML
-    private ToggleGroup group;
-
-    @FXML
-    private RadioButton checkBoxBigger;
-
-    @FXML
     private TextField accidentInsurance;
 
     @FXML
@@ -30,12 +27,34 @@ public class RemunerationController {
     @FXML
     private TextField grossEmployeeCost;
 
-    @FXML
-    private Button button;
+
 
     @FXML
-    void calculate(ActionEvent event) {
+    void calculate() {
 
+        double whereLives;
+        if(checkBoxLower.isSelected())
+            whereLives = 111.25;
+        else
+            whereLives = 139.06;
+
+        try {
+            if (accidentInsurance.getText().isEmpty())
+                throw new CalculatorException("Uzupełnij ubezpieczenie wypadkowe");
+            earnings(new RemunerationPerson(whereLives),netEarnings);
+            earnings(new RemunerationBoss(Double.parseDouble(accidentInsurance.getText())),grossEmployeeCost);
+        } catch (CalculatorException e) {
+            Dialogs.errorDialog(e.getMessage());
+        }
+        catch (NumberFormatException e)
+        {
+         Dialogs.errorDialog("Należy podać liczbę"," Uwaga w przypadku liczby dziesiętnej operatorem dziesiętnym jest '.'(Kropka)");
+        }
+    }
+
+    public void earnings(Taxes remuneration, TextField textField) throws CalculatorException {
+        remuneration.setInsurancePremium(((grossAmount, percent) -> grossAmount * percent),Double.parseDouble(grossSalary.getText()));//klasa anonimowa
+        textField.setText(String.valueOf(remuneration.calculate(Double.parseDouble(grossSalary.getText()))));
     }
 
 }
