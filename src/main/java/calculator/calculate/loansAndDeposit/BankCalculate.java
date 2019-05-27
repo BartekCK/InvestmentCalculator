@@ -15,7 +15,8 @@ public final class BankCalculate implements LoansCalculate,DepositCalculate{
 
     @Override
     public double depositProfit(double initValue, double percent, double countDay) {
-        return MyMath.roundTwo(initValue*(percent/100)*(countDay/365));
+        double temp = initValue*(percent/100)*(countDay/365);
+        return MyMath.roundTwo(temp-(temp*0.19));
     }
 
     @Override

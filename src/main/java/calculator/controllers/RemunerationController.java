@@ -52,7 +52,7 @@ public class RemunerationController {
         }
     }
 
-    public void earnings(Taxes remuneration, TextField textField) throws CalculatorException {
+    private void earnings(Taxes remuneration, TextField textField) throws CalculatorException {
         remuneration.setInsurancePremium(((grossAmount, percent) -> grossAmount * percent),Double.parseDouble(grossSalary.getText()));//klasa anonimowa
         textField.setText(String.valueOf(remuneration.calculate(Double.parseDouble(grossSalary.getText()))));
     }

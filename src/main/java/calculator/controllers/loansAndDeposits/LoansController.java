@@ -55,8 +55,6 @@ public class LoansController {
     {
         percentTextField.textProperty().bindBidirectional(percentSlider.valueProperty(), NumberFormat.getNumberInstance());
         button.disableProperty().bind(loansValueTextField.textProperty().isEmpty().or(installmentCountTextField.textProperty().isEmpty()));
-        percentTextField.textProperty().addListener((observable, oldValue, newValue) -> {
-        });
     }
 
     @FXML
@@ -65,7 +63,7 @@ public class LoansController {
 
 
         try {
-            if(percentTextField.getText().isEmpty())
+            if(percentTextField.getText().isEmpty() || Double.parseDouble(percentTextField.getText().replace(",","."))<=0)
                 throw new CalculatorException("Zły dobór procentow :)");
             loansCalculate.parametrQ(percentSlider.getValue());
             loansCalculate.amountInstallment(Double.parseDouble(loansValueTextField.getText()),Integer.parseInt(installmentCountTextField.getText()));

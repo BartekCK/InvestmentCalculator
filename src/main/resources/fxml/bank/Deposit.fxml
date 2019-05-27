@@ -20,7 +20,7 @@
       <Text layoutX="61.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Od" />
       <Text layoutX="353.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Do" />
       <Text layoutX="46.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Oprocentowanie" />
-      <TextField fx:id="percentTableView" layoutX="501.0" layoutY="293.0" prefHeight="25.0" prefWidth="70.0" />
+      <TextField fx:id="percentTextField" layoutX="501.0" layoutY="293.0" prefHeight="25.0" prefWidth="70.0" />
       <Text layoutX="583.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="\%" />
       <TextField fx:id="showProfitTextField" alignment="CENTER" editable="false" layoutX="7.0" layoutY="579.0" prefHeight="104.0" prefWidth="603.0">
          <font>

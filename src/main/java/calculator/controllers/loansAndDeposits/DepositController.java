@@ -2,6 +2,7 @@ package calculator.controllers.loansAndDeposits;
 
 import calculator.calculate.loansAndDeposit.BankCalculate;
 import calculator.calculate.loansAndDeposit.DepositCalculate;
+import calculator.exceptions.CalculatorException;
 import calculator.exceptions.Dialogs;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -32,7 +33,7 @@ public class DepositController {
     private Slider percentSlider;
 
     @FXML
-    private TextField percentTableView;
+    private TextField percentTextField;
 
     @FXML
     private TextField showProfitTextField;
@@ -43,7 +44,7 @@ public class DepositController {
     @FXML
     public void initialize()
     {
-        percentTableView.textProperty().bindBidirectional(percentSlider.valueProperty(), NumberFormat.getNumberInstance());
+        percentTextField.textProperty().bindBidirectional(percentSlider.valueProperty(), NumberFormat.getNumberInstance());
         button.disableProperty().bind(valueTextField.textProperty().isEmpty().or(fromDate.valueProperty().isNull().or(toDate.valueProperty().isNull())));
 
     }
@@ -52,10 +53,17 @@ public class DepositController {
     void calculateProfit() {
         DepositCalculate depositCalculate = new BankCalculate();
         try {
+            if(percentTextField.getText().isEmpty() || Double.parseDouble(percentTextField.getText().replace(",","."))<=0)
+                throw new CalculatorException("Zły dobór procentow :)");
             countDay.setText(String.valueOf(calculateDayDiffrence()));
             showProfitTextField.setText(String.valueOf(depositCalculate.depositProfit(Double.parseDouble(valueTextField.getText()),percentSlider.getValue(),calculateDayDiffrence())));
             showProfitTextField.setText(showProfitTextField.getText() + " zł brutto");
-        }catch (NumberFormatException e)
+        }
+        catch (CalculatorException e)
+        {
+            Dialogs.errorDialog(e.getMessage());
+        }
+        catch (NumberFormatException e)
         {
             Dialogs.errorDialog("Dane zostały wprowadzone nieprawidłowo");
         }
