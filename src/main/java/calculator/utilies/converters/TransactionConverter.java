@@ -5,10 +5,10 @@ import calculator.date.Transaction;
 
 public class TransactionConverter {
 
-    public static TransactionFx convertToTransactionFx(Transaction transaction)
+    public TransactionFx convertToTransactionFx(Transaction transaction)
     {
         TransactionFx transactionFx = new TransactionFx();
-        transactionFx.setAddedDate(ConvertToDate.convertToLocalDate(transaction.getAddedDate()));
+        transactionFx.setAddedDate(DateConverter.convertToLocalDate(transaction.getAddedDate()));
 
         transactionFx.setBuyTypeCurrency(transaction.getBuyTypeCurrency());
         transactionFx.setBuyCountCurrency(transaction.getBuyCountCurrency());

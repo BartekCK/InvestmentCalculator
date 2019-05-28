@@ -7,7 +7,7 @@ import calculator.currency.types.Zloty;
 import calculator.database.BaseModel;
 import calculator.exceptions.CalculatorException;
 import calculator.user.User;
-import calculator.utilies.converters.ConvertToDate;
+import calculator.utilies.converters.DateConverter;
 import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 
@@ -99,8 +99,8 @@ public abstract class CryptoCurrency extends Money implements BaseModel {
 
     public void setValidFromAndValidTo(LocalDate actuallDate)
     {
-        this.validFrom = ConvertToDate.convertToDate(actuallDate);
-        this.validTo = ConvertToDate.convertToDate(actuallDate.plusDays(1));
+        this.validFrom = DateConverter.convertToDate(actuallDate);
+        this.validTo = DateConverter.convertToDate(actuallDate.plusDays(1));
     }
 
     public void setPolishMoney(double polishMoney) {

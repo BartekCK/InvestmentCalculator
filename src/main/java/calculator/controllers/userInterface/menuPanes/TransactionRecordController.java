@@ -1,8 +1,14 @@
 package calculator.controllers.userInterface.menuPanes;
 
 import calculator.database.tasks.TransactionTask;
+import calculator.date.Transaction;
 import calculator.date.TransactionFx;
 import calculator.user.SuperUser;
+import calculator.utilies.converters.ListConverter;
+import calculator.utilies.converters.TransactionConverter;
+import com.j256.ormlite.dao.ForeignCollection;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -44,8 +50,8 @@ public class TransactionRecordController {
     public void showTable()
     {
         TransactionTask transactionTask = new TransactionTask();
-        transactionTask.init(superUser);
-        tableView.setItems(transactionTask.getTransactionFxObservableList());
+
+        tableView.setItems(transactionTask.returnFxList(superUser));
         dateTableColumn.setCellValueFactory(cell->cell.getValue().addedDateProperty());
 
         buyTypeTableColumn.setCellValueFactory(cell->cell.getValue().buyTypeCurrencyProperty());

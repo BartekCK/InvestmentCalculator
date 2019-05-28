@@ -112,7 +112,6 @@ public class StockExchangeController {
                     Double.parseDouble(buyTextField.getText()), buyComboBox1.getValue())));
             MainWindowController.setUser(this.user);
             UserTask userTask = new UserTask();
-            userTask.addUserToDataBase((SuperUser) user);
 
             buyComboBox1.getValue().buyCurrencyAddOrMinusPolishZloty(buyComboBox.getValue(),Double.parseDouble(buyTextField.getText()));
             if(buyComboBox1.getValue() instanceof CryptoCurrency)
@@ -132,9 +131,10 @@ public class StockExchangeController {
                         ,buyComboBox.getSelectionModel().getSelectedItem().getCurrencyShort()
                         ,buyTextField.getText()
                         ,buyComboBox.getSelectionModel().getSelectedItem().getMoneyRate());
-                TransactionTask transactionTask = new TransactionTask();
-                transactionTask.addTransactionToDataBase(transaction);
+                ((SuperUser)user).addTransaction(transaction);
             }
+
+            userTask.addUserToDataBase((SuperUser) user);
 
         } catch (CalculatorException e) {
             Dialogs.errorDialog(e.getMessage());

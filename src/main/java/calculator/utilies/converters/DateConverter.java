@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
 
-public class ConvertToDate {
+public class DateConverter {
 
     public static Date convertToDate(LocalDateTime dateToConvert) {
         return java.sql.Timestamp.valueOf(dateToConvert);

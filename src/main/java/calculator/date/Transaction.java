@@ -2,7 +2,7 @@ package calculator.date;
 
 import calculator.database.BaseModel;
 import calculator.user.SuperUser;
-import calculator.utilies.converters.ConvertToDate;
+import calculator.utilies.converters.DateConverter;
 import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
@@ -51,7 +51,7 @@ public class Transaction implements BaseModel {
 
     public Transaction(SuperUser superUser, LocalDate addedDate, String buyTypeCurrency, String buyCountCurrency, Double buyRateCurrency, String sellTypeCurrency, String sellCountCurrency, Double sellRateCurrency) {
         this.superUser = superUser;
-        this.addedDate = ConvertToDate.convertToDate(addedDate);
+        this.addedDate = DateConverter.convertToDate(addedDate);
         this.buyTypeCurrency = buyTypeCurrency;
         this.buyCountCurrency = buyCountCurrency;
         this.buyRateCurrency = buyRateCurrency;
@@ -130,5 +130,20 @@ public class Transaction implements BaseModel {
 
     public void setSellRateCurrency(Double sellRateCurrency) {
         this.sellRateCurrency = sellRateCurrency;
+    }
+
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "id=" + id +
+                ", superUser=" + superUser +
+                ", addedDate=" + addedDate +
+                ", buyTypeCurrency='" + buyTypeCurrency + '\'' +
+                ", buyCountCurrency='" + buyCountCurrency + '\'' +
+                ", buyRateCurrency=" + buyRateCurrency +
+                ", sellTypeCurrency='" + sellTypeCurrency + '\'' +
+                ", sellCountCurrency='" + sellCountCurrency + '\'' +
+                ", sellRateCurrency=" + sellRateCurrency +
+                '}';
     }
 }

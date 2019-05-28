@@ -4,6 +4,9 @@ import calculator.date.Transaction;
 import com.j256.ormlite.dao.ForeignCollection;
 import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 
 @DatabaseTable(tableName = "SUPER_USER")
 public class SuperUser extends User {
@@ -18,5 +21,11 @@ public class SuperUser extends User {
     public SuperUser() {
     }
 
-
+    public ObservableList<Transaction> getTransactions() {
+        return FXCollections.observableArrayList(transactions);
+    }
+    public void addTransaction(Transaction transaction)
+    {
+        transactions.add(transaction);
+    }
 }

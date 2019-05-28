@@ -2,7 +2,7 @@ package calculator.database.dao;
 
 import calculator.currency.manage.CryptoCurrency;
 import calculator.exceptions.CalculatorException;
-import calculator.utilies.converters.ConvertToDate;
+import calculator.utilies.converters.DateConverter;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.stmt.PreparedQuery;
 import java.sql.SQLException;
@@ -18,7 +18,7 @@ public class CurrencyDao extends MainDao{
     public <T extends CryptoCurrency> T pullLastCaTandBandK(Class<T> tClass, LocalDate localDate) throws CalculatorException, SQLException {
 
         Dao<T,Object> dao = getDao(tClass);
-        Date date = ConvertToDate.convertToDate(localDate);
+        Date date = DateConverter.convertToDate(localDate);
         PreparedQuery<T> temp = dao.queryBuilder().where().eq("VALID_FROM",date).prepare();
         return dao.queryForFirst(temp);
     }
