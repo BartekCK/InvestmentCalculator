@@ -11,17 +11,17 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <Text layoutX="34.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="Dla przypomnienia:">
+      <Text layoutX="34.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="Dla przypomnienia:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <Text layoutX="34.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="•Jako Super Inwestor dostajesz 1000 zł na start do gry na giełdzie !" wrappingWidth="242.099609375">
+      <Text layoutX="33.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="•Jako Super Inwestor dostajesz 1000 zł na start do gry na giełdzie !" wrappingWidth="251.099609375">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text layoutX="34.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="•Jako Inwestor dostajesz od nas 100 zł na start !" wrappingWidth="242.099609375">
+      <Text layoutX="38.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="•Jako Inwestor dostajesz od nas 100 zł na start !" wrappingWidth="242.099609375">
          <font>
             <Font size="14.0" />
          </font>

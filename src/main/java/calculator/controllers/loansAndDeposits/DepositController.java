@@ -70,9 +70,10 @@ public class DepositController {
 
     }
     
-    private int calculateDayDiffrence()
-    {
-        return (int)DAYS.between(fromDate.getValue(),toDate.getValue());
+    private int calculateDayDiffrence() throws CalculatorException {
+        int temp = (int)DAYS.between(fromDate.getValue(),toDate.getValue());
+        if (temp<=0) throw  new CalculatorException("Różnica dni nie może być ani ujemna, ani równa zero");
+        return temp;
 
     }
 
