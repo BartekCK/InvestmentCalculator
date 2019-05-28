@@ -11,7 +11,8 @@ public class Path {
     public static final String PATH_TRANSACTION_RECORD = "/fxml/userMenu/TransactionRecord.fxml";
     public static final String PATH_LOANS_AND_DEPOSIT = "/fxml/bank/LoansAndDeposits.fxml";
     public static final String PATH_STOCK_EXCHANGE = "/fxml/stock/StockExchange.fxml";
-    public static final String PATH_REMUNERATION = "/fxml/Remuneration.fxml";
+    public static final String PATH_REMUNERATION = "/fxml/remuneration/Remuneration.fxml";
+    public static final String PATH_STATISTIC = "/fxml/userMenu/Statistic.fxml";
 
     public static final String CSS_MAIN_SCENE = "/css/StyleSheetMainScene.css";
 }

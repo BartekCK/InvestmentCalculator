@@ -1,4 +1,4 @@
-package calculator.controllers;
+package calculator.controllers.remuneration;
 
 import calculator.calculate.remuneration.RemunerationBoss;
 import calculator.calculate.remuneration.RemunerationPerson;

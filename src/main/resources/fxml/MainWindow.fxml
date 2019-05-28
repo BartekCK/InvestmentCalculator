@@ -23,6 +23,8 @@
                   <MenuItem mnemonicParsing="false" onAction="#userTopUpAccount" text="Doładuj konto" />
                   <MenuItem fx:id="transactionMenuItem" mnemonicParsing="false" onAction="#superUserTransaction" text="Zapis transakcji" />
                   <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#userStatistic" text="Statystyki" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem mnemonicParsing="false" onAction="#userSignOut" text="Wyloguj" />
             </items>
                <graphic>

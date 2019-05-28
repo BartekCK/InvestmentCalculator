@@ -6,6 +6,7 @@ import calculator.controllers.userInterface.UserInterfaceController;
 import calculator.user.User;
 import calculator.utilies.Path;
 import calculator.utilies.ProjectLoader;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ToggleGroup;
@@ -27,13 +28,6 @@ public class MainWindowController {
     @FXML
     private StackPane downStackPane;
 
-    @FXML
-    private void initialize()
-    {
-
-
-
-    }
 
     @FXML
     private void checkUser() {
@@ -97,6 +91,11 @@ public class MainWindowController {
     }
 
     @FXML
+    private void userStatistic(ActionEvent event) {
+        ProjectLoader.FxmlLoaderNewWindow(Path.PATH_STATISTIC,"Statystyki");
+    }
+
+    @FXML
     private void userSignOut() {
         this.user = null;
         downStackPane.getChildren().clear();
@@ -104,7 +103,7 @@ public class MainWindowController {
 
     }
 
-    public void setSuperUser(User user) {//Rzutowanie w góre
+    public void setSuperUser(User user) {
 
         this.user = user;
         if(user.isSuperUser())
@@ -128,4 +127,6 @@ public class MainWindowController {
     public static void setUser(User user) {
         MainWindowController.user = user;
     }
+
+
 }
