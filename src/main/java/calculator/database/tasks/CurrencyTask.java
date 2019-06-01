@@ -79,7 +79,7 @@ public class CurrencyTask {
 
        try {
            CurrencyDao currencyDao = new CurrencyDao();
-           List<? extends CryptoCurrency> temp1 = currencyDao.pullAllCaTandBandK(cryptoCurrency.getClass());
+           List<? extends CryptoCurrency> temp1 = currencyDao.queryForAll(cryptoCurrency.getClass());
            ObservableList<CryptoCurrencyFx> temp2 = FXCollections.observableArrayList();
            temp1.forEach(cryptoCurrency1->{
                temp2.add( CryptoCurrencyConverter.convertToCryptoCurrencyFx(cryptoCurrency1));
@@ -88,8 +88,6 @@ public class CurrencyTask {
            return temp2;
 
        } catch (CalculatorException e) {
-           e.printStackTrace();
-       } catch (SQLException e) {
            e.printStackTrace();
        }
 

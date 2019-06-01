@@ -28,10 +28,5 @@ public class CurrencyDao extends MainDao{
         return temp > 0;
     }
 
-    public <T extends CryptoCurrency> List<T> pullAllCaTandBandK(Class<T> tClass) throws CalculatorException, SQLException {
-
-        Dao<T,Object> dao = getDao(tClass);
-        return dao.queryForAll();
-    }
 
 }
