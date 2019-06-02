@@ -17,7 +17,6 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
 import java.sql.SQLException;
 
 public class RegistrationController {
@@ -88,7 +87,7 @@ public class RegistrationController {
             userTask.addUserToDataBase(superUser);
 
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-            window.setScene(ProjectLoader.addSCssToScene(new Scene(ProjectLoader.ParentLoader(Path.PATH_REGISTRATION_CONFIRMATION,null))));
+            window.setScene(ProjectLoader.addSCssToScene(new Scene(ProjectLoader.ParentLoader(Path.PATH_REGISTRATION_CONFIRMATION,Path.CSS_MAIN_SCENE))));
         }
 
     }
@@ -122,9 +121,7 @@ public class RegistrationController {
                 emailBoolean.set(false);
                 return true;
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (CalculatorException e) {
+        } catch (SQLException | CalculatorException e) {
             e.printStackTrace();
         }
         return false;

@@ -8,9 +8,7 @@ import pl.calculator.utilies.converters.TransactionConverter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-
 public class TransactionTask {
-
 
 
     public ObservableList<TransactionFx> returnFxList(SuperUser superUser)

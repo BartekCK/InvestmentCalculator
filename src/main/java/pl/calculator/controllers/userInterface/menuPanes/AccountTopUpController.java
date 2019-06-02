@@ -46,7 +46,7 @@ public class AccountTopUpController {
             if( user == null)
                 throw new CalculatorException("Użytkownik został wyrejestrowany");
             user.setPolishZlotyAccount(user.getPolishZlotyAccount()+tSlider.getValue());
-            userTask.addUserToDataBase((SuperUser) user);//rzutowanie w gore
+            userTask.addUserToDataBase((SuperUser) user);//rzutowanie w dół
             addButton.setDisable(true);
         } catch (CalculatorException e) {
             Dialogs.errorDialog(e.getMessage());

@@ -42,14 +42,14 @@ public class MainWindowController {
     private void openCreditAndBankDeposit() {
 
         downStackPane.getChildren().clear();
-        downStackPane.getChildren().add(ProjectLoader.ParentLoader(Path.PATH_LOANS_AND_DEPOSIT,null));
+        downStackPane.getChildren().add(ProjectLoader.ParentLoader(Path.PATH_LOANS_AND_DEPOSIT,Path.CSS_MAIN_SCENE));
 
     }
 
     @FXML
     private void openRemuneration() {
         downStackPane.getChildren().clear();
-        downStackPane.getChildren().add(ProjectLoader.ParentLoader(Path.PATH_REMUNERATION,null));
+        downStackPane.getChildren().add(ProjectLoader.ParentLoader(Path.PATH_REMUNERATION,Path.CSS_MAIN_SCENE));
 
     }
 
@@ -58,7 +58,7 @@ public class MainWindowController {
         if(user != null)
         {
             downStackPane.getChildren().clear();
-            downStackPane.getChildren().add(ProjectLoader.ParentLoader(Path.PATH_STOCK_EXCHANGE,null));
+            downStackPane.getChildren().add(ProjectLoader.ParentLoader(Path.PATH_STOCK_EXCHANGE,Path.CSS_MAIN_SCENE));
         }else
         {
             checkUser();

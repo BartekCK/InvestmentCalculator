@@ -58,7 +58,7 @@ public class LoansController {
     }
 
     @FXML
-    void calculateLoans(ActionEvent event) {
+    void calculateLoans() {
         LoansCalculate loansCalculate = new BankCalculate();
 
 

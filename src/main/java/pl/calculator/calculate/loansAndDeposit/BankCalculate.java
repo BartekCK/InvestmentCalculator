@@ -65,5 +65,4 @@ public final class BankCalculate implements LoansCalculate,DepositCalculate{
         return listFx;
     }
 
-
 }

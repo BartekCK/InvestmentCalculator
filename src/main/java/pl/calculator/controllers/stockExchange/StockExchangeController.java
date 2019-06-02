@@ -98,7 +98,7 @@ public class StockExchangeController {
     }
 
     @FXML
-    void buy(ActionEvent event) {
+    private void buy() {
 
         try {
             buyTextField1.setText(String.valueOf(CryptoCurrency.buyCurrency(this.user, buyComboBox.getValue(),
@@ -141,7 +141,7 @@ public class StockExchangeController {
     }
 
     @FXML
-    void check(ActionEvent event) {
+    private void check() {
         User userTemp = (User)user.clone();
         try {
             buyTextField1.setText(String.valueOf(CryptoCurrency.buyCurrency(userTemp, buyComboBox.getValue(),

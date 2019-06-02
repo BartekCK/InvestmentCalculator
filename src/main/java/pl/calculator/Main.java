@@ -1,6 +1,5 @@
 package pl.calculator;
 
-
 import pl.calculator.database.DbConnector;
 import pl.calculator.utilies.Path;
 import pl.calculator.utilies.ProjectLoader;
@@ -9,7 +8,6 @@ import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 
 public class Main extends Application {
 
@@ -40,9 +38,8 @@ public class Main extends Application {
 
     @Override
     public void stop(){
-        System.out.println("Stage is closing");
+        DbConnector.closeConnectionSource();
         TimeThread timeThread = new TimeThread();
     }
-
 
 }

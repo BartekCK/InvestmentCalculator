@@ -10,7 +10,6 @@ import pl.calculator.models.model.User;
 import pl.calculator.utilies.converters.DateConverter;
 import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
-
 import java.time.LocalDate;
 import java.util.Date;
 

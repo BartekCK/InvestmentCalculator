@@ -22,10 +22,7 @@ public class SuperUserDao extends MainDao {
     public boolean checkFigureEmail(String email) throws SQLException, CalculatorException {
 
         Dao<SuperUser,Object> dao = getDao(SuperUser.class);
-        if(dao.queryForFirst(dao.queryBuilder().where().eq("EMAIL", email).prepare()) == null)
-            return false;
-        else
-            return true;
+        return dao.queryForFirst(dao.queryBuilder().where().eq("EMAIL", email).prepare()) != null;
 
     }
 
