@@ -1,6 +1,8 @@
 package pl.calculator.controllers.userInterface.menuPanes;
 
 import pl.calculator.database.tasks.UserTask;
+import pl.calculator.exceptions.CalculatorException;
+import pl.calculator.exceptions.Dialogs;
 import pl.calculator.models.model.SuperUser;
 import pl.calculator.models.model.User;
 import javafx.event.ActionEvent;
@@ -39,9 +41,17 @@ public class AccountTopUpController {
 
     @FXML
     void addCashZl(ActionEvent event) {
-        user.setPolishZlotyAccount(user.getPolishZlotyAccount()+tSlider.getValue());
-        userTask.addUserToDataBase((SuperUser) user);//rzutowanie w gore
-        addButton.setDisable(true);
+        try
+        {
+            if( user == null)
+                throw new CalculatorException("Użytkownik został wyrejestrowany");
+            user.setPolishZlotyAccount(user.getPolishZlotyAccount()+tSlider.getValue());
+            userTask.addUserToDataBase((SuperUser) user);//rzutowanie w gore
+            addButton.setDisable(true);
+        } catch (CalculatorException e) {
+            Dialogs.errorDialog(e.getMessage());
+        }
+
     }
 
     public AnchorPane getTopUpAccountAnchorPane() {

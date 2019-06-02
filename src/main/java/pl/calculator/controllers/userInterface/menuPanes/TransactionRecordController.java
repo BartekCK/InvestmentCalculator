@@ -57,7 +57,9 @@ public class TransactionRecordController {
         sellRateTableColumn.setCellValueFactory(cell->cell.getValue().sellRateCurrencyProperty());
     }
 
-    public void setSuperUser(SuperUser superUser) {
+    public void setSuperUser(SuperUser superUser)throws NullPointerException {
+        if(superUser == null)
+            throw new NullPointerException();
         this.superUser = superUser;
     }
 

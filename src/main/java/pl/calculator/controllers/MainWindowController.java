@@ -97,7 +97,7 @@ public class MainWindowController {
 
     @FXML
     private void userSignOut() {
-        this.user = null;
+        MainWindowController.user = null;
         downStackPane.getChildren().clear();
         toogleGroup.getToggles().clear();
 
@@ -105,7 +105,7 @@ public class MainWindowController {
 
     public void setSuperUser(User user) {
 
-        this.user = user;
+        MainWindowController.user = user;
         if(user.isSuperUser())
             transactionMenuItem.setDisable(false);
         else
@@ -115,7 +115,7 @@ public class MainWindowController {
 
     private void clickOnMenuItem() {
         userInterfaceController = ProjectLoader.FxmlLoaderNewWindow(Path.PATH_USER_INTERFACE,"Menu użytkownika").getController();
-        userInterfaceController.setUser(this.user);
+        setUser(user);
         if(!user.isSuperUser())
             userInterfaceController.getButtonUserTransaction().setDisable(true);
     }

@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 
-
 public class BankBalanceController {
 
     @FXML
@@ -21,7 +20,7 @@ public class BankBalanceController {
     private Text bandkzlValueText;
 
 
-    public void setValuesInText(User user)
+    public void setValuesInText(User user) throws NullPointerException
     {
         zlValueText.setText(String.valueOf(user.getPolishZlotyAccount()));
         catValueText.setText(String.valueOf(user.getValueCaT()));
@@ -32,7 +31,6 @@ public class BankBalanceController {
     public AnchorPane getBankBalanceAnchorPane() {
         return bankBalanceAnchorPane;
     }
-
 
 
 }
