@@ -1,7 +1,7 @@
-package calculator.date;
+package calculator.models.model;
 
 import calculator.database.BaseModel;
-import calculator.user.SuperUser;
+import calculator.models.model.SuperUser;
 import calculator.utilies.converters.DateConverter;
 import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;

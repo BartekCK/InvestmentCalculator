@@ -1,33 +1,17 @@
-package calculator.date;
+package calculator.models.modelFx;
 
-import calculator.user.User;
+import calculator.models.model.User;
 import javafx.beans.property.*;
 
-public class UserFx {
-
+public class UserFx extends User {
 
     private IntegerProperty id = new SimpleIntegerProperty();
-
-
     private StringProperty email = new SimpleStringProperty();
-
-
     private StringProperty nick= new SimpleStringProperty();
-
-
     private StringProperty name= new SimpleStringProperty();
-
-
     private StringProperty surname= new SimpleStringProperty();
+    private DoubleProperty wealth = new SimpleDoubleProperty();
 
-
-    private DoubleProperty polishZlotyAccount = new SimpleDoubleProperty();
-
-
-    private DoubleProperty valueBandK= new SimpleDoubleProperty();
-
-
-    private DoubleProperty valueCaT= new SimpleDoubleProperty();
 
     public int getId() {
         return id.get();
@@ -90,41 +74,15 @@ public class UserFx {
         this.surname.set(surname);
     }
 
-    public double getPolishZlotyAccount() {
-        return polishZlotyAccount.get();
+    public double getWealth() {
+        return wealth.get();
     }
 
-    public DoubleProperty polishZlotyAccountProperty() {
-        return polishZlotyAccount;
+    public DoubleProperty wealthProperty() {
+        return wealth;
     }
 
-    public void setPolishZlotyAccount(double polishZlotyAccount) {
-        this.polishZlotyAccount.set(polishZlotyAccount);
+    public void setWealth(User user) {
+        this.wealth.set(calculateAllWealth(user));
     }
-
-    public double getValueBandK() {
-        return valueBandK.get();
-    }
-
-    public DoubleProperty valueBandKProperty() {
-        return valueBandK;
-    }
-
-    public void setValueBandK(double valueBandK) {
-        this.valueBandK.set(valueBandK);
-    }
-
-    public double getValueCaT() {
-        return valueCaT.get();
-    }
-
-    public DoubleProperty valueCaTProperty() {
-        return valueCaT;
-    }
-
-    public void setValueCaT(double valueCaT) {
-        this.valueCaT.set(valueCaT);
-    }
-
-
 }

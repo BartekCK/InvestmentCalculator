@@ -3,7 +3,7 @@ package calculator.controllers.login;
 import calculator.controllers.MainWindowController;
 import calculator.database.tasks.UserTask;
 import calculator.exceptions.Dialogs;
-import calculator.user.SuperUser;
+import calculator.models.model.SuperUser;
 import calculator.utilies.Path;
 import calculator.utilies.ProjectLoader;
 import javafx.beans.property.BooleanProperty;

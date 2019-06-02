@@ -1,4 +1,4 @@
-package calculator.currency.modelFx;
+package calculator.models.modelFx;
 
 import javafx.beans.property.*;
 

@@ -1,10 +1,5 @@
-package calculator.user;
+package calculator.models.model;
 
-import calculator.currency.manage.Money;
-import calculator.currency.types.BandK;
-import calculator.currency.types.CaT;
-import calculator.database.tasks.CurrencyTask;
-import calculator.date.Transaction;
 import com.j256.ormlite.dao.ForeignCollection;
 import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;

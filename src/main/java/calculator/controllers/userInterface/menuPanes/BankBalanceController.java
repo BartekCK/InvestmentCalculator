@@ -1,6 +1,6 @@
 package calculator.controllers.userInterface.menuPanes;
 
-import calculator.user.User;
+import calculator.models.model.User;
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;

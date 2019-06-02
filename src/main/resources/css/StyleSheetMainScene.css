@@ -97,7 +97,7 @@
     -fx-font-weight: bold;
 }
 
-.text-field {
+.text-field,.no-editiable-text-field {
     -fx-background-color: -fx-text-box-border, -fx-background ;
     -fx-background: #1E2222;
     -fx-text-box-border: #E300F6;
@@ -105,9 +105,12 @@
     -fx-background-radius: 0 ;
     -fx-text-fill: #c4c4c4;
 }
-.text-field:focused {
+.text-field:focused,.no-editiable-text-field:focused {
     -fx-background-color: -fx-focus-color, -fx-background ;
     -fx-text-fill: #c4c4c4;
+}
+.no-editiable-text-field{
+    -fx-text-box-border: red;
 }
 
 .table-view {

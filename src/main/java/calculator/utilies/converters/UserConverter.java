@@ -1,7 +1,7 @@
 package calculator.utilies.converters;
 
-import calculator.user.User;
-import calculator.date.UserFx;
+import calculator.models.model.User;
+import calculator.models.modelFx.UserFx;
 
 public class UserConverter {
 
@@ -12,9 +12,7 @@ public class UserConverter {
         userFx.setEmail(user.getEmail());
         userFx.setName(user.getName());
         userFx.setSurname(user.getSurname());
-        userFx.setPolishZlotyAccount(user.getPolishZlotyAccount());
-        userFx.setValueBandK(user.getValueBandK());
-        userFx.setValueCaT(user.getValueCaT());
+        userFx.setWealth(user);
         userFx.setNick(user.getNick());
         return userFx;
     }

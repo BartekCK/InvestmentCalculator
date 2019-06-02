@@ -1,7 +1,7 @@
 package calculator.controllers.userInterface.menuPanes;
 
 import calculator.database.tasks.UserTask;
-import calculator.date.UserFx;
+import calculator.models.modelFx.UserFx;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -21,7 +21,7 @@ public class StatisticController {
     private TableColumn<UserFx, String> emailTableColumn;
 
     @FXML
-    private TableColumn<?, ?> countTableColumn;
+    private TableColumn<UserFx, Number> countTableColumn;
 
     @FXML
     public void initialize() {
@@ -30,6 +30,7 @@ public class StatisticController {
         idTableColumn.setCellValueFactory(cell-> cell.getValue().idProperty());
         nickTableColumn.setCellValueFactory(cell-> cell.getValue().nickProperty());
         emailTableColumn.setCellValueFactory(cell-> cell.getValue().emailProperty());
+        countTableColumn.setCellValueFactory(cell-> cell.getValue().wealthProperty());
 
     }
 

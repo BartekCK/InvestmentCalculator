@@ -3,7 +3,7 @@ package calculator.controllers;
 
 import calculator.controllers.login.SignInController;
 import calculator.controllers.userInterface.UserInterfaceController;
-import calculator.user.User;
+import calculator.models.model.User;
 import calculator.utilies.Path;
 import calculator.utilies.ProjectLoader;
 import javafx.event.ActionEvent;

@@ -1,6 +1,6 @@
 package calculator.controllers.stockExchange;
 
-import calculator.currency.modelFx.CryptoCurrencyFx;
+import calculator.models.modelFx.CryptoCurrencyFx;
 import calculator.currency.types.BandK;
 import calculator.currency.types.CaT;
 import calculator.database.tasks.CurrencyTask;

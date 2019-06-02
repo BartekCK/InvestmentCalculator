@@ -1,7 +1,7 @@
 package calculator.utilies.converters;
 
 import calculator.currency.manage.CryptoCurrency;
-import calculator.currency.modelFx.CryptoCurrencyFx;
+import calculator.models.modelFx.CryptoCurrencyFx;
 
 public class CryptoCurrencyConverter {
 

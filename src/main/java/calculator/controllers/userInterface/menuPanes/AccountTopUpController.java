@@ -1,8 +1,8 @@
 package calculator.controllers.userInterface.menuPanes;
 
 import calculator.database.tasks.UserTask;
-import calculator.user.SuperUser;
-import calculator.user.User;
+import calculator.models.model.SuperUser;
+import calculator.models.model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

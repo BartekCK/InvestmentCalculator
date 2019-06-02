@@ -6,7 +6,7 @@ import calculator.currency.types.CaT;
 import calculator.currency.types.Zloty;
 import calculator.database.BaseModel;
 import calculator.exceptions.CalculatorException;
-import calculator.user.User;
+import calculator.models.model.User;
 import calculator.utilies.converters.DateConverter;
 import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
@@ -42,8 +42,8 @@ public abstract class CryptoCurrency extends Money implements BaseModel {
                 }
                 if (forWhatBuy instanceof BandK) {
                     if (user.getValueBandK() >= countForWhatBuy) {
-//                        user.setValueBandK(user.getValueBandK() - countForWhatBuy);
-//                        user.setValueCaT(user.getValueCaT() + ((countForWhatBuy * forWhatBuy.moneyRate)/whatBuy.moneyRate ));
+//                        models.setValueBandK(models.getValueBandK() - countForWhatBuy);
+//                        models.setValueCaT(models.getValueCaT() + ((countForWhatBuy * forWhatBuy.moneyRate)/whatBuy.moneyRate ));
                         throw new CalculatorException("W wersji DEMO można jedynie zmieniać waluty ze złotówek");
                     } else
                         throw new CalculatorException("Brak środków na koncie");
@@ -63,8 +63,8 @@ public abstract class CryptoCurrency extends Money implements BaseModel {
                 }
                 if (forWhatBuy instanceof CaT) {
                     if (user.getValueCaT() >= countForWhatBuy) {
-//                        user.setValueCaT(user.getValueCaT() - countForWhatBuy);
-//                        user.setValueBandK(user.getValueBandK() + ((countForWhatBuy * forWhatBuy.moneyRate)/whatBuy.moneyRate ));
+//                        models.setValueCaT(models.getValueCaT() - countForWhatBuy);
+//                        models.setValueBandK(models.getValueBandK() + ((countForWhatBuy * forWhatBuy.moneyRate)/whatBuy.moneyRate ));
                         throw new CalculatorException("W wersji DEMO można jedynie zmieniać waluty ze złotówek");
                     } else
                         throw new CalculatorException("Brak środków na koncie");

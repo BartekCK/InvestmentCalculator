@@ -6,19 +6,16 @@ import calculator.currency.types.BandK;
 import calculator.currency.types.CaT;
 import calculator.currency.types.Zloty;
 import calculator.currency.manage.Money;
-import calculator.database.dao.TransactionDao;
 import calculator.database.tasks.CurrencyTask;
-import calculator.database.tasks.TransactionTask;
 import calculator.database.tasks.UserTask;
-import calculator.date.Transaction;
+import calculator.models.model.Transaction;
 import calculator.exceptions.CalculatorException;
 import calculator.exceptions.Dialogs;
-import calculator.user.SuperUser;
-import calculator.user.User;
+import calculator.models.model.SuperUser;
+import calculator.models.model.User;
 import calculator.utilies.TimeThread;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
@@ -26,11 +23,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.text.Text;
 
-import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
 

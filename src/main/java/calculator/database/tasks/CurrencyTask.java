@@ -3,7 +3,7 @@ package calculator.database.tasks;
 import calculator.currency.manage.CryptoCurrency;
 
 import calculator.currency.manage.Money;
-import calculator.currency.modelFx.CryptoCurrencyFx;
+import calculator.models.modelFx.CryptoCurrencyFx;
 import calculator.database.dao.CurrencyDao;
 import calculator.exceptions.CalculatorException;
 import calculator.utilies.converters.CryptoCurrencyConverter;

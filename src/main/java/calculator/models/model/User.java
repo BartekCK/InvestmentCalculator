@@ -1,4 +1,4 @@
-package calculator.user;
+package calculator.models.model;
 
 
 import calculator.calculate.MyMath;
@@ -71,21 +71,19 @@ public class User implements BaseModel, Cloneable, Comparable
 
     @Override
     public int compareTo(Object o) {
+        return Double.compare(calculateAllWealth((User) o),calculateAllWealth(this));
+    }
+
+    protected double calculateAllWealth(User user)
+    {
         CurrencyTask currencyTask= new CurrencyTask();
         Money[] tempList = currencyTask.init(FXCollections.observableArrayList(new CaT(), new BandK())).toArray(new Money[2]);
 
-        double tempMoney = this.polishZlotyAccount;
-        tempMoney+=this.valueCaT * tempList[0].getMoneyRate();
-        tempMoney+=this.valueBandK * tempList[1].getMoneyRate();
-
-        User user = (User) o;
         double tempMoneyUser = user.getPolishZlotyAccount();
         tempMoneyUser+=user.getValueCaT()* tempList[0].getMoneyRate();
         tempMoneyUser+=user.getValueBandK() * tempList[1].getMoneyRate();
 
-        return Double.compare(tempMoneyUser,tempMoney);
-
-
+        return MyMath.roundTwo(tempMoneyUser);
     }
 
 

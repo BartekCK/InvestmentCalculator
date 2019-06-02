@@ -2,9 +2,9 @@ package calculator.database.tasks;
 
 import calculator.database.dao.SuperUserDao;
 import calculator.exceptions.CalculatorException;
-import calculator.user.SuperUser;
-import calculator.user.User;
-import calculator.date.UserFx;
+import calculator.models.model.SuperUser;
+import calculator.models.model.User;
+import calculator.models.modelFx.UserFx;
 import calculator.utilies.converters.ListConverter;
 import calculator.utilies.converters.UserConverter;
 import javafx.collections.FXCollections;

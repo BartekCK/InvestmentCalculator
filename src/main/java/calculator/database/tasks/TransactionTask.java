@@ -1,8 +1,8 @@
 package calculator.database.tasks;
 
-import calculator.date.TransactionFx;
-import calculator.user.SuperUser;
-import calculator.date.Transaction;
+import calculator.models.modelFx.TransactionFx;
+import calculator.models.model.SuperUser;
+import calculator.models.model.Transaction;
 import calculator.utilies.converters.ListConverter;
 import calculator.utilies.converters.TransactionConverter;
 import javafx.collections.FXCollections;
