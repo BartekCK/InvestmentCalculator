@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="690.0" prefWidth="615.0" styleClass="anchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.controllers.loansAndDeposits.LoansController">
+<AnchorPane prefHeight="690.0" prefWidth="615.0" styleClass="anchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.calculator.controllers.loansAndDeposits.LoansController">
    <children>
       <Text layoutX="204.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="OBLICZANIE RATY STAŁEJ">
          <font>

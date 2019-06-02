@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="350.0" styleClass="anchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.controllers.login.SignInController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="350.0" styleClass="anchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.calculator.controllers.login.SignInController">
    <children>
       <TextField fx:id="emailTextField" layoutX="101.0" layoutY="112.0" />
       <Text id="h3" layoutX="142.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Adres e-mail" />
