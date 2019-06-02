@@ -41,9 +41,9 @@
          </columnResizePolicy>
       </TableView>
       <Text layoutX="405.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Całkowita kwota do spłaty" />
-      <TextField fx:id="resultInstallment" editable="false" layoutX="69.0" layoutY="306.0" />
-      <TextField fx:id="resultValue1" editable="false" layoutX="400.0" layoutY="306.0" />
-      <TextField fx:id="resultValue2" editable="false" layoutX="400.0" layoutY="467.0" />
+      <TextField fx:id="resultInstallment" editable="false" layoutX="69.0" layoutY="306.0" styleClass="no-editiable-text-field" />
+      <TextField fx:id="resultValue1" editable="false" layoutX="400.0" layoutY="306.0" styleClass="no-editiable-text-field" />
+      <TextField fx:id="resultValue2" editable="false" layoutX="400.0" layoutY="467.0" styleClass="no-editiable-text-field" />
       <Button fx:id="button" layoutX="412.0" layoutY="623.0" mnemonicParsing="false" onAction="#calculateLoans" prefHeight="25.0" prefWidth="124.0" text="Oblicz" />
    </children>
 </AnchorPane>

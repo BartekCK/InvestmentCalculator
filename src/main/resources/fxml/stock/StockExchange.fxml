@@ -39,7 +39,7 @@
                </font></Text>
             <Text layoutX="14.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Wpisz liczbę wybranej waluty:" />
             <ComboBox fx:id="buyComboBox" layoutX="231.0" layoutY="33.0" prefWidth="150.0" />
-            <TextField fx:id="buyTextField1" editable="false" layoutX="232.0" layoutY="195.0" />
+            <TextField fx:id="buyTextField1" editable="false" layoutX="232.0" layoutY="195.0" styleClass="no-editiable-text-field" />
             <Text fx:id="currencyText1" fill="#4a4a4a" layoutX="380.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0">
                <font>
                   <Font name="System Bold" size="12.0" />

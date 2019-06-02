@@ -22,12 +22,12 @@
       <Text layoutX="46.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Oprocentowanie" />
       <TextField fx:id="percentTextField" layoutX="501.0" layoutY="293.0" prefHeight="25.0" prefWidth="70.0" />
       <Text layoutX="583.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="\%" />
-      <TextField fx:id="showProfitTextField" alignment="CENTER" editable="false" layoutX="7.0" layoutY="579.0" prefHeight="104.0" prefWidth="603.0">
+      <TextField fx:id="showProfitTextField" alignment="CENTER" editable="false" layoutX="7.0" layoutY="579.0" prefHeight="104.0" prefWidth="603.0" styleClass="no-editiable-text-field">
          <font>
             <Font size="33.0" />
          </font>
       </TextField>
-      <TextField fx:id="countDay" editable="false" layoutX="433.0" layoutY="236.0" prefHeight="25.0" prefWidth="116.0" />
+      <TextField fx:id="countDay" editable="false" layoutX="433.0" layoutY="236.0" prefHeight="25.0" prefWidth="116.0" styleClass="no-editiable-text-field" />
       <Text layoutX="382.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Ilość dni" />
    </children>
 </AnchorPane>

@@ -34,8 +34,8 @@
       <Text layoutX="152.0" layoutY="628.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="Pracownik zarobki netto" />
       <Text layoutX="880.0" layoutY="629.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="Koszt pracownika brutto" />
       <TextField fx:id="accidentInsurance" layoutX="380.0" layoutY="209.0" />
-      <TextField fx:id="netEarnings" editable="false" layoutX="163.0" layoutY="634.0" />
-      <TextField fx:id="grossEmployeeCost" editable="false" layoutX="892.0" layoutY="634.0" />
+      <TextField fx:id="netEarnings" editable="false" layoutX="163.0" layoutY="634.0" styleClass="no-editiable-text-field" />
+      <TextField fx:id="grossEmployeeCost" editable="false" layoutX="892.0" layoutY="634.0" styleClass="no-editiable-text-field" />
       <Button layoutX="572.0" layoutY="634.0" mnemonicParsing="false" onAction="#calculate" prefHeight="25.0" prefWidth="103.0" text="Oblicz" />
       <Text layoutX="380.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="PLN" />
       <AnchorPane id="anchorPanePhoto" layoutX="688.0" layoutY="29.0" prefHeight="512.0" prefWidth="512.0" />
