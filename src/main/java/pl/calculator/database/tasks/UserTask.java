@@ -17,14 +17,10 @@ import java.util.TreeSet;
 
 public class UserTask {
 
-    public void addUserToDataBase(SuperUser superUser)
-    {
+    public void addUserToDataBase(SuperUser superUser) throws CalculatorException {
         SuperUserDao superUserDao = new SuperUserDao();
-        try {
-            superUserDao.creatOrUpdate(superUser);
-        } catch (CalculatorException e) {
-            e.printStackTrace();
-        }
+        superUserDao.creatOrUpdate(superUser);
+
     }
 
     public SuperUser pullUserFromDataBase(String email, String password)

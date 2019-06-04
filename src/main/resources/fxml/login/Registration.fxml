@@ -12,7 +12,7 @@
    <children>
       <TextField fx:id="nickTextField" layoutX="39.0" layoutY="43.0" prefHeight="25.0" prefWidth="150.0" />
       <TextField fx:id="emailTextField" layoutX="39.0" layoutY="93.0" prefHeight="25.0" prefWidth="150.0" />
-      <Text layoutX="38.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Nick" />
+      <Text layoutX="38.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="*Nick" />
       <Text layoutX="40.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="*Email" />
       <Text layoutX="39.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="*Hasło" />
       <Text layoutX="40.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="*Powtórz hasło" />

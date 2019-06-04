@@ -3,6 +3,7 @@ package pl.calculator.controllers.login;
 import pl.calculator.database.dao.SuperUserDao;
 import pl.calculator.database.tasks.UserTask;
 import pl.calculator.exceptions.CalculatorException;
+import pl.calculator.exceptions.Dialogs;
 import pl.calculator.models.model.SuperUser;
 import pl.calculator.utilies.Path;
 import pl.calculator.utilies.ProjectLoader;
@@ -66,8 +67,10 @@ public class RegistrationController {
     @FXML
     void register(ActionEvent event) {
 
-        if(checkPassword()&&checkEmail() && !(password1TextField.getText().isEmpty() || emailTextField.getText().isEmpty()))
+        try
         {
+            if(!checkPassword()|| !checkEmail() || password1TextField.getText().isEmpty() || emailTextField.getText().isEmpty()|| nickTextField.getText().isEmpty())
+                throw new CalculatorException("Dane zostały wprowadzone nieprawidłowo");
             SuperUser superUser = new SuperUser(emailTextField.getText(),password1TextField.getText(),nickTextField.getText());
             superUser.setName(nameTextField.getText());
             superUser.setSurname(surnameTextField.getText());
@@ -88,7 +91,11 @@ public class RegistrationController {
 
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
             window.setScene(ProjectLoader.addSCssToScene(new Scene(ProjectLoader.ParentLoader(Path.PATH_REGISTRATION_CONFIRMATION,Path.CSS_MAIN_SCENE))));
+
+        } catch (CalculatorException e) {
+            Dialogs.errorDialog(e.getMessage());
         }
+
 
     }
 
