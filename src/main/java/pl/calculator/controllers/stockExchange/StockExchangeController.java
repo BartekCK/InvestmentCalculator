@@ -8,6 +8,8 @@ import pl.calculator.currency.types.Zloty;
 import pl.calculator.currency.manage.Money;
 import pl.calculator.database.tasks.CurrencyTask;
 import pl.calculator.database.tasks.UserTask;
+import pl.calculator.logs.Log;
+import pl.calculator.logs.SaveLogs;
 import pl.calculator.models.model.Transaction;
 import pl.calculator.exceptions.CalculatorException;
 import pl.calculator.exceptions.Dialogs;
@@ -16,7 +18,6 @@ import pl.calculator.models.model.User;
 import pl.calculator.utilies.TimeThread;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -128,6 +129,7 @@ public class StockExchangeController {
             }
 
             userTask.addUserToDataBase((SuperUser) user);
+            SaveLogs.saveToFile(new Log("Udany zakup na giełdzie"));
 
         } catch (CalculatorException e) {
             Dialogs.errorDialog(e.getMessage());

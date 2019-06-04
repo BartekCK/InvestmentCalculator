@@ -3,6 +3,8 @@ package pl.calculator.controllers.userInterface.menuPanes;
 import pl.calculator.database.tasks.UserTask;
 import pl.calculator.exceptions.CalculatorException;
 import pl.calculator.exceptions.Dialogs;
+import pl.calculator.logs.Log;
+import pl.calculator.logs.SaveLogs;
 import pl.calculator.models.model.SuperUser;
 import pl.calculator.models.model.User;
 import javafx.event.ActionEvent;
@@ -40,7 +42,7 @@ public class AccountTopUpController {
     }
 
     @FXML
-    void addCashZl(ActionEvent event) {
+    void addCashZl() {
         try
         {
             if( user == null)
@@ -48,6 +50,7 @@ public class AccountTopUpController {
             user.setPolishZlotyAccount(user.getPolishZlotyAccount()+tSlider.getValue());
             userTask.addUserToDataBase((SuperUser) user);//rzutowanie w dół
             addButton.setDisable(true);
+            SaveLogs.saveToFile(new Log("Doładowanie konta"));
         } catch (CalculatorException e) {
             Dialogs.errorDialog(e.getMessage());
         }

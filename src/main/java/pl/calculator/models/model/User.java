@@ -10,8 +10,10 @@ import pl.calculator.database.tasks.CurrencyTask;
 import com.j256.ormlite.field.DatabaseField;
 import javafx.collections.FXCollections;
 
+import java.io.Serializable;
 
-public class User implements BaseModel, Cloneable, Comparable
+
+public class User implements BaseModel, Cloneable, Comparable, Serializable
 {
 
     @DatabaseField(generatedId = true)
@@ -45,6 +47,10 @@ public class User implements BaseModel, Cloneable, Comparable
     double valueCaT;
 
     public User() {
+    }
+
+    public User(String nick) {
+        this.nick = nick;
     }
 
     public User(String email, String password, String nick) {
@@ -167,4 +173,8 @@ public class User implements BaseModel, Cloneable, Comparable
         this.valueCaT = MyMath.roundTwo(valueCaT);
     }
 
+    @Override
+    public String toString() {
+        return nick;
+    }
 }

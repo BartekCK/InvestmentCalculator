@@ -1,12 +1,12 @@
 package pl.calculator.controllers;
 
-
 import pl.calculator.controllers.login.SignInController;
 import pl.calculator.controllers.userInterface.UserInterfaceController;
+import pl.calculator.logs.Log;
+import pl.calculator.logs.SaveLogs;
 import pl.calculator.models.model.User;
 import pl.calculator.utilies.Path;
 import pl.calculator.utilies.ProjectLoader;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ToggleGroup;
@@ -39,8 +39,16 @@ public class MainWindowController {
     }
 
     @FXML
-    private void openCreditAndBankDeposit() {
+    private void showLog()
+    {
 
+        SaveLogs.saveToFile(new Log("Otwarcie panelu logów"));
+        ProjectLoader.FxmlLoaderNewWindow(Path.PATH_LOG,"Log");
+    }
+
+    @FXML
+    private void openCreditAndBankDeposit() {
+        SaveLogs.saveToFile(new Log("Otwarcie panelu kredytów i lokat"));
         downStackPane.getChildren().clear();
         downStackPane.getChildren().add(ProjectLoader.ParentLoader(Path.PATH_LOANS_AND_DEPOSIT,Path.CSS_MAIN_SCENE));
 
@@ -48,6 +56,7 @@ public class MainWindowController {
 
     @FXML
     private void openRemuneration() {
+        SaveLogs.saveToFile(new Log("Otwarcie panelu wynagordzeń"));
         downStackPane.getChildren().clear();
         downStackPane.getChildren().add(ProjectLoader.ParentLoader(Path.PATH_REMUNERATION,Path.CSS_MAIN_SCENE));
 
@@ -57,6 +66,7 @@ public class MainWindowController {
     private void openStockExchange() {
         if(user != null)
         {
+            SaveLogs.saveToFile(new Log("Otwarcie panelu giełdy"));
             downStackPane.getChildren().clear();
             downStackPane.getChildren().add(ProjectLoader.ParentLoader(Path.PATH_STOCK_EXCHANGE,Path.CSS_MAIN_SCENE));
         }else
@@ -91,7 +101,8 @@ public class MainWindowController {
     }
 
     @FXML
-    private void userStatistic(ActionEvent event) {
+    private void userStatistic() {
+        SaveLogs.saveToFile(new Log("Otwarcie panelu statystyk"));
         ProjectLoader.FxmlLoaderNewWindow(Path.PATH_STATISTIC,"Statystyki");
     }
 

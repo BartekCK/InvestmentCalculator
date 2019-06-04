@@ -6,11 +6,12 @@ import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Date;
 
 @DatabaseTable(tableName = "TRANSACTION")
-public class Transaction implements BaseModel {
+public class Transaction implements BaseModel, Serializable {
 
     @DatabaseField(generatedId = true)
     private int id;
