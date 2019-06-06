@@ -17,7 +17,7 @@ public class CaT extends CryptoCurrency {
     }
 
     @Override
-    public void changeRate() {
+    public final void changeRate() {
         Random random = new Random();
         moneyRate = MyMath.roundTwo(random.nextDouble() * 2 + (this.polishMoney/1000000));
         System.out.println(moneyRate);

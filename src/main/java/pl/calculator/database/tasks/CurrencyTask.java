@@ -51,9 +51,7 @@ public class CurrencyTask {
             {
                 return (Money) currencyDao.pullLastCaTandBandK(cryptoCurrency.getClass(),LocalDate.now());
             }
-        } catch (CalculatorException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
+        } catch (SQLException|CalculatorException e) {
             e.printStackTrace();
         }
         return null;
