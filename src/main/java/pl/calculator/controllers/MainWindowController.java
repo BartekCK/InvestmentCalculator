@@ -126,7 +126,7 @@ public class MainWindowController {
 
     @FXML
     void universityThread(ActionEvent event) {
-        ProjectLoader.FxmlLoaderNewWindow(Path.PATH_THREAD,"Statystyki");
+        ProjectLoader.FxmlLoaderNewWindow(Path.PATH_THREAD,"Wątki");
     }
 
     private void clickOnMenuItem() {

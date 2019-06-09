@@ -16,9 +16,13 @@ public class BankCrew implements Runnable {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        if(agreeCash.getValue() > 1000)
+            agreeCash.setBankAgreesAboutCredit(true);
+        else
+            agreeCash.setBankAgreesAboutCredit(false);
 
         agreeCash.bankAgrees = true;
-        System.out.println("Koniec sprawdzania, nasza ocena to"+agreeCash.bankAgrees);
+        System.out.println("Koniec sprawdzania, nasza ocena to "+agreeCash.isBankAgreesAboutCredit());
         synchronized (agreeCash) {
             agreeCash.notify();
 
