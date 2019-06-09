@@ -48,6 +48,20 @@
                   <CustomMenuItem mnemonicParsing="false" />
                </items>
             </Menu>
+            <Menu mnemonicParsing="false">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#universityThread" text="Wątki" />
+                  <MenuItem mnemonicParsing="false" text="Zapis do pliku" />
+                <MenuItem mnemonicParsing="false" text="Struktury danych" />
+              </items>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/star.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Menu>
         </menus>
       </MenuBar>
       <HBox alignment="CENTER" prefHeight="60.0" styleClass="backScene">

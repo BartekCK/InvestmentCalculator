@@ -1,5 +1,6 @@
 package pl.calculator.controllers;
 
+import javafx.event.ActionEvent;
 import pl.calculator.controllers.login.SignInController;
 import pl.calculator.controllers.userInterface.UserInterfaceController;
 import pl.calculator.logs.Log;
@@ -123,6 +124,10 @@ public class MainWindowController {
             transactionMenuItem.setDisable(true);
     }
 
+    @FXML
+    void universityThread(ActionEvent event) {
+        ProjectLoader.FxmlLoaderNewWindow(Path.PATH_THREAD,"Statystyki");
+    }
 
     private void clickOnMenuItem() {
         userInterfaceController = ProjectLoader.FxmlLoaderNewWindow(Path.PATH_USER_INTERFACE,"Menu użytkownika").getController();
