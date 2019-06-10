@@ -14,6 +14,21 @@ public class UserConverter {
         userFx.setSurname(user.getSurname());
         userFx.setWealth(user);
         userFx.setNick(user.getNick());
+
+        AnonimOnAbstract anonimOnAbstract = new AnonimOnAbstract() {
+            @Override
+            void printMessage(String message) {
+                System.out.println(message);
+            }
+        };
+
+        anonimOnAbstract.printMessage("Proba obiektu klasy, ktora ma tylko jedna instnacje");
         return userFx;
     }
+}
+
+
+abstract class AnonimOnAbstract
+{
+    abstract void printMessage(String message);
 }
