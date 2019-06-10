@@ -38,7 +38,9 @@ public class ThreadsController {
 
 
         Runnable runnable = () -> {
-            for (int i=0;i<10;i++) {
+            for (int i=0;i<11;i++) {
+                if (i==10)
+                    break;
                 System.out.println(i);
                 try {
                     Thread.sleep(1000);
@@ -52,7 +54,9 @@ public class ThreadsController {
 
         List<Thread> threads = new LinkedList();
         ThreadSyn threadSyn = new ThreadSyn();
-        for(int i=0;i<50;i++){
+        for(int i=0;i<51;i++){
+            if (i==50)
+                continue;
             Incrementer inc = new Incrementer(threadSyn);
             Thread tt = new Thread(inc);
             threads.add(tt);

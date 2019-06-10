@@ -19,7 +19,7 @@ public class ForMap extends God implements Comparable{
 
     @Override
     public boolean equals(Object obj) {
-        return this.key == ((ForMap)obj).getKey();
+        return this.key == ((ForMap)obj).getKey()?true:false;
     }
 
     @Override

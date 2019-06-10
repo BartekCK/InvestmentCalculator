@@ -2,7 +2,7 @@ package pl.calculator.exceptions;
 
 import javafx.scene.control.Alert;
 
-public class Dialogs {
+public class Dialogs extends MainDialogs{
 
 
     private static Alert createDialogAlert()
@@ -21,7 +21,7 @@ public class Dialogs {
 
     public static void errorDialog(String message1, String message2)
     {
-        Alert alert = createDialogAlert();
+        Alert alert = createDialogAlert(Alert.AlertType.ERROR,"Uwaga");
         alert.setHeaderText(message1);
         alert.setContentText(message2);
         alert.showAndWait();
