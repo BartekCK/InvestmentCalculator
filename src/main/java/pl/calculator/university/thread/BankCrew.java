@@ -1,4 +1,4 @@
-package pl.university.thread;
+package pl.calculator.university.thread;
 
 public class BankCrew implements Runnable {
     private AgreeCash agreeCash;

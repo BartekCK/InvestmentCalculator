@@ -52,7 +52,7 @@
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#universityThread" text="Wątki" />
                   <MenuItem mnemonicParsing="false" text="Zapis do pliku" />
-                <MenuItem mnemonicParsing="false" text="Struktury danych" />
+                <MenuItem mnemonicParsing="false" onAction="#universityStruct" text="Struktury danych" />
               </items>
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">

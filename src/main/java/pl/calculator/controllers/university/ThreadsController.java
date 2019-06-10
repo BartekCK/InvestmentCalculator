@@ -2,9 +2,9 @@ package pl.calculator.controllers.university;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
-import pl.university.thread.AgreeCash;
-import pl.university.thread.BankAccount;
-import pl.university.thread.BankCrew;
+import pl.calculator.university.thread.AgreeCash;
+import pl.calculator.university.thread.BankAccount;
+import pl.calculator.university.thread.BankCrew;
 
 import java.util.LinkedList;
 import java.util.List;

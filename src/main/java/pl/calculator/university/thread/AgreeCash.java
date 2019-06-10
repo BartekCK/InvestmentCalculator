@@ -1,4 +1,4 @@
-package pl.university.thread;
+package pl.calculator.university.thread;
 
 public class AgreeCash {
     boolean bankAgrees;

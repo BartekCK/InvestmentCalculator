@@ -1,4 +1,4 @@
-package pl.university.thread;
+package pl.calculator.university.thread;
 
 public class BankAccount extends Thread {
     private int amount;

@@ -129,6 +129,11 @@ public class MainWindowController {
         ProjectLoader.FxmlLoaderNewWindow(Path.PATH_THREAD,"Wątki");
     }
 
+    @FXML
+    void universityStruct(ActionEvent event) {
+        ProjectLoader.FxmlLoaderNewWindow(Path.PATH_STRUCT,"Struktury danych");
+    }
+
     private void clickOnMenuItem() {
         userInterfaceController = ProjectLoader.FxmlLoaderNewWindow(Path.PATH_USER_INTERFACE,"Menu użytkownika").getController();
         setUser(user);
