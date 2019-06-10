@@ -76,6 +76,7 @@ public class StructController implements Initializable {
 
     private Set<God> hashSet;
 
+    private Map<ForMap, Double> treeMap;
 
     private Map<ForMap, Double> hashMap;
 
@@ -83,6 +84,7 @@ public class StructController implements Initializable {
         casualList = new LinkedList();
         hashSet = new HashSet<>();
         hashMap = new HashMap<>();
+        treeMap = new TreeMap<>();
     }
 
     @Override
@@ -118,7 +120,11 @@ public class StructController implements Initializable {
 
     @FXML
     void addToTreeMap(ActionEvent event) {
+        forMap = new ForMap(Integer.parseInt(keyRight.getText()),Double.parseDouble(valueRight.getText()));
+        forMap.setHash(Integer.valueOf(hashRight.getText()));
+        treeMap.put(forMap,Double.parseDouble(valueRight.getText()));
 
+        setRightView(FXCollections.observableArrayList(treeMap.entrySet()));
     }
 
     @FXML
