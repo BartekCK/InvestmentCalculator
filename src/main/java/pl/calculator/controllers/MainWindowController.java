@@ -1,11 +1,15 @@
 package pl.calculator.controllers;
 
 import javafx.event.ActionEvent;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import pl.calculator.controllers.login.SignInController;
 import pl.calculator.controllers.userInterface.UserInterfaceController;
 import pl.calculator.logs.Log;
 import pl.calculator.logs.SaveLogs;
 import pl.calculator.models.model.User;
+import pl.calculator.university.interfacesExtends.Circle1;
 import pl.calculator.utilies.Path;
 import pl.calculator.utilies.ProjectLoader;
 import javafx.fxml.FXML;
@@ -132,6 +136,29 @@ public class MainWindowController {
     @FXML
     void universityStruct(ActionEvent event) {
         ProjectLoader.FxmlLoaderNewWindow(Path.PATH_STRUCT,"Struktury danych");
+    }
+
+
+    @FXML
+    void universityInterfaceExtends()
+    {
+        Stage stage = new Stage();
+
+        Circle1 circle1 = new Circle1();
+        Circle1 circle2 = new Circle1();
+
+        circle1.setCircleColor();
+        circle1.setCircleSize(100);
+
+        circle2.setCircleSize(50);
+
+        Pane pane = new Pane();
+        pane.getChildren().addAll(circle1.getCircle(),circle2.getCircle());
+
+
+        Scene scene = new Scene(pane,600,600);
+        stage.setScene(scene);
+        stage.show();
     }
 
     private void clickOnMenuItem() {
