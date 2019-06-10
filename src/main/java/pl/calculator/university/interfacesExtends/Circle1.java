@@ -8,9 +8,8 @@ public class Circle1 extends Circle implements CircleColour {
     Circle circle;
 
     public Circle1() {
-        circle = new Circle(50, 40, 40);
-        circle.setCenterX(300);
-        circle.setCenterY(300);
+        circle = new Circle(150, 150, 40);
+
     }
 
     @Override

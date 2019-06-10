@@ -6,6 +6,7 @@ import pl.calculator.university.thread.AgreeCash;
 import pl.calculator.university.thread.BankAccount;
 import pl.calculator.university.thread.BankCrew;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -74,8 +75,52 @@ public class ThreadsController {
 
         System.out.println("Wartość wynosi: "+threadSyn.getValue());
 
+
+
+
+        List<Thread> listNew = new ArrayList<>();
+        Value value = new Value(0);
+        for (int i= 0 ;i<500;i++)
+        {
+            Proba proba = new Proba(value);
+            Thread thread = new Thread(proba);
+            listNew.add(thread);
+            thread.start();
+        }
+
+        System.out.println("Wynik z niesynchornizacji watkow "+value.i);
+
     }
 
+}
+
+class Value
+{
+    int i;
+
+    public Value(int i) {
+        this.i = i;
+    }
+}
+
+class Proba extends Thread
+{
+
+    Value v;
+    public Proba(Value v)
+    {
+        this.v = v;
+    }
+    @Override
+    public void run() {
+        increment();
+    }
+
+    public void increment()
+    {
+        for (int i=0;i<500;i++)
+            v.i++;
+    }
 }
 
 class ThreadSyn {

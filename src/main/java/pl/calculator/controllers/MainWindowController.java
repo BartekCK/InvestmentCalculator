@@ -1,8 +1,12 @@
 package pl.calculator.controllers;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.Scene;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import pl.calculator.controllers.login.SignInController;
 import pl.calculator.controllers.userInterface.UserInterfaceController;
@@ -10,12 +14,9 @@ import pl.calculator.logs.Log;
 import pl.calculator.logs.SaveLogs;
 import pl.calculator.models.model.User;
 import pl.calculator.university.interfacesExtends.Circle1;
+import pl.calculator.university.interfacesExtends.Circle2;
 import pl.calculator.utilies.Path;
 import pl.calculator.utilies.ProjectLoader;
-import javafx.fxml.FXML;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.ToggleGroup;
-import javafx.scene.layout.StackPane;
 
 
 public class MainWindowController {
@@ -145,7 +146,7 @@ public class MainWindowController {
         Stage stage = new Stage();
 
         Circle1 circle1 = new Circle1();
-        Circle1 circle2 = new Circle1();
+        Circle2 circle2 = new Circle2();
 
         circle1.setCircleColor();
         circle1.setCircleSize(100);

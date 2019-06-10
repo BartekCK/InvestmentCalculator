@@ -1,7 +1,6 @@
 package pl.calculator.university.thread;
 
 public class BankAccount extends Thread {
-    private int amount;
 
     private AgreeCash agreeCash;
 
