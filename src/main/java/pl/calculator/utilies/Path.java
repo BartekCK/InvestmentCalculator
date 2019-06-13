@@ -14,6 +14,7 @@ public class Path {
     public static final String PATH_REMUNERATION = "/fxml/remuneration/Remuneration.fxml";
     public static final String PATH_STATISTIC = "/fxml/userMenu/Statistic.fxml";
     public static final String PATH_LOG = "/fxml/other/ShowLog.fxml";
+    public static final String PATH_FILE = "/fxml/university/Files.fxml";
 
     public static final String PATH_THREAD= "/fxml/university/Threads.fxml";
     public static final String PATH_STRUCT= "/fxml/university/Structs.fxml";

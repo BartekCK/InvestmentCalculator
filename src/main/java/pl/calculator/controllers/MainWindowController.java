@@ -162,6 +162,12 @@ public class MainWindowController {
         stage.show();
     }
 
+    @FXML
+    void universityFile()
+    {
+        ProjectLoader.FxmlLoaderNewWindow(Path.PATH_FILE,"Obsługa plikow");
+    }
+
     private void clickOnMenuItem() {
         userInterfaceController = ProjectLoader.FxmlLoaderNewWindow(Path.PATH_USER_INTERFACE,"Menu użytkownika").getController();
         setUser(user);

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="679.0" styleClass="anchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.calculator.controllers.university.FileController">
+   <children>
+      <Button layoutX="377.0" layoutY="14.0" mnemonicParsing="false" onAction="#saveToFile" text="Zapisz" />
+      <TextArea fx:id="textArea" layoutX="14.0" layoutY="14.0" prefHeight="416.0" prefWidth="327.0" />
+      <Button layoutX="377.0" layoutY="141.0" mnemonicParsing="false" onAction="#readToConsole" text="Odczytaj z pliku do konsoli" />
+      <Button layoutX="377.0" layoutY="80.0" mnemonicParsing="false" onAction="#readByBufferedRead" text="Odczyt BufferedRead" />
+      <Button layoutX="382.0" layoutY="256.0" mnemonicParsing="false" onAction="#readByFileRead" text="Odczyt FileRead" />
+      <Button layoutX="381.0" layoutY="202.0" mnemonicParsing="false" onAction="#saveByFileWrite" text="Zapis FileWrite" />
+      <Button layoutX="382.0" layoutY="384.0" mnemonicParsing="false" onAction="#readByByteArrayOutputStream" text="Odczyt z ByteArrayOutputStream" />
+      <Button layoutX="382.0" layoutY="314.0" mnemonicParsing="false" onAction="#readByScanner" text="Odczyt z Scanner" />
+   </children>
+</AnchorPane>
