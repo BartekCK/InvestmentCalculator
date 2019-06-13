@@ -5,7 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 public class GcController {
-    
+
 
     @FXML
     void turnOn(ActionEvent event) {

@@ -174,6 +174,12 @@ public class MainWindowController {
         ProjectLoader.FxmlLoaderNewWindow(Path.PATH_GC,"Pokazanie pracy GC");
     }
 
+    @FXML
+    void universityArrays()
+    {
+        ProjectLoader.FxmlLoaderNewWindow(Path.PATH_ARRAYS,"Porównywanie tablic liczb całkowitych");
+    }
+
     private void clickOnMenuItem() {
         userInterfaceController = ProjectLoader.FxmlLoaderNewWindow(Path.PATH_USER_INTERFACE,"Menu użytkownika").getController();
         setUser(user);

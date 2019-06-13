@@ -51,6 +51,7 @@
             <Menu mnemonicParsing="false">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#universityThread" text="Wątki" />
+                  <MenuItem mnemonicParsing="false" onAction="#universityArrays" text="Tablice" />
                   <MenuItem mnemonicParsing="false" onAction="#universityFile" text="Zapis do pliku" />
                 <MenuItem mnemonicParsing="false" onAction="#universityStruct" text="Struktury danych" />
                   <MenuItem mnemonicParsing="false" onAction="#universityGarbageCollector" text="Garbage Collector" />
