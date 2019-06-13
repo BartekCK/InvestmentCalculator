@@ -24,7 +24,7 @@ public class FileController {
     void readToConsole(ActionEvent event) throws IOException {
 
         byte[] bytes = Files.readAllBytes(path);
-        String fileContent = new String(bytes, Charset.forName("UTF-8"));
+        String fileContent = new String(bytes, Charset.defaultCharset());
         System.out.println("Zwartość pliku:\n"+ fileContent);
     }
 
@@ -54,9 +54,9 @@ public class FileController {
     }
 
     @FXML
-    void readByFileRead()
+    void readByFileReader()
     {
-        try (FileReader fileReader = new FileReader("zapisOdczyt.txt")) {
+        try (FileReader fileReader = new FileReader(new File("zapisOdczyt.txt"))) {
             StringBuilder stringBuilder = new StringBuilder();
             int character = fileReader.read();
 
@@ -67,14 +67,14 @@ public class FileController {
             System.out.println(stringBuilder.toString());
         } catch (IOException e) {
                     e.printStackTrace();
-                }
+        }
     }
 
     @FXML
     void saveToFile(ActionEvent event) throws IOException {
 
         String toSave = textArea.getText();
-        Files.write(path,toSave.getBytes(Charset.forName("UTF-8")));
+        Files.write(path,toSave.getBytes(Charset.defaultCharset()));
 
 
     }

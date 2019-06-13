@@ -131,11 +131,13 @@ public class StockExchangeController {
             userTask.addUserToDataBase((SuperUser) user);
             SaveLogs.saveToFile(new Log("Udany zakup na giełdzie"));
 
-        } catch (CalculatorException e) {
-            Dialogs.errorDialog(e.getMessage());
+
         }catch (NumberFormatException e)
         {
             Dialogs.errorDialog("Dane zostały wprowadzone nieprawidłowo");
+        }
+        catch (Exception e) {
+            Dialogs.errorDialog(e.getMessage());
         }
 
 
