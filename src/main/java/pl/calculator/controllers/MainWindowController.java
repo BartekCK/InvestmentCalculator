@@ -168,6 +168,12 @@ public class MainWindowController {
         ProjectLoader.FxmlLoaderNewWindow(Path.PATH_FILE,"Obsługa plikow");
     }
 
+    @FXML
+    void universityGarbageCollector()
+    {
+        ProjectLoader.FxmlLoaderNewWindow(Path.PATH_GC,"Pokazanie pracy GC");
+    }
+
     private void clickOnMenuItem() {
         userInterfaceController = ProjectLoader.FxmlLoaderNewWindow(Path.PATH_USER_INTERFACE,"Menu użytkownika").getController();
         setUser(user);
