@@ -1,17 +1,12 @@
 package pl.calculator.controllers.loansAndDeposits;
 
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
 import pl.calculator.calculate.loansAndDeposit.BankCalculate;
 import pl.calculator.calculate.loansAndDeposit.DecreasingInstallmentFx;
 import pl.calculator.calculate.loansAndDeposit.LoansCalculate;
 import pl.calculator.exceptions.CalculatorException;
 import pl.calculator.exceptions.Dialogs;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 
 import java.text.NumberFormat;
 
@@ -63,7 +58,7 @@ public class LoansController {
 
 
         try {
-            if(percentTextField.getText().isEmpty() || Double.parseDouble(percentTextField.getText().replace(",","."))<=0)
+            if(percentTextField.getText().isEmpty() | Double.parseDouble(percentTextField.getText().replace(",","."))<=0)
                 throw new CalculatorException("Zły dobór procentow :)");
             loansCalculate.parametrQ(percentSlider.getValue());
             loansCalculate.amountInstallment(Double.parseDouble(loansValueTextField.getText()),Integer.parseInt(installmentCountTextField.getText()));

@@ -65,7 +65,7 @@ public class ShowArraysController {
         System.out.println("Sortowanie tablicy na lewo (płytko)");
         Arrays.sort(arrayLeft);
         System.out.println(Arrays.toString(arrayLeft));
-        
+
 
     }
 

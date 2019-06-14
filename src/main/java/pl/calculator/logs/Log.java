@@ -4,6 +4,7 @@ import pl.calculator.controllers.MainWindowController;
 import pl.calculator.models.model.User;
 import java.io.Serializable;
 
+import java.nio.charset.Charset;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -27,6 +28,7 @@ public class Log implements Serializable, ThisIsLogInformation {
 
     @Override
     public String toString() {
+        message.getBytes(Charset.defaultCharset());
         return "Log " + localDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))+"> "+message+", dokonał użytkownik: "+ user+"\n\t"+" Próba transient wynik == "+localDate+"\n";
     }
 }
